@@ -69,7 +69,7 @@ button {
 .navmain {
   position: fixed;
   animation: slide-down .7s;
-  top: 65px;
+  top: 58px;
   left: 0;
   right: 0;
   display: flex;

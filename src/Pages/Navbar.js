@@ -25,9 +25,9 @@ function Navbar() {
 
                 <div className='navmain'>
                     <div className='navchild'>
-                        <a href='/'>
+                        <Link to='/'>
                             <img src={Beyounglogo} alt='beyoung' className='logo'></img>
-                        </a>
+                        </Link>
                         <div className='dropdown'>
                             <Link className='link1' to='/men'>MEN</Link>
                             <div className='dropdown-content'>

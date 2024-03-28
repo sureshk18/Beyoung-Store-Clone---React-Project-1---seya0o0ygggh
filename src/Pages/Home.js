@@ -1,7 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-// import Boxer from "../assets/Boxer.png";
-// import Combo from "../assets/Combo.png";
+import { useEffect, useState } from 'react';
+import Boxer from "../assests/Boxer.jpg";
+import Combo from "../assests/Combo.jpg";
+import '../styles/Home.css';
+import CashBackSliders from '../Morepages/Cashbacksliders';
+
 
 function Home() {
     const images = [
@@ -17,6 +19,9 @@ function Home() {
 
         return () => clearInterval(intervalId);
     }, [images]);
+
+
+
     return (<>
         <div className="slide">
             <img
@@ -26,10 +31,11 @@ function Home() {
                 className="sliderimg"
                 loading="lazy"
             />
-
         </div>
+
+        <CashBackSliders />
     </>
     )
 }
 
-export default Home
+export default Home;
