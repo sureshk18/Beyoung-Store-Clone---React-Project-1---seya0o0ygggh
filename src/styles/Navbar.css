@@ -45,6 +45,7 @@
   display: flex;
   margin-left: 10px;
   gap: 10px;
+  cursor: pointer;
   font-family: system-ui;
 }
 .nav-linkss {

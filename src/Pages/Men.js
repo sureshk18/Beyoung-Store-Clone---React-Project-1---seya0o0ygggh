@@ -1,8 +1,9 @@
 import React from 'react'
+import '../styles/Men.css';
 
 function Men() {
     return (
-        <div >Men</div>
+        <div className='mens'>Men</div>
     )
 }
 

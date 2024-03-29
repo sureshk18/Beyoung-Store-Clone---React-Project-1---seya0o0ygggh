@@ -1,9 +1,10 @@
 import React from 'react'
+import '../styles/Combos.css';
 
 function Combos() {
     return (
-        <div>Combos</div>
+        <div className='combos'>Combos</div>
     )
 }
 
-export default Combos
+export default Combos;

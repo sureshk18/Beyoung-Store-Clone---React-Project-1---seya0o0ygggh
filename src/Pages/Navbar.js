@@ -14,7 +14,7 @@ function Navbar() {
                 </div>
                 <div className='navbar'>
                     <div className='nav-links'>
-                        <LocationOnOutlinedIcon style={{ height: '20px', padding: '0px ' }} /> TRACK YOUR ORDER
+                        <LocationOnOutlinedIcon style={{ height: '20px', padding: '0px ', cursor: 'pointer' }} /> TRACK YOUR ORDER
                     </div>
                     <ul className='nav-linkss'>
                         <button>LOGIN</button>

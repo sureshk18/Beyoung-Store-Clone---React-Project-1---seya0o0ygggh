@@ -3,6 +3,9 @@ import Boxer from "../assests/Boxer.jpg";
 import Combo from "../assests/Combo.jpg";
 import '../styles/Home.css';
 import CashBackSliders from '../Morepages/Cashbacksliders';
+import ShirtsImages from '../Morepages/ShirtsImages';
+import NewArrival from '../Morepages/NewArrival';
+import TrackOrders from '../Morepages/TrackOrders';
 
 
 function Home() {
@@ -34,6 +37,8 @@ function Home() {
         </div>
 
         <CashBackSliders />
+        <ShirtsImages />
+        <NewArrival />
     </>
     )
 }

@@ -7,6 +7,8 @@ import Men from '../Pages/Men';
 import Women from '../Pages/Women';
 import Combos from '../Pages/Combos';
 import Joggers from '../Pages/Joggers';
+import TrackOrders from '../Morepages/TrackOrders';
+
 
 
 
@@ -20,6 +22,8 @@ function App() {
         <Route path='/women' element={<Women />}></Route>
         <Route path='/Combos' element={<Combos />}></Route>
         <Route path='/joggers' element={<Joggers />}></Route>
+        <Route path='/trackorders' element={<TrackOrders />}></Route>
+
       </Routes>
     </BrowserRouter>
   </>
