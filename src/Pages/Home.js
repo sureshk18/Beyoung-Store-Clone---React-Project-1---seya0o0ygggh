@@ -5,7 +5,6 @@ import '../styles/Home.css';
 import CashBackSliders from '../Morepages/Cashbacksliders';
 import ShirtsImages from '../Morepages/ShirtsImages';
 import NewArrival from '../Morepages/NewArrival';
-import TrackOrders from '../Morepages/TrackOrders';
 
 
 function Home() {

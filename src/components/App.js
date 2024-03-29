@@ -8,6 +8,7 @@ import Women from '../Pages/Women';
 import Combos from '../Pages/Combos';
 import Joggers from '../Pages/Joggers';
 import TrackOrders from '../Morepages/TrackOrders';
+import Footer from '../Morepages/Footer';
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/trackorders' element={<TrackOrders />}></Route>
 
       </Routes>
+      <Footer />
     </BrowserRouter>
   </>
 }

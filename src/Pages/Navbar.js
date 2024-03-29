@@ -70,7 +70,7 @@ function Navbar() {
                                     </div>
                                     <img src={desktopnav} className='dropdownimg'></img>
                                 </div>
-                                <Link className='link1' to='/trousers'>COMBOS</Link>
+                                <Link className='link1' to='/combos'>COMBOS</Link>
                                 <Link className='link1' to='/joggers'>JOGGERS</Link>
                                 <Link className='link1' to='/winterwear'>WINTER WEAR</Link>
                                 <Link className='link1' to='/shopbycollection'>SHOP BY COLLECTION </Link>

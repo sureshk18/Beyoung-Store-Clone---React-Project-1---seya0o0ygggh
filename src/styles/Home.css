@@ -15,8 +15,9 @@
     position: relative;
     overflow: hidden;
     height: 75%;
-    margin-top: 100px;
-    margin-left: 195px;
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-right: 100px;
     align-items: center;
     z-index: -1;
     max-width: 1122px;
@@ -97,13 +98,14 @@
     display: flex;
     justify-content: center;
     max-width: 1200px;
-    margin-left: 155px;
+    margin-left: 100px;
+    margin-right: 100px;
     gap: 20px;
 }
 
 .shirt-image img {
     height: 340px;
-    width: 553px;
+    width: 523px;
     border-radius: 12px;
 }
 

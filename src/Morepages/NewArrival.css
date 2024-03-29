@@ -33,11 +33,13 @@
   .previmage {
     position: absolute;
     margin-left: 12px;
+    cursor: pointer;
   }
   
   .nextimage {
     position: absolute;
     margin-left: -45px;
+    cursor: pointer;
   }
   
   /* big savingzone */
