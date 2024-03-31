@@ -5,6 +5,7 @@ import nextbutton from '../assests/nextbutton.svg';
 import '../Morepages/NewArrival.css';
 
 
+
 function NewArrival() {
 
     const [imageIndex, setImageIndex] = useState(0);

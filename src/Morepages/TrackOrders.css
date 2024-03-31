@@ -8,13 +8,14 @@
 .trackimage {
     width: 100%;
     margin-top: 118px;
+    height: 100%;
 }
 
 .heading {
     padding: 10px;
     display: inline-block;
     background: #ff0;
-    font-size: 30px;
+    font-size: 20px;
     color: #000;
     font-weight: 600;
 }

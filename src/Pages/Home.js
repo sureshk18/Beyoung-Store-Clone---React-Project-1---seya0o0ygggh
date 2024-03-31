@@ -5,6 +5,9 @@ import '../styles/Home.css';
 import CashBackSliders from '../Morepages/Cashbacksliders';
 import ShirtsImages from '../Morepages/ShirtsImages';
 import NewArrival from '../Morepages/NewArrival';
+import FreeShipping from '../Morepages/FreeShipping';
+import MenHome from '../Morepages/MenHome';
+// import WomenHome from '../Morepages/WomenHome';
 
 
 function Home() {
@@ -38,6 +41,10 @@ function Home() {
         <CashBackSliders />
         <ShirtsImages />
         <NewArrival />
+        <FreeShipping />
+        <MenHome />
+        {/* <WomenHome /> */}
+
     </>
     )
 }

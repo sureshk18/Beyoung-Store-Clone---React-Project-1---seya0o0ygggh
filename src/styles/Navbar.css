@@ -20,7 +20,7 @@
   color: #000;
   z-index: 2;
 }
-.navbar {
+.navbar  {
   position: fixed;
   top: 30px;
   left: 0;
@@ -154,3 +154,8 @@ button {
   width: 20px;
   height: 20px;
 }
+
+/* .track-order{
+  color: #fff;
+  background-color:red;
+} */
