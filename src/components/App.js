@@ -9,7 +9,7 @@ import Combos from '../Pages/Combos';
 import Joggers from '../Pages/Joggers';
 import TrackOrders from '../Morepages/TrackOrders';
 import Footer from '../Morepages/Footer';
-import Login from '../Login/Login';
+// import Login from '../Login/Login';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <Route path='/Combos' element={<Combos />}></Route>
         <Route path='/joggers' element={<Joggers />}></Route>
         <Route path='/trackorders' element={<TrackOrders />}></Route>
-        <Route path='/login' element={<Login />}></Route>
+        {/* <Route path='/login' element={<Login />}></Route> */}
 
       </Routes>
       <Footer />

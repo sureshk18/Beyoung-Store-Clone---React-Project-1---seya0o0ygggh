@@ -155,7 +155,19 @@ button {
   height: 20px;
 }
 
-/* .track-order{
-  color: #fff;
-  background-color:red;
-} */
+.link1:hover{
+  background-color: #fd0;
+  height: 100%;
+  /* width: 60%; */
+  padding-top: 2px;
+	padding-bottom: 3px;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+    position: relative;
+    cursor: pointer;
+}

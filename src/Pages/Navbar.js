@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Beyounglogo from '../assests/Beyounglogo.svg';
 import desktopnav from '../assests/desktopnav.png';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Navbar() {
     return (
@@ -18,7 +21,7 @@ function Navbar() {
                         <Link to='/TrackOrders' className='track-order' style={{ fontSize: '13px', display: 'flex', color: '#fff', gap: '10px', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-                        <button>LOGIN</button>
+                        <button><Link to='/login' style={{ textDecoration: 'none', color: '#fff' }}>LOGIN</Link></button>
                         <p className='dash'>|</p>
                         <button>SIGNUP</button>
                     </ul>
@@ -32,23 +35,23 @@ function Navbar() {
                         <div className='dropdown'>
                             <Link className='link1' to='/men'>MEN</Link>
                             <div className='dropdown-content'>
-                                <div className='sub-heading'>
+                                <li className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
-                                    <a className='sub-sub-link' href='/shirts'>Shirts</a>
-                                    <a className='sub-sub-link' href='/kurtas'>Kurtas</a>
-                                    <a className='sub-sub-link' href='/t-shirts'>T-shirts</a>
-                                    <a className='sub-sub-link' href='/sweater'>Sweater</a>
-                                    <a className='sub-sub-link' href='/hoodie'>Hoodie</a>
-                                    <a className='sub-sub-link' href='/tracksuit'>TrackSuit</a>
-                                </div>
+                                    <Link className='sub-sub-link' to='/shirts'>Shirts</Link>
+                                    <Link className='sub-sub-link' to='/kurtas'>Kurtas</Link>
+                                    <Link className='sub-sub-link' to='/t-shirts'>T-shirts</Link>
+                                    <Link className='sub-sub-link' to='/sweater'>Sweater</Link>
+                                    <Link className='sub-sub-link' to='/hoodie'>Hoodie</Link>
+                                    <Link className='sub-sub-link' to='/tracksuit'>TrackSuit</Link>
+                                </li>
 
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Bottomwear</p>
-                                    <a className='sub-sub-link' href='/shorts'>Shorts</a>
-                                    <a className='sub-sub-link' href='/trousers'>Trousers</a>
-                                    <a className='sub-sub-link' href='/joggers'>Joggers</a>
-                                    <a className='sub-sub-link' href='/pyjamas'>Pyjamas</a>
-                                    <a className='sub-sub-link' href='/jeans'>Jeans</a>
+                                    <Link className='sub-sub-link' to='/shorts'>Shorts</Link>
+                                    <Link className='sub-sub-link' to='/trousers'>Trousers</Link>
+                                    <Link className='sub-sub-link' to='/joggers'>Joggers</Link>
+                                    <Link className='sub-sub-link' to='/pyjamas'>Pyjamas</Link>
+                                    <Link className='sub-sub-link' to='/jeans'>Jeans</Link>
                                 </div>
 
                                 <img src={desktopnav} className='dropdownimg'></img>
@@ -58,16 +61,16 @@ function Navbar() {
                                 <div className='dropdown-content'>
                                     <div className='sub-heading'>
                                         <p className='headingdropdown'>Topwear</p>
-                                        <a className='sub-sub-link' href='/shirtsWomen'>Shirts</a>
-                                        <a className='sub-sub-link' href='/tshirtsWomen'>T-shirts</a>
-                                        <a className='sub-sub-link' href='/kurtisWomen'>kurtis</a>
+                                        <Link className='sub-sub-link' to='/shirtsWomen'>Shirts</Link>
+                                        <Link className='sub-sub-link' to='/tshirtsWomen'>T-shirts</Link>
+                                        <Link className='sub-sub-link' to='/kurtisWomen'>kurtis</Link>
                                     </div>
 
                                     <div className='sub-heading'>
                                         <p className='headingdropdown'>Bottomwear</p>
-                                        <a className='sub-sub-link' href='/joggersWomen'>Joggers</a>
-                                        <a className='sub-sub-link' href='/pyjamasWomen'>Jeans</a>
-                                        <a className='sub-sub-link' href='/jeansWomen'>JumpSuit</a>
+                                        <Link className='sub-sub-link' to='/joggersWomen'>Joggers</Link>
+                                        <Link className='sub-sub-link' to='/pyjamasWomen'>Jeans</Link>
+                                        <Link className='sub-sub-link' to='/jeansWomen'>JumpSuit</Link>
                                     </div>
                                     <img src={desktopnav} className='dropdownimg'></img>
                                 </div>
@@ -78,7 +81,14 @@ function Navbar() {
                             </div>
                         </div>
                     </div>
+                    <div className='nav-right'>
+                        <SearchIcon style={{ width: '20px', height: '20px' }} />
+                        <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} />
+                        <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} />
+                    </div>
                 </div>
+
+
             </header>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import '../Login/Login.css';
@@ -124,7 +124,7 @@ function Login({ isOpen, closeModal, onLogin }) {
                     X
                 </div>
                 <div className="welcome-header">
-                    <Link to='/login'>Login</Link>
+                    Login
                     <span className="welcome-header-small">or</span>
                     Signup
                     <span className="offer-text">
@@ -164,5 +164,9 @@ function Login({ isOpen, closeModal, onLogin }) {
     )
 }
 
-
+LoginModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired, // isOpen should be a boolean and is required
+    closeModal: PropTypes.func.isRequired, // closeModal should be a function and is required
+    onLogin: PropTypes.func, // onLogin should be a function, not required
+};
 export default Login
