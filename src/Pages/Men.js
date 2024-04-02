@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import '../styles/Men.css';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 
 function Men() {
@@ -7,15 +8,18 @@ function Men() {
 
     const fetchProduct = async () => {
         try {
-            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter=${JSON.stringify(filter)}`, {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50 `, {
                 method: 'GET',
                 headers: {
                     projectId: 'yxpa71cax49z',
                 },
             });
-            const json = response.data;
-            console.log(json.data.data);
-            setProducts(json.data.data)
+            if (response.ok) {
+                const data = await response.json();
+                setProducts(data.data);
+            } else {
+                console.log('Failed to fetch products');
+            }
         } catch (error) {
             console.error('An error occurred while fetching products', error);
         }
@@ -37,12 +41,12 @@ function Men() {
                 <p className="heading-men" style={{ fontSize: '100%' }}>Men's Clothing</p>
                 <p className="heading-men1" style={{ marginTop: '10px' }}>Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
                 <div className="for-shirts-pants">
-                    {getProducts.map((product) => (
-                        <div key={product._id}>
-
-                            <img src={product.displayImage}></img>
-                            <h3>{product.name}</h3>
-                            <p>{product.category}</p>
+                    {getProducts.map((seller) => (
+                        <div key={seller._id}>
+                            <img src={seller.displayImage} />
+                            <p>{seller.name}</p>
+                            <p>{seller.subCategory}</p>
+                            <p><CurrencyRupeeIcon />: {seller.price}</p>
 
                         </div>
                     )

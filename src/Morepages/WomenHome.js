@@ -66,6 +66,8 @@ function WomenHome() {
                 : imageIndex - imagesToShow;
         setImageIndex(newIndex);
     };
+
+
     return (
         <div className="big-saving-zone">
             <h1 className='for-men'>FOR WOMEN</h1>
