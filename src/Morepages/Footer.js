@@ -66,10 +66,10 @@ function Footer() {
 
                 <div className='footer-content-section'>
                     <div className='why-choose-us-main'>
-                        <section className='choose-heading f-toggle'><p>WHY CHOOSE US ?</p><KeyboardArrowDownOutlinedIcon /></section>
+                        <section className='choose-heading f-toggle'><p>WHY CHOOSE US ?</p><KeyboardArrowDownOutlinedIcon style={{ color: '#f8ea54' }} /></section>
                     </div>
                     <div className='sitemap-main'>
-                        <section className='choose-heading f-toggle'><p>POPULAR CATEGORIES</p><KeyboardArrowDownIcon /></section>
+                        <section className='choose-heading f-toggle'><p>POPULAR CATEGORIES</p><KeyboardArrowDownIcon style={{ color: '#f8ea54' }} /></section>
                     </div>
 
                     <div className='footer-bottom'>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react'
-import '../styles/Men.css';
+import '../styles/Mens.css';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 
@@ -37,38 +37,22 @@ function Men() {
         </div >
 
         <div className="men-container">
-            <section className="men-clothes">
-                <p className="heading-men" style={{ fontSize: '100%' }}>Men's Clothing</p>
-                <p className="heading-men1" style={{ marginTop: '10px' }}>Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
-                <div className="for-shirts-pants">
+            <section className="men-clothess">
+                <p className="heading-mens" >Men's Clothing</p>
+                <p className="heading-menss" >Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
+                <div className="for-men-shirts-pants">
                     {getProducts.map((seller) => (
                         <div key={seller._id}>
-                            <img src={seller.displayImage} />
-                            <p>{seller.name}</p>
-                            <p>{seller.subCategory}</p>
-                            <p><CurrencyRupeeIcon />: {seller.price}</p>
+                            <img src={seller.displayImage} className='img' loading='lazy' />
+                            <h2 className='seller-details'>{seller.name}</h2>
+                            <span className='seller-subCategory'>{seller.subCategory}</span>
+                            <p className='seller-price'>Price:&#8377;{seller.price}</p>
 
                         </div>
                     )
                     )}
                 </div>
             </section >
-
-
-            {/* 
-            {selectedProduct && <ProductDetail product={selectedProduct} />}
-            {showLoginModal && (
-                <div className="popup-modal" style={loginModalStyle}>
-                    <p>Please log in to add items to your wishlist.</p>
-                </div>
-
-            )}
-
-            {showWishlistMessage && (
-                <div className="popup-modal">
-                    <p>Product is succesfully added to wishlist!</p>
-                </div>
-            )} */}
         </div >
     </>
 

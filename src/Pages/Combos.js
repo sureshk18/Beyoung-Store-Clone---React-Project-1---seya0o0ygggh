@@ -28,15 +28,21 @@ function Combos() {
     }, []);
     return (
         <div className='men-container'>
+            <section className='filter-section'>
+                <div className='color-filter'>
+                    <p className='heading-menfilter'>FILTER</p>
+                </div>
+            </section>
             <section className='men-clothes'>
-                <p className='heading-men'>Combos</p>
+                <h2 className='heading-men'>MEN'S TROUSERS</h2>
+                <p className='heading-men1'>Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
                 <div className='for-shirts-pants'>
                     {featuredProducts.map((product) => (
                         <div key={product._id}>
-                            <img src={product.displayImage} alt={product.name} />
-                            <h3>{product.name}</h3>
-                            <p>{product.category}</p>
-                            <p>Price: ${product.price}</p>
+                            <img src={product.displayImage} alt={product.name} className='img' />
+                            <h3 className='product-name'>{product.name}</h3>
+                            <p className='product-category'>{product.category}</p>
+                            <p className='product-price'>Price: &#8377;{product.price}</p>
                         </div>
                     ))}
                 </div>
