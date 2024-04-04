@@ -9,7 +9,9 @@ import Combos from '../Pages/Combos';
 import Joggers from '../Pages/Joggers';
 import TrackOrders from '../Morepages/TrackOrders';
 import Footer from '../Morepages/Footer';
-// import Login from '../Login/Login';
+import WinterWear from '../Pages/WinterWear';
+import ProductDetails from '../Pages/ProductDetails';
+
 
 
 function App() {
@@ -22,8 +24,9 @@ function App() {
         <Route path='/women' element={<Women />}></Route>
         <Route path='/Combos' element={<Combos />}></Route>
         <Route path='/joggers' element={<Joggers />}></Route>
-        <Route path='/trackorders' element={<TrackOrders />}></Route>
-        {/* <Route path='/login' element={<Login />}></Route> */}
+        <Route path='/track-orders' element={<TrackOrders />}></Route>
+        <Route path='/winterwear' element={<WinterWear />}></Route>
+        <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
 
       </Routes>
       <Footer />

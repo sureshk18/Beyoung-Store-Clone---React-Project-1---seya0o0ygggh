@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import '../Login/Login.css';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./Context/UserProvider";
 
-function Login({ isOpen, closeModal, onLogin }) {
+import './LoginModal.css';
+import './SignupPage.css'; // Import the external CSS file
+import PropTypes from 'prop-types';
+
+const LoginModal = ({ isOpen, closeModal, onLogin }) => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({
         email: '',
         password: '',
-        appType: 'ecommerce',
+        appType: "ecommerce",
     });
+
     const [error, setError] = useState("");
     const [messageSucess, setSuccessMessage] = useState(false);
     const [emailErr, setEmailErr] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
+
 
     function handleChange(event) {
         const element = event.target;
@@ -90,6 +96,12 @@ function Login({ isOpen, closeModal, onLogin }) {
             setError('Ok');
         }
     };
+    // useEffect(() => {
+    //     if (isLoggedIn) {
+    //         closeModal();
+    //     }
+    // }, [isLoggedIn, closeModal]);
+
     useEffect(() => {
         console.log('isLoggedIn:', isLoggedIn);
     }, [isLoggedIn]);
@@ -111,62 +123,75 @@ function Login({ isOpen, closeModal, onLogin }) {
         <Modal
             isOpen={isOpen}
             onRequestClose={closeModal}
-            className='react-modal-content'
+            className="react-modal-content"
             overlayClassName="react-modal-overlay"
             ariaHideApp={false}
         >
-            <div className='login-intro'>
-                <img src='https://www.beyoung.in/images/login-and-signup-image.jpg'
+
+            <div className="login-intro">
+                <img
+                    src="https://www.beyoung.in/images/login-and-signup-image.jpg"
                     alt="loginintro"
                     className='loginimage'
                 />
-                <div className="close-button" onClick={closeModal}>
-                    X
-                </div>
-                <div className="welcome-header">
-                    Login
-                    <span className="welcome-header-small">or</span>
-                    Signup
-                    <span className="offer-text">
-                        Get Exciting Offers &amp; Track Order
-                    </span>
-                </div>
-
-                <from className='form-submission' onSubmit={handleSubmit}>
-                    <div className='form-in'>
-                        <input type='email' placeholder='Email' name='email' value={userInfo.email} onChange={handleChange} />
-                        {emailErr && (
-                            <p className="error-message">{emailErr}</p>
-                        )}
-                        <input
-                            type="password"
-                            name="password"
-                            value={userInfo.password}
-                            onChange={handleChange}
-                            placeholder="Password"
-                        />
-                        {passwordErr && (
-                            <p className="error-message">{passwordErr}</p>
-                        )}
-                        <button className="btn-login" type="submit">
-                            Log in
-                        </button>
-                        {error && <p className="error-message">{error}</p>}
-                        {messageSucess && (
-                            <p className="success-message">Login successful!</p>
-                        )}                    <p className="heading-bottom" onClick={closeModal}>
-                            Continue as Guest
-                        </p>
-                    </div>
-                </from>
             </div>
+            <div className="close-button" onClick={closeModal}>
+                X
+            </div>
+
+            <div className="welcome-header">
+                Login
+                <span className="welcome-header-small">or</span>
+                Signup
+                <span className="offer-text">
+                    Get Exciting Offers &amp; Track Order
+                </span>
+            </div>
+
+            <form className="form-Submission" onSubmit={handleSubmit}>
+                <div className="form-in">
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={userInfo.email}
+                        onChange={handleChange}
+                    />
+                    {emailErr && (
+                        <p className="error-message">{emailErr}</p>
+                    )}
+                    <input
+                        type="password"
+                        name="password"
+                        value={userInfo.password}
+                        onChange={handleChange}
+                        placeholder="Password"
+                    />
+                    {passwordErr && (
+                        <p className="error-message">{passwordErr}</p>
+                    )}
+                    <button className="btn-login" type="submit">
+                        Log in
+                    </button>
+                    {error && <p className="error-message">{error}</p>}
+                    {messageSucess && (
+                        <p className="success-message">Login successful!</p>
+                    )}                    <p className="heading-bottom" onClick={closeModal}>
+                        Continue as Guest
+                    </p>
+                </div>
+            </form>
+
+
         </Modal>
-    )
-}
+
+    );
+};
 
 LoginModal.propTypes = {
     isOpen: PropTypes.bool.isRequired, // isOpen should be a boolean and is required
     closeModal: PropTypes.func.isRequired, // closeModal should be a function and is required
     onLogin: PropTypes.func, // onLogin should be a function, not required
 };
-export default Login
+
+export default LoginModal;

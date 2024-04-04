@@ -1,56 +1,62 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState, useMemo } from 'react'
 import '../styles/Women.css';
+import womenBanner from '../assests/womenBanner.jpg';
+import { Link } from 'react-router-dom';
 
 function Women() {
-    const [featuredProducts, setFeaturedProducts] = useState([]);
+    const [getProducts, setProducts] = useState([]);
 
-    useEffect(() => {
-        setFeaturedProducts()
-    }, [featuredProducts]);
-
-    async function fetchProduct() {
+    const fetchProduct = async () => {
         try {
-            let filter = { "gender": "women" };
-
-            if (selectedColorFilter !== 'All') {
-                filter.color = selectedColorFilter;
-            }
-            if (selectedSizeFilter !== 'All') {
-                filter.size = selectedSizeFilter;
-            }
-
-            const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter=${JSON.stringify(filter)}`, {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50?&filter={"gender":"Women"}`, {
                 method: 'GET',
                 headers: {
-                    projectID: 'seya0o0ygggh',
+                    projectId: 'seya0o0ygggh',
                 },
             });
-
-            if (res.ok) {
-                const data = await res.json();
-                fetchProduct(data.data.seller)
+            if (response.ok) {
+                const data = await response.json();
+                setProducts(data.data);
             } else {
                 console.log('Failed to fetch products');
             }
-        } catch (err) {
-            console.error('Error', err);
+        } catch (error) {
+            console.error('An error occurred while fetching products', error);
         }
-    }
+    };
+    useEffect(() => {
+        fetchProduct();
+    }, [])
+    return (<>
+        <div className='banners' >
+            <img src={womenBanner} alt='womenbannerimg' className='bannerwomen' style={{ width: '100%', height: 'auto' }} />
 
+        </div >
 
+        <div className="women-container">
+            <section className="women-clothess">
+                <p className="heading-womens" >WOMENS CLOTHING</p>
+                <p className="heading-womenss" >Women's Clothing - Get your hands on stylish and comfortable clothing for women - Buy a range of ladies' clothing online at affordable prices. Beyoung offers the latest collection of Kurtis, shirts, tops, t-shirts, pants, boxers, and jeggings with existing offers and discounts. Find women's clothing for formal to weekend outings in all styles. Free Shipping | COD | S - 4XL Sizes | 15 Days Return</p>
+                <div className="for-women-shirts-pants">
+                    {getProducts.map((seller) => (
+                        <div key={seller._id}>
+                            <Link to={`/product-details/${seller._id}`}>
+                                <img src={seller.displayImage} className='img' /></Link>
+                            <h2 className='seller-details'>{seller.name}</h2>
+                            <span className='seller-subCategory'>{seller.subCategory}</span>
+                            <p className='seller-price'>Price:&#8377;{seller.price}</p>
 
-
-    return (
-        <div className='women'>
-            {featuredProducts.map((product) => (
-                <div key={product._id}>
-                    <img src={product.displayImage} />
+                        </div>
+                    )
+                    )}
                 </div>
-            )
-            )}
-        </div>
+            </section >
+        </div >
+    </>
+
     )
 }
 
 export default Women
+
+/*filter={"gender":"add_your_gender"}*/

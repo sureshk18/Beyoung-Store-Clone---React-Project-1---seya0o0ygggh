@@ -9,19 +9,20 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Navbar() {
+
     return (
         <div>
             <header>
                 <div className='couponcode'>
-                    <p>Free Shipping on All Orders | Get Extra ₹100 OFF on Spent of ₹999 Use Code: BEYOUNG100</p>
+                    <p>Free Shipping on All Orders | Get Extra <b>₹100</b> OFF on Spent of ₹999 Use Code: <b>BEYOUNG100</b></p>
                 </div>
                 <div className='navbar'>
                     <div className='nav-links'>
-                        <Link to='/TrackOrders' className='track-order' style={{ fontSize: '13px', color: '#fff', }}><LocationOnOutlinedIcon style={{ height: '20px', padding: '0px ', cursor: 'pointer' }} /></Link>
-                        <Link to='/TrackOrders' className='track-order' style={{ fontSize: '13px', display: 'flex', color: '#fff', gap: '10px', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
+                        <Link to='/track-orders' className='track-order' style={{ fontSize: '13px', color: '#fff', }}><LocationOnOutlinedIcon style={{ height: '20px', width: '20px', cursor: 'pointer' }} /></Link>
+                        <Link to='/track-orders' className='track-order' style={{ fontSize: '12px', alignItems: 'center', display: 'flex', color: '#fff', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-                        <button><Link to='/login' style={{ textDecoration: 'none', color: '#fff' }}>LOGIN</Link></button>
+                        <button >LOGIN</button>
                         <p className='dash'>|</p>
                         <button>SIGNUP</button>
                     </ul>
@@ -35,23 +36,23 @@ function Navbar() {
                         <div className='dropdown'>
                             <Link className='link1' to='/men'>MEN</Link>
                             <div className='dropdown-content'>
-                                <li className='sub-heading'>
+                                <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
-                                    <Link className='sub-sub-link' to='/shirts'>Shirts</Link>
-                                    <Link className='sub-sub-link' to='/kurtas'>Kurtas</Link>
-                                    <Link className='sub-sub-link' to='/t-shirts'>T-shirts</Link>
-                                    <Link className='sub-sub-link' to='/sweater'>Sweater</Link>
-                                    <Link className='sub-sub-link' to='/hoodie'>Hoodie</Link>
-                                    <Link className='sub-sub-link' to='/tracksuit'>TrackSuit</Link>
-                                </li>
+                                    <Link to='/shirts' className='sub-sub-link' >Shirts</Link>
+                                    <Link to='/kurtas' className='sub-sub-link' >Kurtas</Link>
+                                    <Link to='/t-shirts' className='sub-sub-link' >T-shirts</Link>
+                                    <Link to='/sweater' className='sub-sub-link' >Sweater</Link>
+                                    <Link to='/hoodie' className='sub-sub-link' >Hoodie</Link>
+                                    <Link to='/tracksuit' className='sub-sub-link' >TrackSuit</Link>
+                                </div>
 
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Bottomwear</p>
-                                    <Link className='sub-sub-link' to='/shorts'>Shorts</Link>
-                                    <Link className='sub-sub-link' to='/trousers'>Trousers</Link>
-                                    <Link className='sub-sub-link' to='/joggers'>Joggers</Link>
-                                    <Link className='sub-sub-link' to='/pyjamas'>Pyjamas</Link>
-                                    <Link className='sub-sub-link' to='/jeans'>Jeans</Link>
+                                    <Link to='/shorts' className='sub-sub-link' >Shorts</Link>
+                                    <Link to='/trousers' className='sub-sub-link' >Trousers</Link>
+                                    <Link to='/joggers' className='sub-sub-link' >Joggers</Link>
+                                    <Link to='/pyjamas' className='sub-sub-link' >Pyjamas</Link>
+                                    <Link to='/jeans' className='sub-sub-link' >Jeans</Link>
                                 </div>
 
                                 <img src={desktopnav} className='dropdownimg'></img>
@@ -89,8 +90,8 @@ function Navbar() {
                 </div>
 
 
-            </header>
-        </div>
+            </header >
+        </div >
 
     )
 }
