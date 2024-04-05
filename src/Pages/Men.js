@@ -7,8 +7,6 @@ function Men() {
     const [getProducts, setProducts] = useState([]);
     // const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-
-
     const fetchProduct = async () => {
         try {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50?&filter={"gender":"Men"}`, {

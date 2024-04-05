@@ -13,6 +13,12 @@ import WinterWear from '../Pages/WinterWear';
 import ProductDetails from '../Pages/ProductDetails';
 import SearchPage from '../Morepages/SearchPage';
 import Shirt from '../Men/Shirt';
+import Hoodie from '../Men/Hoodie';
+import Kurtas from '../Men/Kurtas';
+import Tshirt from '../Men/Tshirt';
+import Sweater from '../Men/Sweater';
+import Tracksuit from '../Men/Tracksuit';
+
 
 
 
@@ -30,8 +36,13 @@ function App() {
         <Route path='/winterwear' element={<WinterWear />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
+        {/*men & women */}
         <Route path='/shirts' element={<Shirt />}></Route>
-
+        <Route path='/hoodie' element={<Hoodie />}></Route>
+        <Route path='/kurtas' element={<Kurtas />}></Route>
+        <Route path='/t-shirts' element={<Tshirt />}></Route>
+        <Route path='/sweater' element={<Sweater />}></Route>
+        <Route path='/tracksuit' element={<Tracksuit />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

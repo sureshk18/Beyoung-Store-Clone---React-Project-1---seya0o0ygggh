@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/WinterWear.css';
 import blackfriday from '../assests/black-friday.jpg';
 import { Link } from 'react-router-dom';
