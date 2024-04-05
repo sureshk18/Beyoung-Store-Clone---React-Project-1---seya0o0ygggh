@@ -95,6 +95,9 @@ function Navbar() {
                         <Link to='/'>
                             <img src={Beyounglogo} alt='beyoung' className='logo'></img>
                         </Link>
+
+                        {/* MEN DROPDOWN MENU*/}
+
                         <div className='dropdown'>
                             <Link className='link1' to='/men'>MEN</Link>
                             <div className='dropdown-content'>
@@ -119,30 +122,35 @@ function Navbar() {
 
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>
-                            <div className='dropdown'>
-                                <Link className='link1' to='/women'>WOMEN</Link>
-                                <div className='dropdown-content'>
-                                    <div className='sub-heading'>
-                                        <p className='headingdropdown'>Topwear</p>
-                                        <Link className='sub-sub-link' to='/shirtsWomen'>Shirts</Link>
-                                        <Link className='sub-sub-link' to='/tshirtsWomen'>T-shirts</Link>
-                                        <Link className='sub-sub-link' to='/kurtisWomen'>kurtis</Link>
-                                    </div>
+                        </div>
 
-                                    <div className='sub-heading'>
-                                        <p className='headingdropdown'>Bottomwear</p>
-                                        <Link className='sub-sub-link' to='/joggersWomen'>Joggers</Link>
-                                        <Link className='sub-sub-link' to='/pyjamasWomen'>Jeans</Link>
-                                        <Link className='sub-sub-link' to='/jeansWomen'>JumpSuit</Link>
-                                    </div>
-                                    <img src={desktopnav} className='dropdownimg'></img>
+                        {/* MEN DROPDOWN MENU*/}
+
+                        <div className='dropdown'>
+                            <Link className='link1' to='/women'>WOMEN</Link>
+                            <div className='dropdown-content'>
+                                <div className='sub-heading'>
+                                    <p className='headingdropdown'>Topwear</p>
+                                    <Link className='sub-sub-link' to='/shirtsWomen'>Shirts</Link>
+                                    <Link className='sub-sub-link' to='/tshirtsWomen'>T-shirts</Link>
+                                    <Link className='sub-sub-link' to='/kurtisWomen'>kurtis</Link>
                                 </div>
-                                <Link className='link1' to='/combos'>COMBOS</Link>
-                                <Link className='link1' to='/joggers'>JOGGERS</Link>
-                                <Link className='link1' to='/winterwear'>WINTER WEAR</Link>
-                                <Link className='link1' to='/shopbycollection'>SHOP BY COLLECTION </Link>
+
+                                <div className='sub-heading'>
+                                    <p className='headingdropdown'>Bottomwear</p>
+                                    <Link className='sub-sub-link' to='/joggersWomen'>Joggers</Link>
+                                    <Link className='sub-sub-link' to='/pyjamasWomen'>Jeans</Link>
+                                    <Link className='sub-sub-link' to='/jeansWomen'>JumpSuit</Link>
+                                </div>
+                                <img src={desktopnav} className='dropdownimg'></img>
                             </div>
                         </div>
+                        <Link className='link1' to='/combos'>COMBOS</Link>
+                        <Link className='link1' to='/joggers'>JOGGERS</Link>
+                        <Link className='link1' to='/winterwear'>WINTER WEAR</Link>
+                        <Link className='link1' to='/shopbycollection'>SHOP BY COLLECTION </Link>
+
+
                     </div>
                     <div className='nav-right'>
                         <Link to={'/search'}><SearchIcon style={{ width: '20px', height: '20px' }} /></Link>

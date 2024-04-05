@@ -33,7 +33,7 @@ function WinterWear() {
 
         </div >
 
-        <div className="container">
+        <div className="winter-container">
             <section className="winter-clothes">
                 <p className="winterheading" >MENS WINTER WEARS</p>
                 <p className="winter-wear-details" >Men Winter Wear - Buy Winter Wear for Men Online in India at BeYOUng. Shop Mens Winterwear Online @Best Prices. Select a wide range of latest collection on Winterwear for Men. *Free Shipping and *COD Available.</p>

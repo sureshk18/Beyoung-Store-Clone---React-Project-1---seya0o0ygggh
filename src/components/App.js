@@ -12,6 +12,7 @@ import Footer from '../Morepages/Footer';
 import WinterWear from '../Pages/WinterWear';
 import ProductDetails from '../Pages/ProductDetails';
 import SearchPage from '../Morepages/SearchPage';
+import Shirt from '../Men/Shirt';
 
 
 
@@ -29,6 +30,8 @@ function App() {
         <Route path='/winterwear' element={<WinterWear />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
+        <Route path='/shirts' element={<Shirt />}></Route>
+
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -92,7 +92,7 @@ button {
 .navchild {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 .dropdown {
   position: relative;
@@ -105,6 +105,13 @@ button {
   font-weight: 600;
   font-family: system-ui;
 }
+.link1:hover{
+  background-color: #fd0;
+  height: 100%;
+  /* width: 60%; */
+  padding-top: 2px;
+	padding-bottom: 3px;
+}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -112,6 +119,13 @@ button {
   box-shadow: #32325d40 0 50px 100px -20px, #0000004d 0 30px 60px -30px, #0a254059 0 -2px 6px inset;
   z-index: 1;
   border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  width: 600px;
+  height: 400px;
+  gap: 80px;
 }
 .sub-heading {
   display: flex;
@@ -156,13 +170,7 @@ button {
   height: 20px;
 }
 
-.link1:hover{
-  background-color: #fd0;
-  height: 100%;
-  /* width: 60%; */
-  padding-top: 2px;
-	padding-bottom: 3px;
-}
+
 .nav-right{
     display: flex;
     align-items: center;
@@ -172,3 +180,6 @@ button {
     position: relative;
     cursor: pointer;
 }
+
+
+
