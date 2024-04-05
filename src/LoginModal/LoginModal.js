@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./Context/UserProvider";
+import { useAuth } from "../Context/UserProvider";
 
 import './LoginModal.css';
 import './SignupPage.css'; // Import the external CSS file

@@ -7,7 +7,6 @@ import ShirtsImages from '../Morepages/ShirtsImages';
 import NewArrival from '../Morepages/NewArrival';
 import FreeShipping from '../Morepages/FreeShipping';
 import MenHome from '../Morepages/MenHome';
-
 // import WomenHome from '../Morepages/WomenHome';
 
 

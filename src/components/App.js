@@ -11,6 +11,7 @@ import TrackOrders from '../Morepages/TrackOrders';
 import Footer from '../Morepages/Footer';
 import WinterWear from '../Pages/WinterWear';
 import ProductDetails from '../Pages/ProductDetails';
+import SearchPage from '../Morepages/SearchPage';
 
 
 
@@ -27,7 +28,7 @@ function App() {
         <Route path='/track-orders' element={<TrackOrders />}></Route>
         <Route path='/winterwear' element={<WinterWear />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
-
+        <Route path='/search' element={<SearchPage />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

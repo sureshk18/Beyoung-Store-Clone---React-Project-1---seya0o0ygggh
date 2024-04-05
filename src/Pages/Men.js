@@ -31,7 +31,10 @@ function Men() {
         fetchProduct();
     }, [])
 
-
+    const handleClick = (_id) => {
+        navigate(`/product-details${_id}`)
+    }
+    // ProductDetails();
 
     return (<>
         <div className='banners' >
@@ -56,7 +59,7 @@ function Men() {
                     {getProducts.map((seller, index) => (
                         <div key={index}>
                             <Link to={`/product-details/${seller._id}`}>
-                                <img src={seller.displayImage} id='zoom-In' /></Link>
+                                <img src={seller.displayImage} onClick={handleClick} id='zoom-In' /></Link>
                             <h2 className='seller-details'>{seller.name}</h2>
                             <span className='seller-subCategory'>{seller.subCategory}</span>
                             <p className='seller-price'>Price: &#8377; {seller.price}</p>
