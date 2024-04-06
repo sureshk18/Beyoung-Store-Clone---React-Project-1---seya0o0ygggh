@@ -115,9 +115,9 @@ function Navbar() {
                                     <p className='headingdropdown'>Bottomwear</p>
                                     <Link to='/shorts' className='sub-sub-link' >Shorts</Link>
                                     <Link to='/trousers' className='sub-sub-link' >Trousers</Link>
-                                    <Link to='/joggers' className='sub-sub-link' >Joggers</Link>
                                     <Link to='/pyjamas' className='sub-sub-link' >Pyjamas</Link>
-                                    <Link to='/jeans' className='sub-sub-link' >Jeans</Link>
+                                    {/* <Link to='/joggers' className='sub-sub-link' >Joggers</Link> */}
+                                    {/* <Link to='/jeans' className='sub-sub-link' >Jeans</Link> */}
                                 </div>
 
                                 <img src={desktopnav} className='dropdownimg'></img>
@@ -139,8 +139,8 @@ function Navbar() {
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Bottomwear</p>
                                     <Link className='sub-sub-link' to='/joggersWomen'>Joggers</Link>
-                                    <Link className='sub-sub-link' to='/pyjamasWomen'>Jeans</Link>
-                                    <Link className='sub-sub-link' to='/jeansWomen'>JumpSuit</Link>
+                                    <Link className='sub-sub-link' to='/jeansWomen'>Jeans</Link>
+                                    <Link className='sub-sub-link' to='/jumpsuit'>JumpSuit</Link>
                                 </div>
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>

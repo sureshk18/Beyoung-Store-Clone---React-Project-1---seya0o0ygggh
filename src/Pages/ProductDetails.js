@@ -103,97 +103,13 @@ function ProductDetails() {
                                 <img
                                     src={getProductData?.displayImage}
                                     alt="Default Display Image"
-                                // onClick={() => handleImageClick(product.data.displayImage)}
+                                // onClick={() => handleImageClick(getProductData.displayImage)}
                                 />
                             )
                         )}
                     </div>
+
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* <div className='forImageShowing'>
-                        {getProductData?.images &&
-                            getProductData.images
-                                .slice(0, 5)
-                                .map((image, index) => (
-                                    <img
-                                        key={index}
-                                        src={image}
-                                        alt={`Image ${index}`}
-                                        onClick={() => handleImageClick(image)}
-                                    />
-                                ))}
-                        {(getProductData) ? (<>
-                            <img src={getProductData.images} />
-
-                            <img src={getProductData.displayImage} />
-                        </>
-                        ) : (
-                            <h2>Loading...</h2>)}
-                    </div> */}
 
                 <div className='product-right'>
                     {(getProductData) ? (<>
@@ -228,9 +144,7 @@ function ProductDetails() {
                     ) : (
                         null)}
                 </div>
-
             </div>
-
             {/* <div className="product-description-container">
                 <h3>Product Description</h3>
                 {/* <div>{getProductData.description}</div> 
@@ -241,14 +155,34 @@ function ProductDetails() {
 
             <div className="ratings-review-container">
                 <h3>Rating & Reviews</h3>
-
             </div>
-
-
-
-
         </div >
     )
 }
 
-export default ProductDetails
+export default ProductDetails;
+
+
+
+
+
+{/* <div className='forImageShowing'>
+                        {getProductData?.images &&
+                            getProductData.images
+                                .slice(0, 5)
+                                .map((image, index) => (
+                                    <img
+                                        key={index}
+                                        src={image}
+                                        alt={`Image ${index}`}
+                                        onClick={() => handleImageClick(image)}
+                                    />
+                                ))}
+                        {(getProductData) ? (<>
+                            <img src={getProductData.images} />
+
+                            <img src={getProductData.displayImage} />
+                        </>
+                        ) : (
+                            <h2>Loading...</h2>)}
+                    </div> */}

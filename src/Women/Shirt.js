@@ -3,12 +3,12 @@ import '../Men/MenAll.css';
 import { Link } from 'react-router-dom';
 
 
-function Kurtas() {
+function WomenShirt() {
     const [getShirtData, setShirtData] = useState([]);
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"kurta"}`, {
+                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"womenshirt"}`, {
                     method: 'GET',
                     headers: {
                         projectId: 'seya0o0ygggh',
@@ -39,8 +39,8 @@ function Kurtas() {
                 </div>
             </section>
             <section className='productcontainer'>
-                <h3 className='headingg'>Men's Shirt</h3>
-                <p className="sub-headingg-mens">Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
+                <h3 className='headingg'>Women's Shirt</h3>
+                <p className="sub-headingg-mens">Women's Clothing - Get your hands on stylish and comfortable clothing for women - Buy a range of ladies' clothing online at affordable prices. Beyoung offers the latest collection of Kurtis, shirts, tops, t-shirts, pants, boxers, and jeggings with existing offers and discounts. Find women's clothing for formal to weekend outings in all styles. Free Shipping | COD | S - 4XL Sizes | 15 Days Return</p>
                 <div className='men-products'>
                     {getShirtData.map((seller, index) => {
                         return (
@@ -59,4 +59,4 @@ function Kurtas() {
     )
 }
 
-export default Kurtas;
+export default WomenShirt;

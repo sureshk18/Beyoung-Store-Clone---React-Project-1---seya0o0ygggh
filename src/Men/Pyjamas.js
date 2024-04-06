@@ -3,12 +3,12 @@ import '../Men/MenAll.css';
 import { Link } from 'react-router-dom';
 
 
-function Kurtas() {
+function Pyjamas() {
     const [getShirtData, setShirtData] = useState([]);
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"kurta"}`, {
+                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"pyjamas"}`, {
                     method: 'GET',
                     headers: {
                         projectId: 'seya0o0ygggh',
@@ -59,4 +59,4 @@ function Kurtas() {
     )
 }
 
-export default Kurtas;
+export default Pyjamas;
