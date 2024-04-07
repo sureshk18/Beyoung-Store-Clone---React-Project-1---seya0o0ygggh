@@ -25,11 +25,11 @@ function Filter({ handleColorFilterChange,
                 setIsSizeDropdownOpen(false);
             }
         };
-        document.body.addEventListener('click', handleOutsideClick);
+        document.body.addEventListener('click', handleOutSideClick);
 
         // Cleanup the event listener on component unmount
         return () => {
-            document.body.removeEventListener('click', handleOutsideClick);
+            document.body.removeEventListener('click', handleOutSideClick);
         };
     }, []);
     const handleColorButtonClick = () => {

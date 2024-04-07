@@ -20,7 +20,7 @@
 
 .filter-section {
     width: 18%;
-    margin-top: 10px;
+    margin-top: 20px;
     box-sizing: border-box;
     margin-left: 27px;
     padding: 50px 0 150px;
@@ -47,24 +47,24 @@
 .men-clothess {
     width: 75%;
     box-sizing: border-box;
-    margin-top: 76px;
+    margin-top: 60px;
 }
 p.heading-mens {
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 20px;
     text-align: left;
     top: 70px;
     font-weight: 600;
-    margin-left: -45px;
+    margin-left: 58px;
     color: #343434;
     border-bottom: 1px solid #f9eb28;
     display: inline-block;
     font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
 }
 p.heading-menss {
-    font-size: 13px;
+    font-size: 15px;
     text-align: left;
-    margin-left: -45px;
+    margin-left: 58px;
     color: #343434;
     display: inline-block;
     margin-top: 5px;
@@ -75,7 +75,7 @@ p.heading-menss {
     text-align: center;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: -45px;
+    margin-left: 55px;
     margin-top: 20px;
     gap: 14px;
 }

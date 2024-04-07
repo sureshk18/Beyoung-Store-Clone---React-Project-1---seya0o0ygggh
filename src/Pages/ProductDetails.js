@@ -150,13 +150,69 @@ function ProductDetails() {
                 {/* <div>{getProductData.description}</div> 
                 <div dangerouslySetInnerHTML={{ __html: getProductData.description || "" }}
                     className="product-description"
-                />
+                ></div>
             </div> */}
 
             <div className="ratings-review-container">
                 <h3>Rating & Reviews</h3>
+                <div className='ratings-review-section'>
+                    <div className='review-section-left'>
+                        {/* <h3>{getProductData.ratings}</h3> */}
+                        <p>Based on 31K+ ratings and 9K+ reviews</p>
+                    </div>
+                    <div className='review-section-right'>
+                        <h4>Product reviews</h4>
+                        <p>
+                            <ThumbUpIcon />
+                            91% of customers recommend this brand
+                        </p>
+                        <Divider sx={{ marginBottom: "2rem" }} />
+                    </div>
+                </div>
             </div>
-        </div >
+
+            <div className="aboutus-container">
+                <ul>
+                    <li>
+                        <img
+                            src={
+                                "https://www.beyoung.in/desktop/images/product-details-2/product-discription-icon1.jpg"
+                            }
+                            alt={"icon"}
+                        />
+                        <p>1.5M+ Happy Beyoungsters</p>
+                    </li>
+                    <li>
+                        <img
+                            src={
+                                "https://www.beyoung.in/desktop/images/product-details-2/product-discription-icon2.jpg"
+                            }
+                            alt={"icon"}
+                        />
+                        <p>15 Days Easy Returns</p>
+                    </li>
+                    <li>
+                        <img
+                            src={
+                                "https://www.beyoung.in/desktop/images/product-details-2/product-discription-icon3.jpg"
+                            }
+                            alt={"icon"}
+                        />
+                        <p>Homegrown Brand</p>
+                    </li>
+                    <li>
+                        <img
+                            src={
+                                "https://www.beyoung.in/desktop/images/product-details-2/product-discription-icon4.jpg"
+                            }
+                            alt={"icon"}
+                        />
+                        <p>Packed with Safety</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     )
 }
 

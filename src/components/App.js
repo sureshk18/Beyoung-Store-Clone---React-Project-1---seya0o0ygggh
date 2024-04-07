@@ -28,13 +28,18 @@ import JumpSuit from '../Women/JumpSuit';
 import WomenTshirt from '../Women/Tshirt';
 import Shopbycollection from '../Pages/Shopbycollection';
 import Jogger from '../Women/Jogger';
+// import { useAuth } from '../Context/UserProvider';
+// import AuthModalComp from '../Pages/authModal';
 
 
 
 function App() {
+
+  // const { isAuthUser } = useAuth();
   return <>
     <BrowserRouter>
       <Navbar />
+      {/* {isAuthUser ? (<AuthModalComp />) : ("")} */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/men' element={<Men />}></Route>

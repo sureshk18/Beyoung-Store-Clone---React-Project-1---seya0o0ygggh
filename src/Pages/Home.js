@@ -7,7 +7,7 @@ import ShirtsImages from '../Morepages/ShirtsImages';
 import NewArrival from '../Morepages/NewArrival';
 import FreeShipping from '../Morepages/FreeShipping';
 import MenHome from '../Morepages/MenHome';
-// import WomenHome from '../Morepages/WomenHome';
+import Womens from '../Morepages/Womens';
 
 
 function Home() {
@@ -43,7 +43,7 @@ function Home() {
         <NewArrival />
         <FreeShipping />
         <MenHome />
-        {/* <WomenHome /> */}
+        <Womens />
 
     </>
     )

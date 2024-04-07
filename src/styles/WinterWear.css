@@ -23,7 +23,7 @@
     text-align: left;
     top: -10px;
     font-weight: 600;
-    margin-left: 60px;
+    margin-left: -25px;
     color: #343434;
     border-bottom: 1px solid #f9eb28;
     display: inline-block;
@@ -32,7 +32,7 @@
 p.winter-wear-details {
     font-size: 15px;
     text-align: left;
-    margin-left: -45px;
+    margin-left: -25px;
     color: #343434;
     display: inline-block;
     margin-top: 4px;
@@ -44,7 +44,7 @@ p.winter-wear-details {
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     margin-left: -25px;
-    margin-top: 37px;
+    margin-top: 30px;
     gap: 10px;
 }
 .for-winter-wear img{

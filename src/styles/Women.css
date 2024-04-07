@@ -20,15 +20,15 @@
 .women-clothess {
     width: 75%;
     box-sizing: border-box;
-    margin-top: 76px;
+    margin-top: 56px;
 }
 p.heading-womens {
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 20px;
     text-align: left;
     top: 70px;
     font-weight: 600;
-    margin-left: 60px;
+    margin-left: 120px;
     color: #343434;
     border-bottom: 1px solid #f9eb28;
     display: inline-block;
@@ -37,7 +37,7 @@ p.heading-womens {
 p.heading-womenss {
     font-size: 13px;
     text-align: left;
-    margin-left: 60px;
+    margin-left: 120px;
     color: #343434;
     display: inline-block;
     margin-top: 5px;
@@ -48,7 +48,7 @@ p.heading-womenss {
     text-align: center;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: -45px;
+    margin-left: 118px;
     margin-top: 20px;
     gap: 14px;
 }

@@ -160,3 +160,56 @@ span.discounted-text {
     padding: 2.5rem;
     gap: 2rem;
 }
+.review-section-left{
+    width: 45%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: #F8EA54;
+    align-items: center;
+    padding: 2rem 3rem;
+    >h3 {
+        font-size: 60px;
+    }
+    >p {
+        font-size: 25px;
+        text-align: center;
+    }
+}
+.review-section-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+.review-section-right h4 {
+    text-transform: uppercase;
+    border-bottom: 3px solid #F9EB28;
+    width: fit-content;
+}
+.review-section-right>p {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+.aboutus-container ul {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 0;
+    margin-top: 4rem;
+}
+
+.aboutus-container ul img {
+    width: 35%;
+}
+
+.aboutus-container ul li {
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #b8b4b4;
+    border-radius: 7px;
+    padding: 2rem 0;
+}

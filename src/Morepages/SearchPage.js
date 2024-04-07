@@ -4,10 +4,10 @@ import ProductDetails from '../Pages/ProductDetails';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Morepages/SearchPage.css';
 const SearchPage = () => {
-    const location = useLocation();
+
     const searchQuery = new URLSearchParams(location.search).get('name');
     const [searchResults, setSearchResults] = useState([]);
-    const [selectedProduct, setSelectedProduct] = useState(null);
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,16 +15,6 @@ const SearchPage = () => {
             if (searchQuery) {
                 const encodedSearchQuery = encodeURIComponent(`{"name": "${searchQuery.toLowerCase()}"}`);
                 const apiUrl = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search=${encodedSearchQuery}`;
-
-
-                const myHeaders = new Headers();
-                myHeaders.append("projectId", "yxpa71cax49z");
-
-                const requestOptions = {
-                    method: 'GET',
-                    headers: myHeaders,
-                    redirect: 'follow',
-                };
 
                 try {
                     const response = await fetch(apiUrl, requestOptions);
@@ -65,11 +55,11 @@ const SearchPage = () => {
                         searchResults.map((product) => (
                             <div key={product._id} onClick={() => handleProductClick(product)} id='zoom-In'>
                                 <figure>
-                                    <img src={product.displayImage} alt={product.name} loading="lazy" />
+                                    <img src={getProductData.displayImage} alt={getProductData.name} loading="lazy" />
                                 </figure>
-                                <p className='headingsearch'>{product.name}</p>
-                                <p className='headingsearch1'>{product.subCategory}</p>
-                                <p className='headingsearch'>₹{product.price}</p>
+                                <p className='headingsearch'>{getProductData.name}</p>
+                                <p className='headingsearch1'>{getProductData.subCategory}</p>
+                                <p className='headingsearch'>₹{getProductData.price}</p>
                             </div>
                         ))
                     ) : (

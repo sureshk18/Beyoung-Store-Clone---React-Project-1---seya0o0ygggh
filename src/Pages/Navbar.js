@@ -7,68 +7,14 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useAuth } from '../Context/UserProvider';
 
 
 function Navbar() {
+    // const { setisAuthUser } = useAuth();
     // Searching a product
-    const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
-    const [anchorEl, setAnchorEl] = useState(null);
-    const searchInputRef = useRef();
-    const navigate = useNavigate(); // Move useNavigate hook here
-    const [searchResults, setSearchResults] = useState("");
-
-    const handleSearchBtnClick = (event) => {
-        if (anchorEl) {
-            setIsSearchbarOpen(false);
-            setAnchorEl(null);
-        } else {
-            setIsSearchbarOpen(true);
-            setAnchorEl(event.currentTarget);
-        }
-    };
-
-    const handleSearch = async (event) => {
-        event.preventDefault();
-        const { value } = searchInputRef.current;
-
-        const encodedSearchQuery = encodeURIComponent(`{"name":"${value}"}`);
-        const apiUrl = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search=${encodedSearchQuery}`;
-        console.log(apiUrl);
-        setIsSearchbarOpen(false);
-
-        var myHeaders = new Headers();
-        myHeaders.append("projectId", "yxpa71cax49z");
-
-        const requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow',
-        };
-        try {
-            const response = await fetch(apiUrl, requestOptions);
-            const result = await response.json(); // Parse the response as JSON
-
-            if (response.ok) {
-                // Check if the response status is OK
-                if (result.status === 'success' && result.results > 0) {
-                    // Products found, update the state with the data
-                    setSearchResults(result.data);
-                } else {
-                    // No products found
-                    setSearchResults([]);
-                }
-            } else {
-                // Handle non-OK response status
-                console.log('Error:', result.message);
-                setSearchResults([]); // Set empty array in case of an error
-            }
-        } catch (error) {
-            // Handle fetch error
-            console.log('Fetch Error:', error);
-            setSearchResults([]); // Set empty array in case of an error
-        }
-
-        navigate(`/search?name=${value}`);
+    const authUserDetails = () => {
+        setisAuthUser(true)
     };
 
 
@@ -84,9 +30,9 @@ function Navbar() {
                         <Link to='/track-orders' className='track-order' style={{ fontSize: '12px', alignItems: 'center', display: 'flex', color: '#fff', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-                        <button >LOGIN</button>
+                        <button onClick={{ authUserDetails }}>LOGIN</button>
                         <p className='dash'>|</p>
-                        <button>SIGNUP</button>
+                        <button onClick={{ authUserDetails }}>SIGNUP</button>
                     </ul>
                 </div>
 
@@ -153,34 +99,11 @@ function Navbar() {
 
                     </div>
                     <div className='nav-right'>
-                        <Link to={'/search'}><SearchIcon style={{ width: '20px', height: '20px' }} /></Link>
+                        <SearchIcon style={{ width: '20px', height: '20px' }} />
                         <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} />
                         <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} />
                     </div>
                 </div>
-
-
-                {isSearchbarOpen && (
-                    <ClickAwayListener onClickAway={handleSearchBtnClick}>
-                        <Popper
-                            open={isSearchbarOpen}
-                            anchorEl={anchorEl}
-                            placement="bottom-start"
-                            style={{ width: "350px" }}
-                        >
-                            <div className="search-bar">
-                                <input
-                                    id="searchBarInput"
-                                    type="text"
-                                    placeholder="Search entire store here..."
-                                    ref={searchInputRef}
-                                />
-                                <button onClick={handleSearch}>Search</button>
-                            </div>
-                        </Popper>
-                    </ClickAwayListener>
-                )}
-
             </header >
         </div >
 
