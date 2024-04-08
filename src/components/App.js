@@ -36,6 +36,7 @@ import Jogger from '../Women/Jogger';
 function App() {
 
   // const { isAuthUser } = useAuth();
+  // console.log(isAuthUser);
   return <>
     <BrowserRouter>
       <Navbar />
@@ -69,6 +70,8 @@ function App() {
         <Route path='/jumpsuit' element={<JumpSuit />}></Route>
         <Route path='/tshirtsWomen' element={<WomenTshirt />}></Route>
         <Route path='/joggersWomen' element={<Jogger />}></Route>
+
+
 
       </Routes>
       <Footer />

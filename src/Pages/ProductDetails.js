@@ -90,8 +90,6 @@ function ProductDetails() {
                                         onClick={() => handleImageClick(image)}
                                     />
                                 ))}
-
-
                         {selectedImage ? (
                             <img
                                 src={selectedImage}
@@ -103,7 +101,7 @@ function ProductDetails() {
                                 <img
                                     src={getProductData?.displayImage}
                                     alt="Default Display Image"
-                                // onClick={() => handleImageClick(getProductData.displayImage)}
+                                    onClick={() => handleImageClick(getProductData.displayImage)}
                                 />
                             )
                         )}

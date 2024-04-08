@@ -7,14 +7,51 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { useAuth } from '../Context/UserProvider';
+import { AuthProvider, useAuth } from '../Context/UserProvider';
+import LoginModal from '../login/LoginModal';
+import SignupModal from '../login/SingupModal';
 
 
 function Navbar() {
     // const { setisAuthUser } = useAuth();
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const { isUserLoggedIn, signInContext, signOutContext } = useAuth();
+    const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
     // Searching a product
-    const authUserDetails = () => {
-        setisAuthUser(true)
+    // const authUserDetails = () => {
+    //     setisAuthUser(true)
+    // };
+
+
+    const openLoginModal = () => {
+        setIsLoginModalOpen(true);
+    };
+
+    const closeLoginModal = () => {
+        setIsLoginModalOpen(false);
+    };
+    const openSignupModal = () => {
+        setIsSignupModalOpen(true);
+    };
+
+    const closeSignupModal = () => {
+        setIsSignupModalOpen(false);
+    };
+    const handleLogin = (token, userName) => {
+        sessionStorage.setItem("authToken", token);
+        sessionStorage.setItem("userInfo", userName);
+        setIsLoggedIn(true);
+        signInContext(token, userName);
+        closeLoginModal();
+    };
+    const handleLogout = (token, userName) => {
+        sessionStorage.removeItem("authToken");
+        sessionStorage.removeItem("userInfo");
+        signOutContext(token, userName);
+        setIsLoggedIn(false);
+        updateCartNumber(0);
+        updateWishlistNumbers(0);
+        navigate('/');
     };
 
 
@@ -30,9 +67,36 @@ function Navbar() {
                         <Link to='/track-orders' className='track-order' style={{ fontSize: '12px', alignItems: 'center', display: 'flex', color: '#fff', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-                        <button onClick={{ authUserDetails }}>LOGIN</button>
-                        <p className='dash'>|</p>
-                        <button onClick={{ authUserDetails }}>SIGNUP</button>
+                        {isUserLoggedIn ? (
+                            <>
+                                <div className='dropdownmyaccount'>
+                                    <Link >
+                                        <button className="dropbtn1">MY ACCOUNT</button>
+                                    </Link>
+                                    <div className="dropdown-contentmyaccount">
+                                        <Link to='/myprofile' className='linked'>
+                                            My Profile
+                                        </Link>
+                                        <Link to='/orders' className='linked'>
+                                            Orders
+                                        </Link>
+                                        <Link to='/address' className='linked'>
+                                            Address
+                                        </Link>
+                                        <Link to='/wishlist' className='linked'>
+                                            Wishlist
+                                        </Link>
+                                    </div>
+                                </div>
+                                <p className='dash'>|</p>
+                                <button onClick={handleLogout}>LOGOUT</button>
+
+                            </>
+                        ) : (<>
+                            <button onClick={openLoginModal}>LOGIN</button>
+                            <p className='dash'>|</p>
+                            <button onClick={openSignupModal}>SIGNUP</button>
+                        </>)}
                     </ul>
                 </div>
 
@@ -105,6 +169,8 @@ function Navbar() {
                     </div>
                 </div>
             </header >
+            <AuthProvider> <LoginModal isOpen={isLoginModalOpen} closeModal={closeLoginModal} onLogin={handleLogin} /></AuthProvider>
+            <SignupModal isOpen={isSignupModalOpen} closeModal={closeSignupModal} openLoginModal={openLoginModal} />
         </div >
 
     )
