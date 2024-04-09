@@ -106,7 +106,6 @@ function ProductDetails() {
                             )
                         )}
                     </div>
-
                 </div>
 
                 <div className='product-right'>
@@ -143,13 +142,12 @@ function ProductDetails() {
                         null)}
                 </div>
             </div>
-            {/* <div className="product-description-container">
+            <div className="product-description-container">
                 <h3>Product Description</h3>
-                {/* <div>{getProductData.description}</div> 
-                <div dangerouslySetInnerHTML={{ __html: getProductData.description || "" }}
-                    className="product-description"
-                ></div>
-            </div> */}
+                {/* <div>{getProductData?.description}</div> */}
+                <div dangerouslySetInnerHTML={{ __html: getProductData?.description || "" }}></div>
+
+            </div>
 
             <div className="ratings-review-container">
                 <h3>Rating & Reviews</h3>
@@ -165,9 +163,22 @@ function ProductDetails() {
                             91% of customers recommend this brand
                         </p>
                         <Divider sx={{ marginBottom: "2rem" }} />
+                        {[5, 4, 3, 2, 1].map((rating) => (
+                            <div key={rating} className="rating-bar">
+                                <span>{rating}</span>
+                                <StarBorderIcon />
+                                <LinearProgress
+                                    style={{ width: "70%" }}
+                                    color="inherit"
+                                    variant="determinate"
+                                    value={80}
+                                />
+                                <span>80+</span>{" "}
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </div>
+            </div >
 
             <div className="aboutus-container">
                 <ul>
@@ -209,7 +220,7 @@ function ProductDetails() {
                     </li>
                 </ul>
             </div>
-        </div>
+        </div >
 
     )
 }

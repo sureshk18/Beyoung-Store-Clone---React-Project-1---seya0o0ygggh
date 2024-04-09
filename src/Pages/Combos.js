@@ -29,11 +29,11 @@ function Combos() {
     }, []);
     return (
         <div className='men-container'>
-            <section className='filter-section'>
+            {/* <section className='filter-section'>
                 <div className='color-filter'>
                     <p className='heading-menfilter'>FILTER</p>
                 </div>
-            </section>
+            </section> */}
             <section className='men-clothes'>
                 <h2 className='heading-men'>MEN'S TROUSERS</h2>
                 <p className='heading-men1'>Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>

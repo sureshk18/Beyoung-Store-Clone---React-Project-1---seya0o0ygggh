@@ -30,11 +30,11 @@ function Joggers() {
 
     return (
         <div className='men-container'>
-            <section className='filter-section'>
+            {/* <section className='filter-section'>
                 <div className='color-filter'>
                     <p className='heading-menfilter'>FILTER</p>
                 </div>
-            </section>
+            </section> */}
             <section className='men-clothes'>
                 <h2 className='heading-men'>Joggers</h2>
                 <div className='for-shirts-pants'>

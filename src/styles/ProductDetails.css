@@ -95,9 +95,7 @@ span.discounted-text {
     margin-top: 50px;
     text-align: left;
 }
-.product-info-container {
-    margin-top: 3rem;
-}
+
 .colorr {
     color: black;
 }
@@ -170,10 +168,10 @@ span.discounted-text {
     align-items: center;
     padding: 2rem 3rem;
     >h3 {
-        font-size: 60px;
+        font-size: 35px;
     }
     >p {
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;
     }
 }
@@ -183,6 +181,14 @@ span.discounted-text {
     width: 100%;
     gap: 1rem;
 }
+.review-section-right .rating-bar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-right: 2rem;
+    margin-top: -1rem;
+}
+
 .review-section-right h4 {
     text-transform: uppercase;
     border-bottom: 3px solid #F9EB28;
