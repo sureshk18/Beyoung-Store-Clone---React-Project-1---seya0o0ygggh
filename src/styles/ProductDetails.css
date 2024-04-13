@@ -94,6 +94,7 @@ span.discounted-text {
 .product-description-container {
     margin-top: 50px;
     text-align: left;
+    font-size: 14px;
 }
 
 .colorr {
@@ -159,7 +160,7 @@ span.discounted-text {
     gap: 2rem;
 }
 .review-section-left{
-    width: 45%;
+    width: 85%;
     background-color: black;
     display: flex;
     justify-content: space-between;

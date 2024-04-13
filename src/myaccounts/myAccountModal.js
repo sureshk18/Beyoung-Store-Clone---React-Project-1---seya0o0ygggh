@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import "../login/myAccountModal.css";
+import "../myaccount/MyAccountModal.css";
 import { useNavigate } from "react-router-dom";
 
 const MyAccountModal = ({ isOpenHomeModal, closeModal }) => {

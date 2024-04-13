@@ -46,7 +46,7 @@ function Men() {
             <section className="men-clothess">
                 <p className="heading-mens" >Men's Clothing</p>
                 <p className="heading-menss" >Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
-                <div className="for-men-shirts-pants">
+                <div className="for-men-shirts-pants" >
                     {getProducts.map((seller, index) => (
                         <div key={index}>
                             <Link to={`/product-details/${seller._id}`}>

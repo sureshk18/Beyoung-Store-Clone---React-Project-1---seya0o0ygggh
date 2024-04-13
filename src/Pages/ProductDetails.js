@@ -144,7 +144,6 @@ function ProductDetails() {
             </div>
             <div className="product-description-container">
                 <h3>Product Description</h3>
-                {/* <div>{getProductData?.description}</div> */}
                 <div dangerouslySetInnerHTML={{ __html: getProductData?.description || "" }}></div>
 
             </div>
@@ -153,7 +152,8 @@ function ProductDetails() {
                 <h3>Rating & Reviews</h3>
                 <div className='ratings-review-section'>
                     <div className='review-section-left'>
-                        {/* <h3>{getProductData.ratings}</h3> */}
+                        <h3>{getProductData?.ratings}</h3>
+                        <StarRating rating={getProductData?.ratings} />
                         <p>Based on 31K+ ratings and 9K+ reviews</p>
                     </div>
                     <div className='review-section-right'>
@@ -168,7 +168,7 @@ function ProductDetails() {
                                 <span>{rating}</span>
                                 <StarBorderIcon />
                                 <LinearProgress
-                                    style={{ width: "70%" }}
+                                    style={{ width: "80%" }}
                                     color="inherit"
                                     variant="determinate"
                                     value={80}

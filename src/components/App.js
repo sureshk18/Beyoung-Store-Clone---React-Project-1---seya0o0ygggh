@@ -30,6 +30,9 @@ import Shopbycollection from '../Pages/Shopbycollection';
 import Jogger from '../Women/Jogger';
 // import { useAuth } from '../Context/UserProvider';
 // import AuthModalComp from '../Pages/authModal';
+import myAccount from '../myaccounts/myAccount';
+import myProfile from '../myaccounts/myProfile';
+import ProtectedComponent from '../Context/ProtectedComponent';
 
 
 
@@ -71,6 +74,9 @@ function App() {
         <Route path='/tshirtsWomen' element={<WomenTshirt />}></Route>
         <Route path='/joggersWomen' element={<Jogger />}></Route>
 
+        <Route path="/" element={<ProtectedComponent><myAccount /></ProtectedComponent>}>
+          <Route path="/myprofile" element={<myProfile />} />
+        </Route>
 
 
       </Routes>
