@@ -94,7 +94,7 @@ span.discounted-text {
 .product-description-container {
     margin-top: 50px;
     text-align: left;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .colorr {
@@ -145,6 +145,62 @@ span.discounted-text {
     border-color: #0056b3;
 }
 
+
+.product-right .btn-cart-buy {
+    display: flex;
+    gap: 1rem;
+    margin-top: 20px;
+}
+.cartloggo {
+    line-height: 10px;
+    height: 19px;
+    width: 20px;
+    margin-right: 5px;
+    
+}
+.btn-cart-buy .btn-cart {
+    padding: 0px 0px;
+    width: 55%;
+    text-transform: uppercase;
+    background-color: #51cccc;
+    border: 1px solid black;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn-cart-buy .btn-buy {
+    padding: 20px 20px;
+    width: 50%;
+    text-transform: uppercase;
+    background-color: #f9eb28;
+    border: 1px solid black;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn-cart-buy .btn-buy svg {
+    vertical-align: middle;
+    margin-right: 5px;
+    fill: rgba(0, 0, 0, 0.6);
+}
+
+.cartbtn {
+    text-decoration: none;
+    padding: 0px 0px;
+    width: 45%;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
 
 
 /*ratings-review-container*/
@@ -219,4 +275,33 @@ span.discounted-text {
     border: 1px solid #b8b4b4;
     border-radius: 7px;
     padding: 2rem 0;
+}
+
+/*button cart*/
+
+.btn-cart-buy .btn-cart {
+    padding: 0px 0px;
+    width: 55%;
+    text-transform: uppercase;
+    background-color: #51cccc;
+    border: 1px solid black;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn-cart-buy .btn-buy {
+    padding: 20px 20px;
+    width: 50%;
+    text-transform: uppercase;
+    background-color: #f9eb28;
+    border: 1px solid black;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
 }

@@ -10,6 +10,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { AuthProvider, useAuth } from '../Context/UserProvider';
 import LoginModal from '../login/LoginModal';
 import SignupModal from '../login/SingupModal';
+import { ClickAwayListener, Popper } from "@mui/material";
 
 
 function Navbar() {
@@ -55,6 +56,80 @@ function Navbar() {
     };
 
 
+    const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const searchInputRef = useRef();
+    const navigate = useNavigate(); // Move useNavigate hook here
+    const [searchResults, setSearchResults] = useState("");
+
+    const handleSearchBtnClick = (event) => {
+        if (anchorEl) {
+            setIsSearchbarOpen(false);
+            setAnchorEl(null);
+        } else {
+            setIsSearchbarOpen(true);
+            setAnchorEl(event.currentTarget);
+        }
+    };
+
+    const handleSearch = async (event) => {
+        event.preventDefault();
+        const { value } = searchInputRef.current;
+
+        const encodedSearchQuery = encodeURIComponent(`{"name":"${value}"}`);
+        const apiUrl = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search=${encodedSearchQuery}`;
+        console.log(apiUrl);
+        setIsSearchbarOpen(false);
+
+        var myHeaders = new Headers();
+        myHeaders.append("projectId", "yxpa71cax49z");
+
+        const requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow',
+        };
+        try {
+            const response = await fetch(apiUrl, requestOptions);
+            const result = await response.json(); // Parse the response as JSON
+
+            if (response.ok) {
+                // Check if the response status is OK
+                if (result.status === 'success' && result.results > 0) {
+                    // Products found, update the state with the data
+                    setSearchResults(result.data);
+                } else {
+                    // No products found
+                    setSearchResults([]);
+                }
+            } else {
+                // Handle non-OK response status
+                console.log('Error:', result.message);
+                setSearchResults([]); // Set empty array in case of an error
+            }
+        } catch (error) {
+            // Handle fetch error
+            console.log('Fetch Error:', error);
+            setSearchResults([]); // Set empty array in case of an error
+        }
+
+        navigate(`/search?name=${value}`);
+    };
+
+    const handleWishlistClick = () => {
+        if (!isUserLoggedIn) {
+            openLoginModal();
+        } else {
+            return;
+        }
+    };
+    const handleCartClick = () => {
+        if (!isUserLoggedIn) {
+            openLoginModal();
+        } else {
+            return;
+        }
+    };
     return (
         <div>
             <header>
@@ -163,11 +238,31 @@ function Navbar() {
 
                     </div>
                     <div className='nav-right'>
-                        <SearchIcon style={{ width: '20px', height: '20px' }} />
-                        <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} />
-                        <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} />
+                        <SearchIcon style={{ width: '20px', height: '20px' }} onClick={handleSearchBtnClick} />
+                        {/* <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} /> */}
+                        <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} onClick={handleCartClick} />
                     </div>
                 </div>
+                {isSearchbarOpen && (
+                    <ClickAwayListener onClickAway={handleSearchBtnClick}>
+                        <Popper
+                            open={isSearchbarOpen}
+                            anchorEl={anchorEl}
+                            placement="bottom-start"
+                            style={{ width: "350px" }}
+                        >
+                            <div className="search-bar" >
+                                <input
+                                    id="searchBarInput"
+                                    type="text"
+                                    placeholder="Search product here..."
+                                    ref={searchInputRef}
+                                />
+                                <button onClick={handleSearch}>Search</button>
+                            </div>
+                        </Popper>
+                    </ClickAwayListener>
+                )}
             </header >
             <AuthProvider> <LoginModal isOpen={isLoginModalOpen} closeModal={closeLoginModal} onLogin={handleLogin} /></AuthProvider>
             <SignupModal isOpen={isSignupModalOpen} closeModal={closeSignupModal} openLoginModal={openLoginModal} />

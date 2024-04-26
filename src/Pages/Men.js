@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react'
 import '../styles/Mens.css';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import ProductDetails from '../Pages/ProductDetails';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Men() {
     const [getProducts, setProducts] = useState([]);
@@ -29,9 +30,9 @@ function Men() {
         fetchProduct();
     }, [])
 
-    const handleClick = (_id) => {
-        navigate(`/product-details${_id}`)
-    }
+    // const handleClick = (_id) => {
+    //     navigate(`/product-details${_id}`)
+    // }
     // ProductDetails();
 
     return (<>
@@ -47,14 +48,15 @@ function Men() {
                 <p className="heading-mens" >Men's Clothing</p>
                 <p className="heading-menss" >Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
                 <div className="for-men-shirts-pants" >
-                    {getProducts.map((seller, index) => (
+                    {getProducts.map((seller, index) => (<>
                         <div key={index}>
                             <Link to={`/product-details/${seller._id}`}>
-                                <img src={seller.displayImage} onClick={handleClick} id='zoom-In' /></Link>
+                                <img src={seller.displayImage} id='zoom-In' /></Link>
                             <h2 className='seller-details'>{seller.name}</h2>
                             <span className='seller-subCategory'>{seller.subCategory}</span>
                             <p className='seller-price'>Price: &#8377; {seller.price}</p>
                         </div>
+                    </>
                     )
                     )}
                 </div>

@@ -11,7 +11,7 @@ import TrackOrders from '../Morepages/TrackOrders';
 import Footer from '../Morepages/Footer';
 import WinterWear from '../Pages/WinterWear';
 import ProductDetails from '../Pages/ProductDetails';
-import SearchPage from '../Morepages/SearchPage';
+// import SearchPage from '../Morepages/SearchPage';
 import Shirt from '../Men/Shirt';
 import Hoodie from '../Men/Hoodie';
 import Kurtas from '../Men/Kurtas';
@@ -33,7 +33,8 @@ import Jogger from '../Women/Jogger';
 import myAccount from '../myaccounts/myAccount';
 import myProfile from '../myaccounts/myProfile';
 import ProtectedComponent from '../Context/ProtectedComponent';
-
+import SearchPage from '../Pages/SearchPage';
+// import CartProduct from '../Pages/CartProduct';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route path='/shopbycollection' element={<Shopbycollection />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
+        {/* <Route path='/cart' element={<CartProduct />}></Route> */}
         {/*men  */}
         <Route path='/shirts' element={<Shirt />}></Route>
         <Route path='/hoodie' element={<Hoodie />}></Route>

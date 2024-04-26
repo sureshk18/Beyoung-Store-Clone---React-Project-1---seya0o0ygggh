@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/ProductDetails.css';
 import StarIcon from "@mui/icons-material/Star";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { Divider, LinearProgress, Rating } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import Carticon from '../assests/Carticon.svg';
 
 const StarRating = ({ rating }) => {
     if (typeof rating !== "number") {
@@ -46,7 +49,7 @@ function ProductDetails() {
     const { _id } = useParams();
     const [getProductData, setProductData] = useState();
     const [selectedImage, setSelectedImage] = useState("");
-
+    const [showAddToCartMessage, setShowAddToCartMessage] = useState(false);
 
     const getProduct = async () => {
         try {
@@ -74,6 +77,59 @@ function ProductDetails() {
     const handleImageClick = (image) => {
         setSelectedImage(image);
     };
+
+    //Adding to cart
+    // Adding to cart
+    const handleAddToCart = async ({ productId }) => {
+        if (!isUserLoggedIn) {
+            setShowLoginModal(true);
+            return;
+        }
+
+        try {
+            const myHeaders = new Headers();
+            myHeaders.append("projectId", "yxpa71cax49z");
+            myHeaders.append("Authorization", `Bearer ${token}`);
+            myHeaders.append("Content-Type", "application/json");
+
+            const requestOptions = {
+                method: "PATCH",
+                headers: myHeaders,
+                body: JSON.stringify({
+                    productId: _id,
+                    quantity: 1,
+                }),
+                redirect: "follow",
+            };
+
+            const response = await fetch(
+                `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
+                requestOptions
+            );
+
+            if (response.ok) {
+                console.log("Product added to cart successfully");
+
+                // Assuming the API response provides the updated cart count
+                const responseData = await response.json();
+
+                updateCartNumber(responseData.data.items.length);
+
+                // Optionally, you can update the UI or show a success message
+                setShowAddToCartMessage(true);
+
+                // Hide the message after a certain duration (e.g., 3 seconds)
+                setTimeout(() => {
+                    setShowAddToCartMessage(false);
+                }, 3000);
+            } else {
+                console.error("Failed to add product to cart");
+                // Optionally, you can handle different HTTP status codes here
+            }
+        } catch (error) {
+            console.error("Error adding product to cart:", error);
+        }
+    };
     return (
         <div className='product-component-container'>
             <div className='product-component-box'>
@@ -90,10 +146,12 @@ function ProductDetails() {
                                         onClick={() => handleImageClick(image)}
                                     />
                                 ))}
+
                         {selectedImage ? (
                             <img
                                 src={selectedImage}
                                 alt="Selected Image"
+                                className='bigImage'
                                 onClick={() => handleImageClick(selectedImage)}
                             />
                         ) : (
@@ -140,10 +198,63 @@ function ProductDetails() {
                     </>
                     ) : (
                         null)}
+                    <label htmlFor="qty">
+                        QTY<sup>*</sup>
+                        <select name="" id="">
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="1">4</option>
+                            <option value="2">5</option>
+                            <option value="3">6</option>
+                            <option value="1">7</option>
+                            <option value="2">8</option>
+                            <option value="3">9</option>
+                            <option value="1">10</option>
+                        </select>
+                    </label>
+
+                    <div className="btn-cart-buy">
+                        <button className="btn-cart" onClick={handleAddToCart}>
+                            <img src={Carticon} alt="cart" className="cartloggo" /> add to
+                            cart
+                        </button>
+                        <button className="btn-buy">
+                            <Link to="/cart" className="cartbtn">
+                                <ArrowCircleRightIcon /> buy now
+                            </Link>
+                        </button>
+                        {showAddToCartMessage && (
+                            <div className="popup-modal">
+                                <p>Product is succesfully added to Cart!</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* <div className="btn-cart-buy">
+                        <button className="btn-cart" onClick={handleAddToCart}>
+                            <img alt="cart" className="cartloggo" /> add to
+                            cart
+                        </button>
+                        <button className="btn-buy">
+                            <Link to="/cart" className="cartbtn">
+                                <ArrowCircleRightIcon /> buy now
+                            </Link>
+                        </button>
+                        {showAddToCartMessage && (
+                            <div className="popup-modal">
+                                <p>Product is succesfully added to Cart!</p>
+                            </div>
+                        )}
+                    </div> */}
                 </div>
             </div>
+
+
             <div className="product-description-container">
                 <h3>Product Description</h3>
+                <br></br>
                 <div dangerouslySetInnerHTML={{ __html: getProductData?.description || "" }}></div>
 
             </div>
@@ -171,9 +282,9 @@ function ProductDetails() {
                                     style={{ width: "80%" }}
                                     color="inherit"
                                     variant="determinate"
-                                    value={80}
+                                    value={50}
                                 />
-                                <span>80+</span>{" "}
+                                <span>50+</span>{" "}
                             </div>
                         ))}
                     </div>
