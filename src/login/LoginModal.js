@@ -96,11 +96,11 @@ const LoginModal = ({ isOpen, closeModal, onLogin }) => {
             setError('Ok');
         }
     };
-    // useEffect(() => {
-    //     if (isLoggedIn) {
-    //         closeModal();
-    //     }
-    // }, [isLoggedIn, closeModal]);
+    useEffect(() => {
+        if (isLoggedIn) {
+            closeModal();
+        }
+    }, [isLoggedIn, closeModal]);
 
     useEffect(() => {
         console.log('isLoggedIn:', isLoggedIn);

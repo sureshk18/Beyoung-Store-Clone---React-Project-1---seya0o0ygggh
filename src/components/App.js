@@ -30,11 +30,11 @@ import Shopbycollection from '../Pages/Shopbycollection';
 import Jogger from '../Women/Jogger';
 // import { useAuth } from '../Context/UserProvider';
 // import AuthModalComp from '../Pages/authModal';
-import myAccount from '../myaccounts/myAccount';
-import myProfile from '../myaccounts/myProfile';
+import MyAccount from '../myaccounts/myAccount';
+import MyProfile from '../myaccounts/myProfile';
 import ProtectedComponent from '../Context/ProtectedComponent';
 import SearchPage from '../Pages/SearchPage';
-// import CartProduct from '../Pages/CartProduct';
+import CartProduct from '../Pages/CartProduct';
 
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
         <Route path='/shopbycollection' element={<Shopbycollection />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
-        {/* <Route path='/cart' element={<CartProduct />}></Route> */}
+        <Route path='/cart' element={<CartProduct />}></Route>
         {/*men  */}
         <Route path='/shirts' element={<Shirt />}></Route>
         <Route path='/hoodie' element={<Hoodie />}></Route>
@@ -76,8 +76,8 @@ function App() {
         <Route path='/tshirtsWomen' element={<WomenTshirt />}></Route>
         <Route path='/joggersWomen' element={<Jogger />}></Route>
 
-        <Route path="/" element={<ProtectedComponent><myAccount /></ProtectedComponent>}>
-          <Route path="/myprofile" element={<myProfile />} />
+        <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
+          <Route path="/myprofile" element={<MyProfile />} />
         </Route>
 
 

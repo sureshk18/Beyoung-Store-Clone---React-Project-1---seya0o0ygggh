@@ -50,6 +50,8 @@ function ProductDetails() {
     const [getProductData, setProductData] = useState();
     const [selectedImage, setSelectedImage] = useState("");
     const [showAddToCartMessage, setShowAddToCartMessage] = useState(false);
+    // const updateCartNumber = useUpdateCartNumbers();
+    // const { isUserLoggedIn, token } = useAuth();
 
     const getProduct = async () => {
         try {
@@ -88,7 +90,7 @@ function ProductDetails() {
 
         try {
             const myHeaders = new Headers();
-            myHeaders.append("projectId", "yxpa71cax49z");
+            myHeaders.append("projectId", "seya0o0ygggh");
             myHeaders.append("Authorization", `Bearer ${token}`);
             myHeaders.append("Content-Type", "application/json");
 
@@ -146,24 +148,24 @@ function ProductDetails() {
                                         onClick={() => handleImageClick(image)}
                                     />
                                 ))}
-
-                        {selectedImage ? (
-                            <img
-                                src={selectedImage}
-                                alt="Selected Image"
-                                className='bigImage'
-                                onClick={() => handleImageClick(selectedImage)}
-                            />
-                        ) : (
-                            getProductData?.displayImage && (
-                                <img
-                                    src={getProductData?.displayImage}
-                                    alt="Default Display Image"
-                                    onClick={() => handleImageClick(getProductData.displayImage)}
-                                />
-                            )
-                        )}
                     </div>
+
+                    {selectedImage ? (
+                        <img
+                            src={selectedImage}
+                            alt="Selected Image"
+                            className='bigImage'
+                            onClick={() => handleImageClick(selectedImage)}
+                        />
+                    ) : (
+                        getProductData?.displayImage && (
+                            <img
+                                src={getProductData?.displayImage}
+                                alt="Default Display Image"
+                                onClick={() => handleImageClick(getProductData.displayImage)}
+                            />
+                        )
+                    )}
                 </div>
 
                 <div className='product-right'>
@@ -231,29 +233,12 @@ function ProductDetails() {
                             </div>
                         )}
                     </div>
-
-                    {/* <div className="btn-cart-buy">
-                        <button className="btn-cart" onClick={handleAddToCart}>
-                            <img alt="cart" className="cartloggo" /> add to
-                            cart
-                        </button>
-                        <button className="btn-buy">
-                            <Link to="/cart" className="cartbtn">
-                                <ArrowCircleRightIcon /> buy now
-                            </Link>
-                        </button>
-                        {showAddToCartMessage && (
-                            <div className="popup-modal">
-                                <p>Product is succesfully added to Cart!</p>
-                            </div>
-                        )}
-                    </div> */}
                 </div>
             </div>
 
 
             <div className="product-description-container">
-                <h3>Product Description</h3>
+                <h2>Product Description</h2>
                 <br></br>
                 <div dangerouslySetInnerHTML={{ __html: getProductData?.description || "" }}></div>
 
@@ -263,7 +248,7 @@ function ProductDetails() {
                 <h3>Rating & Reviews</h3>
                 <div className='ratings-review-section'>
                     <div className='review-section-left'>
-                        <h3>{getProductData?.ratings}</h3>
+                        <h3>{getProductData?.ratings.toFixed(2)}</h3>
                         <StarRating rating={getProductData?.ratings} />
                         <p>Based on 31K+ ratings and 9K+ reviews</p>
                     </div>
@@ -282,9 +267,9 @@ function ProductDetails() {
                                     style={{ width: "80%" }}
                                     color="inherit"
                                     variant="determinate"
-                                    value={50}
+                                    value={60}
                                 />
-                                <span>50+</span>{" "}
+                                <span>80+</span>{" "}
                             </div>
                         ))}
                     </div>

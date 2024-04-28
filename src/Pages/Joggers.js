@@ -1,7 +1,9 @@
 import React from 'react'
-import '../styles/Joggers.css';
+import '../styles/WinterWear.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Joggers.css';
+import PalazzoPants from '../assests/PalazzoPants.jpg'
 
 function Joggers() {
     const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -28,13 +30,11 @@ function Joggers() {
         fetchProducts();
     }, []);
 
-    return (
+    return (<>
+        <div className='banner-jogger'>
+            <img src={PalazzoPants} alt='palazoPants' className='plazzo-pants'></img>
+        </div>
         <div className='men-container'>
-            {/* <section className='filter-section'>
-                <div className='color-filter'>
-                    <p className='heading-menfilter'>FILTER</p>
-                </div>
-            </section> */}
             <section className='men-clothes'>
                 <h2 className='heading-men'>Joggers</h2>
                 <div className='for-shirts-pants'>
@@ -50,6 +50,7 @@ function Joggers() {
                 </div>
             </section>
         </div>
+    </>
     )
 }
 

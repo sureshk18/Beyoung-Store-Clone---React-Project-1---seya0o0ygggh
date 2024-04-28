@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Combos.css';
 import { Link } from 'react-router-dom';
+import comboImage from '../assests/comboImage.jpg';
 
 function Combos() {
 
@@ -27,7 +28,10 @@ function Combos() {
     useEffect(() => {
         fetchProducts();
     }, []);
-    return (
+    return (<>
+        <div className='banner-combo'>
+            <img src={comboImage} alt='combos' className='cargo'></img>
+        </div>
         <div className='men-container'>
             {/* <section className='filter-section'>
                 <div className='color-filter'>
@@ -50,6 +54,7 @@ function Combos() {
                 </div>
             </section>
         </div>
+    </>
     )
 }
 

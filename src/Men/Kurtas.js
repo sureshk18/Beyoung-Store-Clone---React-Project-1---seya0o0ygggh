@@ -30,14 +30,7 @@ function Kurtas() {
 
     return (
         <div className='mens-wear'>
-            <section className='filter-section'>
-                <div className='color-filter'>
-                    <p className='heading-filter'>FILTER</p>
-                    <button className='choosecolor'>Choose Color</button>
-                    <button>Choose Color</button>
-                    <button>Choose Color</button>
-                </div>
-            </section>
+
             <section className='productcontainer'>
                 <h3 className='headingg'>Men's Shirt</h3>
                 <p className="sub-headingg-mens">Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>

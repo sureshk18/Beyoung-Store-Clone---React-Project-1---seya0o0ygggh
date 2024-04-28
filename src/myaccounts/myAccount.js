@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useNavigate } from 'react';
 
-function myAccounts() {
+function MyAccount() {
     const { user: name, isUserLoggedIn, signInContext, signOutContext, token } = useAuth();
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -116,4 +116,4 @@ function myAccounts() {
 }
 
 
-export default myAccounts
+export default MyAccount

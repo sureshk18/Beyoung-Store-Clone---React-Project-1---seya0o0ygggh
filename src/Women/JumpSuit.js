@@ -30,14 +30,6 @@ function JumpSuit() {
 
     return (
         <div className='mens-wear'>
-            <section className='filter-section'>
-                <div className='color-filter'>
-                    <p className='heading-filter'>FILTER</p>
-                    <button className='choosecolor'>Choose Color</button>
-                    <button>Choose Color</button>
-                    <button>Choose Color</button>
-                </div>
-            </section>
             <section className='productcontainer'>
                 <h3 className='headingg'>Women's Jumpsuit</h3>
                 <p className="sub-headingg-mens">Women's Clothing - Get your hands on stylish and comfortable clothing for women - Buy a range of ladies' clothing online at affordable prices. Beyoung offers the latest collection of Kurtis, shirts, tops, t-shirts, pants, boxers, and jeggings with existing offers and discounts. Find women's clothing for formal to weekend outings in all styles. Free Shipping | COD | S - 4XL Sizes | 15 Days Return
