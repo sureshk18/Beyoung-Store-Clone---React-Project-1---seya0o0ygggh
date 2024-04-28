@@ -11,7 +11,6 @@ import TrackOrders from '../Morepages/TrackOrders';
 import Footer from '../Morepages/Footer';
 import WinterWear from '../Pages/WinterWear';
 import ProductDetails from '../Pages/ProductDetails';
-// import SearchPage from '../Morepages/SearchPage';
 import Shirt from '../Men/Shirt';
 import Hoodie from '../Men/Hoodie';
 import Kurtas from '../Men/Kurtas';
@@ -31,10 +30,11 @@ import Jogger from '../Women/Jogger';
 // import { useAuth } from '../Context/UserProvider';
 // import AuthModalComp from '../Pages/authModal';
 import MyAccount from '../myaccounts/myAccount';
-import MyProfile from '../myaccounts/myProfile';
+import MyProfile from '../myaccounts/MyProfile';
 import ProtectedComponent from '../Context/ProtectedComponent';
 import SearchPage from '../Pages/SearchPage';
 import CartProduct from '../Pages/CartProduct';
+import { CartNumberProvider } from '../Context/CartNumberContext';
 
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
   // console.log(isAuthUser);
   return <>
     <BrowserRouter>
+      <CartNumberProvider />
       <Navbar />
       {/* {isAuthUser ? (<AuthModalComp />) : ("")} */}
       <Routes>
@@ -79,8 +80,6 @@ function App() {
         <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
           <Route path="/myprofile" element={<MyProfile />} />
         </Route>
-
-
       </Routes>
       <Footer />
     </BrowserRouter>

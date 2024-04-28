@@ -192,9 +192,6 @@ const SignUp = ({ isOpen, closeModal }) => {
                                 </p>
                             )}
                             <button>Sign Up</button>
-                            <p className="heading-bottom" onClick={closeModal}>
-                                Continue as Guest
-                            </p>
                         </div>
                     </form>
                 </div>

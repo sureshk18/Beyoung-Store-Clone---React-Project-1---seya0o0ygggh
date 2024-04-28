@@ -35,7 +35,7 @@ export const getProductById = async (id) => {
 
     try {
         const res = await axios.get(
-            `https://academics.newtonschool.co/api/v1/ecommerce/product/${id}`,
+            `https://academics.newtonschool.co/api/v1/ecommerce/product/${_id}`,
             headers
         );
         return res.data.data;

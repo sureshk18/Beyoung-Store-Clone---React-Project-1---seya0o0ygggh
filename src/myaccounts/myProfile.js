@@ -13,7 +13,7 @@ import {
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 // import { toast } from "react-toastify";
 import { useAuth } from "../Context/UserProvider";
-// import '../MyAccount/myaccount.css';
+import '../myaccounts/myaccount.css';
 const MyProfile = () => {
     const { user: name, signIn } = useAuth();
 

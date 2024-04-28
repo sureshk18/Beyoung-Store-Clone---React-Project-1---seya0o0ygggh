@@ -78,7 +78,7 @@ const LoginModal = ({ isOpen, closeModal, onLogin }) => {
                 setSuccessMessage(true);
 
                 // Assuming signInContext sets the user and token in the context
-                // signInContext(token, userName);
+                signInContext(token, userName);
 
                 // Check if onLogin is defined and call it
                 if (typeof onLogin === 'function') {
@@ -173,12 +173,10 @@ const LoginModal = ({ isOpen, closeModal, onLogin }) => {
                     <button className="btn-login" type="submit">
                         Log in
                     </button>
-                    {error && <p className="error-message">{error}</p>}
+                    {error && <p className="error-message">Incorrect Email Id or Password</p>}
                     {messageSucess && (
                         <p className="success-message">Login successful!</p>
-                    )}                    <p className="heading-bottom" onClick={closeModal}>
-                        Continue as Guest
-                    </p>
+                    )}
                 </div>
             </form>
 

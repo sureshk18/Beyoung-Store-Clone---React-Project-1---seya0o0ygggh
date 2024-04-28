@@ -8,7 +8,6 @@ export const headerWithProjectIdOnly = () => {
         },
     };
 };
-
 export const getHeaderWithProjectIdAndBody = () => {
     return {
         headers: { projectId: projectID, "Content-Type": "application/json" },

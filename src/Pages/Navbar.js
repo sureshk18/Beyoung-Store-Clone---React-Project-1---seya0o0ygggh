@@ -82,7 +82,7 @@ function Navbar() {
         setIsSearchbarOpen(false);
 
         var myHeaders = new Headers();
-        myHeaders.append("projectId", "yxpa71cax49z");
+        myHeaders.append("projectId", "seya0o0ygggh");
 
         const requestOptions = {
             method: 'GET',
@@ -239,7 +239,7 @@ function Navbar() {
                     </div>
                     <div className='nav-right'>
                         <SearchIcon style={{ width: '20px', height: '20px' }} onClick={handleSearchBtnClick} />
-                        {/* <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} /> */}
+                        <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} />
                         <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} onClick={handleCartClick} />
                     </div>
                 </div>

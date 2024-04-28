@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/ProductDetails.css';
+import { useAuth } from '../Context/UserProvider';
 import StarIcon from "@mui/icons-material/Star";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
@@ -51,7 +52,8 @@ function ProductDetails() {
     const [selectedImage, setSelectedImage] = useState("");
     const [showAddToCartMessage, setShowAddToCartMessage] = useState(false);
     // const updateCartNumber = useUpdateCartNumbers();
-    // const { isUserLoggedIn, token } = useAuth();
+    const { isUserLoggedIn, token } = useAuth();
+    const [showLoginModal, setShowLoginModal] = useState(false);
 
     const getProduct = async () => {
         try {

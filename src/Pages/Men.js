@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Mens.css';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import ProductDetails from '../Pages/ProductDetails';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Men() {
     const [getProducts, setProducts] = useState([]);

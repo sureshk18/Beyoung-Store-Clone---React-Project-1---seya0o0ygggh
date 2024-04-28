@@ -58,7 +58,7 @@ p.heading-menss {
     transition: transform .2s;
     cursor: pointer;
 }
-#zoom-In img{
+/* #zoom-In img{
     margin: 0px;
     margin-left: -50px;
 }
@@ -69,7 +69,7 @@ p.heading-menss {
 }
 .for-shirts-pants #zoom-In:hover img {
     transform: scale(1.5);
-}
+} */
 
 .seller-details{
     margin-left: 8px;
