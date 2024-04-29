@@ -55,7 +55,7 @@ const LoginModal = ({ isOpen, closeModal, onLogin }) => {
             };
 
             const response = await fetch(url, requestOptions);
-
+            localStorage.setItem("tokenAvailable", response.token);
 
             if (response.ok) {
                 const data = await response.json();
