@@ -54,7 +54,7 @@ const SearchPage = () => {
         navigate(`/ProductDetails${_id}`
         )
     };
-    // ProductDetails();
+    ProductDetails();
 
     return (
         <div className="men-containerrr">

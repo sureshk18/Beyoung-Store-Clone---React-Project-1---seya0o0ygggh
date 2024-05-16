@@ -22,7 +22,7 @@ function Logout() {
                 !isLoggedIn ? (
                     <Link to="login" ></Link>
                 ) : (
-                    <h1 style={{ marginTop: '90px' }}>hello</h1>
+                    <h1>hello</h1>
                 )}
         </div>
     );

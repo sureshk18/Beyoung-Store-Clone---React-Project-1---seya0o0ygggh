@@ -78,7 +78,7 @@ figure img{
     border-radius: 8px;
     cursor: pointer;
 }
-#zoom-In {
+/* #zoom-In {
     margin: 0px;
     margin-left: -10px;
 }
@@ -88,4 +88,4 @@ figure img{
 }
 .for-shirts-pantss #zoom-In:hover img {
     transform: scale(1.2);
-}
+} */

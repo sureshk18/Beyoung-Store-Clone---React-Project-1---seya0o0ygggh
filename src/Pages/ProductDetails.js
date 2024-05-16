@@ -10,6 +10,7 @@ import { Divider, LinearProgress, Rating } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Carticon from '../assests/Carticon.svg';
+// import { useUpdateCartNumbers } from '../Context/CartNumberContext';
 
 const StarRating = ({ rating }) => {
     if (typeof rating !== "number") {
@@ -117,7 +118,7 @@ function ProductDetails() {
                 // Assuming the API response provides the updated cart count
                 const responseData = await response.json();
 
-                updateCartNumber(responseData.data.items.length);
+                // updateCartNumber(responseData.data.items.length);
 
                 // Optionally, you can update the UI or show a success message
                 setShowAddToCartMessage(true);
@@ -278,7 +279,7 @@ function ProductDetails() {
                 </div>
             </div >
 
-            <div className="aboutus-container">
+            {/* <div className="aboutus-container">
                 <ul>
                     <li>
                         <img
@@ -317,7 +318,7 @@ function ProductDetails() {
                         <p>Packed with Safety</p>
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </div >
 
     )

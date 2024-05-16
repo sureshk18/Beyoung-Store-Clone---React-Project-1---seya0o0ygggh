@@ -11,18 +11,22 @@ import { AuthProvider, useAuth } from '../Context/UserProvider';
 import LoginModal from '../login/LoginModal';
 import SignupModal from '../login/SingupModal';
 import { ClickAwayListener, Popper } from "@mui/material";
+import {
+    useCartNumbers,
+    useUpdateCartNumbers,
+    useUpdateWishlistNumbers,
+    useWishlistNumbers,
+} from "../Context/CartNumberContext";
 
 
 function Navbar() {
-    // const { setisAuthUser } = useAuth();
+
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const { isUserLoggedIn, signInContext, signOutContext } = useAuth();
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
-    // Searching a product
-    // const authUserDetails = () => {
-    //     setisAuthUser(true)
-    // };
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const updateCartNumber = useUpdateCartNumbers();
+    // const updateWishlistNumbers = useUpdateWishlistNumbers();
 
     const openLoginModal = () => {
         setIsLoginModalOpen(true);
@@ -50,8 +54,8 @@ function Navbar() {
         sessionStorage.removeItem("userInfo");
         signOutContext(token, userName);
         setIsLoggedIn(false);
-        updateCartNumber(0);
-        updateWishlistNumbers(0);
+        // updateCartNumber(0);
+        // updateWishlistNumbers(0);
         navigate('/');
     };
 
@@ -142,8 +146,8 @@ function Navbar() {
                         <Link to='/track-orders' className='track-order' style={{ fontSize: '12px', alignItems: 'center', display: 'flex', color: '#fff', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-
-                        {localStorage.getItem("tokenAvailable") ? (
+                        {/* {isUserLoggedIn ? ( */}
+                        {isUserLoggedIn && localStorage.getItem("tokenAvailable") ? (
                             <>
                                 <div className='dropdownmyaccount'>
                                     <Link >

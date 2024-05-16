@@ -45,7 +45,7 @@ p.heading-menss {
 .for-men-shirts-pants {
     display: grid;
     text-align: center;
-    width: 145%;
+    width: 135%;
     grid-template-columns: repeat(3, 1fr);
     margin-left: -90px;
     margin-top: 37px;
@@ -54,7 +54,7 @@ p.heading-menss {
 .for-men-shirts-pants img{
     border-radius: 8px;
     width: 100%;
-    height: 300px;
+    height: 400px;
     transition: transform .2s;
     cursor: pointer;
 }

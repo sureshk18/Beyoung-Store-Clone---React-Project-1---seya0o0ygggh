@@ -33,8 +33,9 @@ import MyAccount from '../myaccounts/myAccount';
 import MyProfile from '../myaccounts/MyProfile';
 import ProtectedComponent from '../Context/ProtectedComponent';
 import SearchPage from '../Pages/SearchPage';
-import CartProduct from '../Pages/CartProduct';
 import { CartNumberProvider } from '../Context/CartNumberContext';
+import MyOrder from '../myaccounts/myOrder';
+import Cart from '../Pages/Cart';
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
         <Route path='/shopbycollection' element={<Shopbycollection />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
-        <Route path='/cart' element={<CartProduct />}></Route>
+
         {/*men  */}
         <Route path='/shirts' element={<Shirt />}></Route>
         <Route path='/hoodie' element={<Hoodie />}></Route>
@@ -79,7 +80,11 @@ function App() {
 
         <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/orders" element={<MyOrder />} />
+          {/* <Route path="/address" element={<MyAddress />} /> */}
         </Route>
+
+        <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>
