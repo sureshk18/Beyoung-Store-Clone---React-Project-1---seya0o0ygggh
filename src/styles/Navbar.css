@@ -289,19 +289,43 @@ button {
   }
 }
 
-@media screen and(max-width:1024px) {
-    .nav-links{
-      margin-left: 0;
-      gap: 5px;
-    }
+@media screen and (max-width: 1024px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
 
-    .navmain{
-      flex-direction: row;
-      align-items: center;
-      padding: 15px;
-      gap: 10px;
-    }
-    .navchild{
-      gap: 10px;
-    }
+  .nav-links {
+    margin-left: 0;
+    gap: 5px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .navmain {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .navchild {
+    gap: 10px;
+  }
+
+  .link1 {
+    background: none;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+
+
 }
