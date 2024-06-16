@@ -28,7 +28,7 @@ import WomenTshirt from '../Women/Tshirt';
 import Shopbycollection from '../Pages/Shopbycollection';
 import Jogger from '../Women/Jogger';
 import MyAccount from '../myaccounts/myAccount';
-import MyProfile from '../myaccounts/MyProfile';
+// import MyProfile from '../myaccounts/MyProfile';
 import ProtectedComponent from '../Context/ProtectedComponent';
 import SearchPage from '../Pages/SearchPage';
 import { CartNumberProvider } from '../Context/CartNumberContext';
@@ -74,7 +74,7 @@ function App() {
         <Route path='/joggersWomen' element={<Jogger />}></Route>
 
         <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
-          <Route path="/myprofile" element={<MyProfile />} />
+          {/* <Route path="/myprofile" element={<MyProfile />} /> */}
           <Route path="/orders" element={<MyOrder />} />
           {/* <Route path="/address" element={<MyAddress />} /> */}
         </Route>
