@@ -100,7 +100,6 @@ function Navbar() {
             if (response.ok) {
                 // Check if the response status is OK
                 if (result.status === 'success' && result.results > 0) {
-                    // Products found, update the state with the data
                     setSearchResults(result.data);
                 } else {
                     // No products found
@@ -112,7 +111,6 @@ function Navbar() {
                 setSearchResults([]); // Set empty array in case of an error
             }
         } catch (error) {
-            // Handle fetch error
             console.log('Fetch Error:', error);
             setSearchResults([]); // Set empty array in case of an error
         }
@@ -146,7 +144,6 @@ function Navbar() {
                         <Link to='/track-orders' className='track-order' style={{ fontSize: '12px', alignItems: 'center', display: 'flex', color: '#fff', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-                        {/* {isUserLoggedIn ? ( */}
                         {isUserLoggedIn && localStorage.getItem("tokenAvailable") ? (
                             <>
                                 <div className='dropdownmyaccount'>

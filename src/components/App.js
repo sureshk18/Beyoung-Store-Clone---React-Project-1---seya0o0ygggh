@@ -27,8 +27,6 @@ import JumpSuit from '../Women/JumpSuit';
 import WomenTshirt from '../Women/Tshirt';
 import Shopbycollection from '../Pages/Shopbycollection';
 import Jogger from '../Women/Jogger';
-// import { useAuth } from '../Context/UserProvider';
-// import AuthModalComp from '../Pages/authModal';
 import MyAccount from '../myaccounts/myAccount';
 import MyProfile from '../myaccounts/MyProfile';
 import ProtectedComponent from '../Context/ProtectedComponent';
@@ -39,14 +37,11 @@ import Cart from '../Pages/Cart';
 
 
 function App() {
-
-  // const { isAuthUser } = useAuth();
-  // console.log(isAuthUser);
   return <>
     <BrowserRouter>
       <CartNumberProvider />
       <Navbar />
-      {/* {isAuthUser ? (<AuthModalComp />) : ("")} */}
+      
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/men' element={<Men />}></Route>

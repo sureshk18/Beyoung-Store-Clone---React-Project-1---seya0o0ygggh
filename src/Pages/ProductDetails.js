@@ -14,7 +14,7 @@ import Carticon from '../assests/Carticon.svg';
 
 const StarRating = ({ rating }) => {
     if (typeof rating !== "number") {
-        return null; // or handle the case when rating is undefined or not a number
+        return null; 
     }
     const maxRating = 5;
     const fullStars = Math.floor(rating);
@@ -119,8 +119,6 @@ function ProductDetails() {
                 const responseData = await response.json();
 
                 // updateCartNumber(responseData.data.items.length);
-
-                // Optionally, you can update the UI or show a success message
                 setShowAddToCartMessage(true);
 
                 // Hide the message after a certain duration (e.g., 3 seconds)
