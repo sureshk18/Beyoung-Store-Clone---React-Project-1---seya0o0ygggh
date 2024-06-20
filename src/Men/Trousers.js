@@ -41,7 +41,7 @@ function Trousers() {
                                 <Link to={`/product-details/${seller._id}`}>
                                     <img className='mens-img' src={seller.displayImage} alt={getShirtData.name} /></Link>
                                 <h2 className='product-name'>{seller.name}</h2>
-                                <p className='product-category'>{seller.category}</p>
+                                <p className='product-category'>{seller.subCategory}</p>
                                 <p className='product-price'>Price: &#8377;{seller.price}</p>
                             </div>
                         )
