@@ -6,31 +6,31 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 function Shopbycollection() {
-    // const [getData, setData] = useState([]);
+    const [getData, setData] = useState([]);
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             let filter = { "subCategory": "shirt" };
-    //             const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products`, {
-    //                 method: 'GET',
-    //                 headers: {
-    //                     projectId: 'seya0o0ygggh',
-    //                 },
-    //             });
-    //             if (res.ok) {
-    //                 const data = await res.json();
-    //                 setData(data.data);
-    //             } else {
-    //                 console.log('Failed to fetch products');
-    //             }
-    //         } catch (error) {
-    //             console.error('An error occurred while fetching products', error);
-    //         }
-    //     };
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                let filter = { "subCategory": "All" };
+                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=500`, {
+                    method: 'GET',
+                    headers: {
+                        projectId: 'seya0o0ygggh',
+                    },
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    setData(data.data);
+                } else {
+                    console.log('Failed to fetch products');
+                }
+            } catch (error) {
+                console.error('An error occurred while fetching products', error);
+            }
+        };
 
-    //     fetchData()
-    // }, []);
+        fetchData()
+    }, []);
 
     return (
         <>
@@ -38,8 +38,8 @@ function Shopbycollection() {
 
 
             <div className="winter-container" style={{ marginTop: '160px' }}>
-                <h1>This page is under process</h1>
-                {/* <section className="winter-clothes">
+                {/* <h1>This page is under process</h1> */}
+                <section className="winter-clothes">
                     <p className="winterheading" >Shopping Collection</p>
                     <p className="winter-wear-details" >Men Winter Wear - Buy Winter Wear for Men Online in India at BeYOUng. Shop Mens Winterwear Online @Best Prices. Select a wide range of latest collection on Winterwear for Men. *Free Shipping and *COD Available.</p>
                     <div className="for-winter-wear">
@@ -55,7 +55,7 @@ function Shopbycollection() {
                         )
                         )}
                     </div>
-                </section > */}
+                </section >
             </div >  </>
     )
 }

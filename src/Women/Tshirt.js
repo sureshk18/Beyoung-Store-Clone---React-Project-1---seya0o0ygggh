@@ -8,7 +8,8 @@ function WomenTshirt() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"tshirt"}`, {
+                let filter = { "subCategory": "tshirt","gender":"Women" };
+                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter=${JSON.stringify(filter)}`, {
                     method: 'GET',
                     headers: {
                         projectId: 'seya0o0ygggh',
