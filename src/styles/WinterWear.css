@@ -41,7 +41,7 @@ p.winter-wear-details {
 .for-winter-wear {
     display: grid;
     text-align: center;
-    width: 100%;
+    width: 90%;
     grid-template-columns: repeat(3, 1fr);
     margin-left: -25px;
     margin-top: 30px;
@@ -49,7 +49,7 @@ p.winter-wear-details {
 }
 .for-winter-wear img{
     border-radius: 6px;
-    width: 100%;
+    width: 80%;
     height: auto;
     transition: transform .2s;
     cursor: pointer;
@@ -89,8 +89,8 @@ p.winter-wear-details {
     letter-spacing: .3px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-left: 12px; */
+    white-space: nowrap;*/
+    margin-left: 35px; 
 }
 .seller-subCategory{
     margin-left: -8px;
@@ -107,15 +107,16 @@ p.winter-wear-details {
     padding: 5px 18 6px;
     text-align: center;
     white-space: nowrap;
-    width: 100%;
-    margin-left: 15px; */
+    width: 100%;*/
+    margin-left: 15px; 
 }
 .seller-price{
-    margin-left: -8px;
+    /* margin-left: -8px; */
     text-align: center;
     font-weight: 600;
     width: 220px;
     font-size: 14px;
     margin-top: 5px;
+    margin-left: 15px;
 }
   

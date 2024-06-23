@@ -42,9 +42,9 @@ function Joggers() {
                         <div key={product._id}>
                             <Link to={`/product-details/${product._id}`}>
                                 <img src={product.displayImage} alt={product.name} className='img' /></Link>
-                            <h3 className='product-name'>{product.name}</h3>
-                            <p className='product-category'>{product.subCategory}</p>
-                            <p className='product-price'>Price: &#8377;{product.price}</p>
+                            <h3 className='seller-details'>{product.name}</h3>
+                            <p className='seller-subCategory'>{product.subCategory}</p>
+                            <p className='seller-price'>Price : &#8377; {product.price}</p>
                         </div>
                     ))}
                 </div>

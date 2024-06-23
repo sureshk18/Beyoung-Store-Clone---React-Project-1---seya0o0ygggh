@@ -1,13 +1,13 @@
 .mens-wear {
     margin-left: 220px;
-    margin-top: 70px;
+    margin-top: 10px;
     display: flex;
     width: 80%;
 }
 .productcontainer {
     width: 90%;
     box-sizing: border-box;
-    margin-top: 55px;
+    margin-top: 15px;
 }
 .headingg {
     text-transform: uppercase;

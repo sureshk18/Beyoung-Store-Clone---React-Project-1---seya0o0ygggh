@@ -34,12 +34,6 @@ p.headingsearch-name{
     margin-left: 40px;
 }
 
-@media (max-width: 440px) {
-    p.heading-mensearch {
-        margin-left: 0px;
-    }
-}
-
 
 .men-containerrr{
     margin-left: 240px;

@@ -1,3 +1,4 @@
+import { People } from "@mui/icons-material";
 import { createContext, useEffect, useState, useContext } from "react";
 
 const AuthContext = createContext();
@@ -8,7 +9,8 @@ export function AuthProvider({ children }) {
     const [cart, setCart] = useState([]);
     const [resultData, setResultData] = useState(null);
     const [isAuthUser, setisAuthUser] = useState(false);
-
+    const [cloth, setcloth] = useState('');
+    const [gender,setGender] = useState('');
 
     useEffect(() => {
         console.log('Result data changed:', resultData);
@@ -40,7 +42,11 @@ export function AuthProvider({ children }) {
         updateCart: setCart,
         updateResultData: setResultData,
         isAuthUser,
-        setisAuthUser
+        setisAuthUser,
+        cloth,
+        setcloth,
+        gender,
+        setGender,
     };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

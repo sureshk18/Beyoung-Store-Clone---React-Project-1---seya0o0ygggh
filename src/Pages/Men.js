@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Mens.css';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import ProductDetails from '../Pages/ProductDetails';
+
 
 function Men() {
     const [getProducts, setProducts] = useState([]);

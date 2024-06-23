@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import '../Men/MenAll.css';
+import '../styles/MenAll.css';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../Context/UserProvider';
+import Tshirtss from '../assests/Tshirtss.png'
 
-
-function Tracksuit() {
+function MixCloths() {
     const [getShirtData, setShirtData] = useState([]);
+    const {cloth}=useAuth();
+    // const {gender} = useAuth();
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"tracksuit"}`, {
+                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"${cloth}"}`, {
                     method: 'GET',
                     headers: {
                         projectId: 'seya0o0ygggh',
@@ -26,30 +29,34 @@ function Tracksuit() {
         };
 
         fetchData()
-    }, []);
+    }, [cloth]);
 
-    return (
+    return (<>
+        <div className='bannerss'>
+            <img src={Tshirtss} style={{ width: '100%', height: 'auto',marginTop:'88px',maxWidth:'100%' }}/>
+        </div>
         <div className='mens-wear'>
-
             <section className='productcontainer'>
-                <h3 className='headingg'>Men's Shirt</h3>
-                <p className="sub-headingg-mens">Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p>
+                <h3 className='headingg'>Collection of Cloths</h3>
+                {/* <p className="sub-headingg-mens">Mens Clothing is all about being stylish and comfortable all day long. Beyoung understands the same and provides you with a handsome range of Clothing For Men out there. Scroll below to get a look at it.</p> */}
                 <div className='men-products'>
                     {getShirtData.map((seller, index) => {
                         return (
                             <div key={index}>
                                 <Link to={`/product-details/${seller._id}`}>
                                     <img className='mens-img' src={seller.displayImage} alt={getShirtData.name} /></Link>
-                                <h2 className='product-name'>{seller.name}</h2>
-                                <p className='product-category'>{seller.subCategory}</p>
-                                <p className='product-price'>Price: &#8377;{seller.price}</p>
+                                <h2 className='seller-details'>{seller.name}</h2>
+                                <p className='seller-subCategory'>{seller.subCategory}</p>
+                                {/* <p className='product-category'>{seller.name}</p> */}
+                                <p className='seller-price'>Price : &#8377; {seller.price}</p>
                             </div>
                         )
                     })}
                 </div>
             </section>
         </div>
+        </>
     )
 }
 
-export default Tracksuit;
+export default MixCloths;

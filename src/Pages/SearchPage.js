@@ -71,7 +71,7 @@ const SearchPage = () => {
                                 </figure>
                                 <p className='headingsearch-name'>{product.name}</p>
                                 <p className='headingsearch-category'>{product.subCategory}</p>
-                                <p className='headingsearch-price'>Price: &#8377;{product.price}</p>
+                                <p className='headingsearch-price'>Price: &#8377; {product.price}</p>
                             </div>
                         ))
                     ) : (

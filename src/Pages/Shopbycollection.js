@@ -11,7 +11,6 @@ function Shopbycollection() {
     useEffect(() => {
         async function fetchData() {
             try {
-                let filter = { "subCategory": "All" };
                 const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=500`, {
                     method: 'GET',
                     headers: {
@@ -38,10 +37,9 @@ function Shopbycollection() {
 
 
             <div className="winter-container" style={{ marginTop: '160px' }}>
-                {/* <h1>This page is under process</h1> */}
                 <section className="winter-clothes">
                     <p className="winterheading" >Shopping Collection</p>
-                    <p className="winter-wear-details" >Men Winter Wear - Buy Winter Wear for Men Online in India at BeYOUng. Shop Mens Winterwear Online @Best Prices. Select a wide range of latest collection on Winterwear for Men. *Free Shipping and *COD Available.</p>
+                    {/* <p className="winter-wear-details" >Men Winter Wear - Buy Winter Wear for Men Online in India at BeYOUng. Shop Mens Winterwear Online @Best Prices. Select a wide range of latest collection on Winterwear for Men. *Free Shipping and *COD Available.</p> */}
                     <div className="for-winter-wear">
                         {getData.map((seller) => (
                             <div key={seller._id} >
@@ -49,7 +47,7 @@ function Shopbycollection() {
                                     <img src={seller.displayImage} /></Link>
                                 <h2 className='seller-details'>{seller.name}</h2>
                                 <span className='seller-subCategory'>{seller.subCategory}</span>
-                                <p className='seller-price'>Price:&#8377;{seller.price}</p>
+                                <p className='seller-price'>Price : &#8377; {seller.price}</p>
 
                             </div>
                         )

@@ -35,9 +35,3 @@ p.heading-mensearch {
 .men-clothessearch {
     margin-left: 40px;
 }
-
-@media (max-width: 440px) {
-    p.heading-mensearch {
-        margin-left: 0px;
-    }
-}

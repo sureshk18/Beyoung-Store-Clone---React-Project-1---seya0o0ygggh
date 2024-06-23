@@ -44,7 +44,7 @@ function Women() {
                                 <img src={seller.displayImage} className='img' /></Link>
                             <h2 className='seller-details'>{seller.name}</h2>
                             <span className='seller-subCategory'>{seller.subCategory}</span>
-                            <p className='seller-price'>Price:&#8377;{seller.price}</p>
+                            <p className='seller-price'>Price : &#8377; {seller.price}</p>
 
                         </div>
                     )

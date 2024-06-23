@@ -22,7 +22,7 @@ import {
 function Navbar() {
 
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-    const { isUserLoggedIn, signInContext, signOutContext } = useAuth();
+    const { isUserLoggedIn, signInContext, signOutContext,setcloth,setGender} = useAuth();
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     // const updateCartNumber = useUpdateCartNumbers();
@@ -132,6 +132,16 @@ function Navbar() {
             return;
         }
     };
+    const setClothselected = (value) => {
+        console.log("Hi hello")
+        setcloth(value);
+        navigate(`/allcloths`);
+    };
+
+    const setGenderselected = ()=>{
+        setGender();
+        navigate(`/gender`);
+    }
     return (
         <div>
             <header>
@@ -167,7 +177,6 @@ function Navbar() {
                                 </div>
                                 <p className='dash'>|</p>
                                 <button onClick={handleLogout}>LOGOUT</button>
-
                             </>
                         ) : (<>
                             <button onClick={openLoginModal}>LOGIN</button>
@@ -177,74 +186,78 @@ function Navbar() {
                     </ul>
                 </div>
 
+
+
+
                 <div className='navmain'>
                     <div className='navchild'>
                         <Link to='/'>
                             <img src={Beyounglogo} alt='beyoung' className='logo'></img>
                         </Link>
-
                         {/* MEN DROPDOWN MENU*/}
-
                         <div className='dropdown'>
-                            <Link className='link1' to='/men'>MEN</Link>
+                            <Link className='link1' to='/men' onClick={()=>setGenderselected('Men')}>MEN</Link>
                             <div className='dropdown-content'>
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
-                                    <Link to='/shirts' className='sub-sub-link' >Shirts</Link>
-                                    <Link to='/kurtas' className='sub-sub-link' >Kurtas</Link>
-                                    <Link to='/t-shirts' className='sub-sub-link' >T-shirts</Link>
-                                    <Link to='/sweater' className='sub-sub-link' >Sweater</Link>
-                                    <Link to='/hoodie' className='sub-sub-link' >Hoodie</Link>
-                                    <Link to='/tracksuit' className='sub-sub-link' >TrackSuit</Link>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('shirt')}>Shirts</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('kurta')}>Kurtas</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('tshirt')}>T-shirts</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('sweater')}>Sweater</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('hoodie')}>Hoodie</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('tracksuit')}>TrackSuit</p>
                                 </div>
-
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Bottomwear</p>
-                                    <Link to='/shorts' className='sub-sub-link' >Shorts</Link>
-                                    <Link to='/trousers' className='sub-sub-link' >Trousers</Link>
-                                    <Link to='/pyjamas' className='sub-sub-link' >Pyjamas</Link>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('shorts')} >Shorts</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('trouser')} >Trousers</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('pyjamas')} >Pyjamas</p>
                                     {/* <Link to='/joggers' className='sub-sub-link' >Joggers</Link> */}
                                     {/* <Link to='/jeans' className='sub-sub-link' >Jeans</Link> */}
                                 </div>
-
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>
                         </div>
 
-                        {/* MEN DROPDOWN MENU*/}
 
+
+
+                        {/* WOMEN DROPDOWN MENU*/}
                         <div className='dropdown'>
-                            <Link className='link1' to='/women'>WOMEN</Link>
+                            <Link className='link1' to='/women' onClick={()=>setGenderselected('Women')}>WOMEN</Link>
                             <div className='dropdown-content'>
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
-                                    <Link className='sub-sub-link' to='/shirtsWomen'>Shirts</Link>
-                                    <Link className='sub-sub-link' to='/tshirtsWomen'>T-shirts</Link>
-                                    <Link className='sub-sub-link' to='/kurtisWomen'>kurtis</Link>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('shirt')}>Shirts</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('tshirt')}>T-shirts</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('kurti')}>kurtis</p>
                                 </div>
-
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Bottomwear</p>
-                                    <Link className='sub-sub-link' to='/joggersWomen'>Joggers</Link>
-                                    <Link className='sub-sub-link' to='/jeansWomen'>Jeans</Link>
-                                    <Link className='sub-sub-link' to='/jumpsuit'>JumpSuit</Link>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('jogger')}>Joggers</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('jeans')}>Jeans</p>
+                                    <p className='sub-sub-link' onClick={()=>setClothselected('jumpsuit')}>JumpSuit</p>
                                 </div>
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>
                         </div>
-                        <Link className='link1' to='/combos'>COMBOS</Link>
+                        <Link className='link1'  to='/combos' >COMBOS</Link>
                         <Link className='link1' to='/joggers'>JOGGERS</Link>
-                        <Link className='link1' to='/winterwear'>WINTER WEAR</Link>
+                        <Link className='link1' to='/winterwear' >WINTER WEAR</Link>
                         <Link className='link1' to='/shopbycollection'>SHOP BY COLLECTION </Link>
-
-
                     </div>
+
+
+
+
                     <div className='nav-right'>
                         <SearchIcon style={{ width: '20px', height: '20px' }} onClick={handleSearchBtnClick} />
                         <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} />
                         <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} onClick={handleCartClick} />
                     </div>
                 </div>
+
+
                 {isSearchbarOpen && (
                     <ClickAwayListener onClickAway={handleSearchBtnClick}>
                         <Popper
