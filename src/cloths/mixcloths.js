@@ -7,7 +7,7 @@ import Tshirtss from '../assests/Tshirtss.png'
 function MixCloths() {
     const [getShirtData, setShirtData] = useState([]);
     const {cloth}=useAuth();
-    // const {gender} = useAuth();
+    // const {Gender} = useAuth();
     useEffect(() => {
         async function fetchData() {
             try {

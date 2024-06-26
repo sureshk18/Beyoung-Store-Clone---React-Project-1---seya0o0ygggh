@@ -19,6 +19,7 @@ import SearchPage from '../Pages/SearchPage';
 import { CartNumberProvider } from '../Context/CartNumberContext';
 import MyOrder from '../myaccounts/myOrder';
 import Cart from '../Pages/Cart';
+import Buy from '../Pages/Buy';
 import MixCloths from '../cloths/mixcloths'
 function App() {
   return <>
@@ -45,6 +46,7 @@ function App() {
         </Route>
 
         <Route path='/cart' element={<Cart />} />
+        <Route path='buy' element={<Buy/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
