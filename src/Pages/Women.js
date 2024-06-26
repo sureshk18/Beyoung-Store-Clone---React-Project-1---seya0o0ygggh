@@ -11,7 +11,7 @@ function Women() {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50?&filter={"gender":"Women"}`, {
                 method: 'GET',
                 headers: {
-                    projectId: 'seya0o0ygggh',
+                    projectId: 'f104bi07c490',
                 },
             });
             if (response.ok) {

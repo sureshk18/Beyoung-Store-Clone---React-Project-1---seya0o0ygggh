@@ -133,15 +133,17 @@ function Navbar() {
         }
     };
     const setClothselected = (value) => {
-        console.log("Hi hello")
+        // console.log("Hi hello")
         setcloth(value);
         navigate(`/allcloths`);
     };
 
     const setGenderselected = ()=>{
+        console.log("gnder");
         setGender();
-        navigate(`/gender`);
+        // navigate(`/gender`);
     }
+    console.log("hi");
     return (
         <div>
             <header>
@@ -196,7 +198,7 @@ function Navbar() {
                         </Link>
                         {/* MEN DROPDOWN MENU*/}
                         <div className='dropdown'>
-                            <Link className='link1' to='/men' onClick={()=>setGenderselected('Men')}>MEN</Link>
+                            <Link className='link1' to='/men' onClick={()=>setGenderselected("Men")}>MEN</Link>
                             <div className='dropdown-content'>
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
@@ -213,7 +215,7 @@ function Navbar() {
                                     <p className='sub-sub-link' onClick={()=>setClothselected('trouser')} >Trousers</p>
                                     <p className='sub-sub-link' onClick={()=>setClothselected('pyjamas')} >Pyjamas</p>
                                     {/* <Link to='/joggers' className='sub-sub-link' >Joggers</Link> */}
-                                    {/* <Link to='/jeans' className='sub-sub-link' >Jeans</Link> */}
+                                    {/* <Link to='/jeans' className='sub-sub-link' onClick={()=>setClothselected('jeans')}>Jeans</Link> */}
                                 </div>
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>
@@ -224,7 +226,7 @@ function Navbar() {
 
                         {/* WOMEN DROPDOWN MENU*/}
                         <div className='dropdown'>
-                            <Link className='link1' to='/women' onClick={()=>setGenderselected('Women')}>WOMEN</Link>
+                            <Link className='link1' to='/women' onClick={()=>setGenderselected("Women")}>WOMEN</Link>
                             <div className='dropdown-content'>
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>

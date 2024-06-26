@@ -11,7 +11,7 @@ function Combos() {
             const res = await fetch('https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"trouser"}', {
                 method: 'GET',
                 headers: {
-                    projectId: 'seya0o0ygggh',
+                    projectId: 'f104bi07c490',
                 },
             });
             if (res.ok) {

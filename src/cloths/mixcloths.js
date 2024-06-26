@@ -7,16 +7,17 @@ import Tshirtss from '../assests/Tshirtss.png'
 function MixCloths() {
     const [getShirtData, setShirtData] = useState([]);
     const {cloth}=useAuth();
-    // const {Gender} = useAuth();
+    const {gender} = useAuth();
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?filter={"subCategory":"${cloth}"}`, {
+                const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?&filter={"subCategory":"${cloth}"}`, {
                     method: 'GET',
                     headers: {
-                        projectId: 'seya0o0ygggh',
+                        projectId: 'f104bi07c490',
                     },
                 });
+                // console.log("gender");
                 if (res.ok) {
                     const data = await res.json();
                     setShirtData(data.data);
@@ -29,7 +30,8 @@ function MixCloths() {
         };
 
         fetchData()
-    }, [cloth]);
+    }, [cloth,gender]);
+    // console.log("gender");
 
     return (<>
         <div className='bannerss'>

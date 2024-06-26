@@ -14,7 +14,7 @@ function Shopbycollection() {
                 const res = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=500`, {
                     method: 'GET',
                     headers: {
-                        projectId: 'seya0o0ygggh',
+                        projectId: 'f104bi07c490',
                     },
                 });
                 if (res.ok) {

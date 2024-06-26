@@ -61,7 +61,7 @@ function ProductDetails() {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/product/${_id}`, {
                 method: 'GET',
                 headers: {
-                    projectID: 'seya0o0ygggh',
+                    projectID: 'f104bi07c490',
                 },
             });
             if (response.ok) {

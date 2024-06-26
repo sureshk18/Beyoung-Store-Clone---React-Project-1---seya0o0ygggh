@@ -48,6 +48,7 @@ export function AuthProvider({ children }) {
         gender,
         setGender,
     };
+    
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

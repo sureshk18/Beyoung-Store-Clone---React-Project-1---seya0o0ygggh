@@ -18,7 +18,7 @@ const SearchPage = () => {
                 const apiUrl = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search=${encodedSearchQuery}`;
 
                 const myHeaders = new Headers();
-                myHeaders.append("projectId", "seya0o0ygggh");
+                myHeaders.append("projectId", "f104bi07c490");
 
                 const requestOptions = {
                     method: 'GET',
