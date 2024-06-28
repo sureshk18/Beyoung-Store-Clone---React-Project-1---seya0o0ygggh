@@ -2,13 +2,15 @@ import React, { useEffect, useState, useMemo } from 'react'
 import '../styles/Women.css';
 import womenBanner from '../assests/womenBanner.jpg';
 import { Link } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 function Women() {
     const [getProducts, setProducts] = useState([]);
 
     const fetchProduct = async () => {
         try {
-            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50?&filter={"gender":"Women"}`, {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=100&filter={"gender":"Women"}`, {
                 method: 'GET',
                 headers: {
                     projectId: 'f104bi07c490',
@@ -40,6 +42,9 @@ function Women() {
                 <div className="for-women-shirts-pants">
                     {getProducts.map((seller) => (
                         <div key={seller._id}>
+                            <button className='wishlist-button' >
+                                <FavoriteBorderIcon />
+                            </button>
                             <Link to={`/product-details/${seller._id}`}>
                                 <img src={seller.displayImage} className='img' /></Link>
                             <h2 className='seller-details'>{seller.name}</h2>

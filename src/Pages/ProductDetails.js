@@ -85,54 +85,54 @@ function ProductDetails() {
 
     //Adding to cart
     // Adding to cart
-    const handleAddToCart = async ({ productId }) => {
-        if (!isUserLoggedIn) {
-            setShowLoginModal(true);
-            return;
-        }
+    // const handleAddToCart = async ({ productId }) => {
+    //     if (!isUserLoggedIn) {
+    //         setShowLoginModal(true);
+    //         return;
+    //     }
 
-        try {
-            const myHeaders = new Headers();
-            myHeaders.append("projectId", "seya0o0ygggh");
-            myHeaders.append("Authorization", `Bearer ${token}`);
-            myHeaders.append("Content-Type", "application/json");
+    //     try {
+    //         const myHeaders = new Headers();
+    //         myHeaders.append("projectId", "seya0o0ygggh");
+    //         myHeaders.append("Authorization", `Bearer ${token}`);
+    //         myHeaders.append("Content-Type", "application/json");
 
-            const requestOptions = {
-                method: "PATCH",
-                headers: myHeaders,
-                body: JSON.stringify({
-                    productId: _id,
-                    quantity: 1,
-                }),
-                redirect: "follow",
-            };
+    //         const requestOptions = {
+    //             method: "PATCH",
+    //             headers: myHeaders,
+    //             body: JSON.stringify({
+    //                 productId: _id,
+    //                 quantity: 1,
+    //             }),
+    //             redirect: "follow",
+    //         };
 
-            const response = await fetch(
-                `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
-                requestOptions
-            );
+    //         const response = await fetch(
+    //             `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
+    //             requestOptions
+    //         );
 
-            if (response.ok) {
-                console.log("Product added to cart successfully");
+    //         if (response.ok) {
+    //             console.log("Product added to cart successfully");
 
-                // Assuming the API response provides the updated cart count
-                const responseData = await response.json();
+    //             // Assuming the API response provides the updated cart count
+    //             const responseData = await response.json();
 
-                // updateCartNumber(responseData.data.items.length);
-                setShowAddToCartMessage(true);
+    //             // updateCartNumber(responseData.data.items.length);
+    //             setShowAddToCartMessage(true);
 
-                // Hide the message after a certain duration (e.g., 3 seconds)
-                setTimeout(() => {
-                    setShowAddToCartMessage(false);
-                }, 3000);
-            } else {
-                console.error("Failed to add product to cart");
-                // Optionally, you can handle different HTTP status codes here
-            }
-        } catch (error) {
-            console.error("Error adding product to cart:", error);
-        }
-    };
+    //             // Hide the message after a certain duration (e.g., 3 seconds)
+    //             setTimeout(() => {
+    //                 setShowAddToCartMessage(false);
+    //             }, 3000);
+    //         } else {
+    //             console.error("Failed to add product to cart");
+    //             // Optionally, you can handle different HTTP status codes here
+    //         }
+    //     } catch (error) {
+    //         console.error("Error adding product to cart:", error);
+    //     }
+    // };
     return (
         <div className='product-component-container'>
             <div className='product-component-box'>
@@ -219,7 +219,7 @@ function ProductDetails() {
                     </label>
 
                     <div className="btn-cart-buy">
-                        <button className="btn-cart" onClick={handleAddToCart}>
+                        <button className="btn-cart" >
                             <img src={Carticon} alt="cart" className="cartloggo" /> add to
                             cart
                         </button>

@@ -1,0 +1,7 @@
+.container-box{
+    display: flex;
+    padding: 7rem 8rem 10rem;
+}
+h1{
+    color:darkgray
+}

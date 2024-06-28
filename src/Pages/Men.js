@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Mens.css';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 function Men() {
     const [getProducts, setProducts] = useState([]);
-    // const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const fetchProduct = async () => {
         try {
-            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50?&filter={"gender":"Men"}`, {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=100&filter={"gender":"Men"}`, {
                 method: 'GET',
                 headers: {
                     projectId: 'f104bi07c490',
@@ -49,11 +49,15 @@ function Men() {
                 <div className="for-men-shirts-pants" >
                     {getProducts.map((seller, index) => (<>
                         <div key={index}>
+                            <button className='wishlist-button' >
+                                <FavoriteBorderIcon />
+                            </button>
                             <Link to={`/product-details/${seller._id}`}>
                                 <img src={seller.displayImage} id='zoom-In' /></Link>
                             <h2 className='seller-details'>{seller.name}</h2>
                             <span className='seller-subCategory'>{seller.subCategory}</span>
                             <p className='seller-price'>Price: &#8377; {seller.price}</p>
+
                         </div>
                     </>
                     )
@@ -68,4 +72,12 @@ function Men() {
 
 export default Men
 
-/*filter={"gender":"add_your_gender"}*/
+/*filter={"gender":"add_your_gender"}
+
+
+
+z-index: 100;
+    margin-left: 260px;
+    position: absolute;
+    margin-top: 14px;
+    /* margin-left: 253px;*/

@@ -26,53 +26,41 @@ p.heading-mens {
     font-size: 20px;
     text-align: left;
     top: 70px;
-    font-weight: 600;
-    margin-left: -90px;
+    font-weight: 700;
+    margin-left: 3%;
     color: #343434;
     border-bottom: 1px solid #f9eb28;
     display: inline-block;
-    font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 p.heading-menss {
     font-size: 15px;
     text-align: left;
-    margin-left: -90px;
+    margin-left: 3%;
     color: #343434;
     display: inline-block;
     margin-top: 10px;
     height: 40px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .for-men-shirts-pants {
     display: grid;
     text-align: center;
     width: 135%;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: -90px;
+    margin-left: -3%;
     margin-top: 37px;
-    gap: 10px;
+    /* gap: 5px; */
 }
 .for-men-shirts-pants img{
-    border-radius: 8px;
-    width: 90%;
-    height: 300px;
+    border-radius: 3px;
+    width: 80%;
+    height: 80%;
     transition: transform .2s;
     cursor: pointer;
 }
-/* #zoom-In img{
-    margin: 0px;
-    margin-left: -50px;
-}
-
-.for-men-shirts-pants #zoom-In img {
-    transform: scale(1);
-    transition: 0.5s ease-in-out;
-}
-.for-shirts-pants #zoom-In:hover img {
-    transform: scale(1.5);
-} */
-
 .seller-details{
-    margin-left: 8px;
+    margin-left: 40px;
     text-align: center;
     font-weight: 600;
     overflow: hidden;
@@ -80,22 +68,42 @@ p.heading-menss {
     text-overflow: ellipsis;
     text-wrap: nowrap;
     font-size: 13px;
-    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .seller-subCategory{
-    margin-left: -8px;
+    margin-left: 40px;
     text-align: center;
     color: #7d7777;
     font-weight: 400;
     margin-top: 5px;
-   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 p.seller-price{
-    margin-left: 20px;
+    margin-left: 40px;
     text-align: center;
     font-weight: 600;
     width: 220px;
     font-size: 14px;
     margin-top: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-  
+
+.wishlist-button{
+    z-index: 1;
+    margin-left: 250px;
+    position: absolute;
+    margin-top: 10px;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    border-radius: 20px;
+    background:transparent;
+    line-height: 25px;
+    color: rgb(23, 21, 21);
+    /* background-color: rgb(255,255,255); */
+    align-items: center;
+    justify-content: center;
+}
+.wishlist-button:hover{
+    background-color: #e2ce1b;
+}

@@ -11,16 +11,16 @@
 }
 .headingg {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 24px;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
     margin-left: -86px;
     color: #343434;
     border-bottom: 1px solid #f9eb28;
     display: inline-block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-p.sub-headingg-mens{
+/* p.sub-headingg-mens{
     font-size: 14px;
     text-align: left;
     margin-left: -86px;
@@ -28,7 +28,7 @@ p.sub-headingg-mens{
     display: inline-block;
     margin-top: 10px;
     height: 10px;
-}
+} */
 .men-products {
     display: grid;
     text-align: center;
@@ -40,9 +40,9 @@ p.sub-headingg-mens{
     
 } 
 .mens-img{
-    width: 180%;
-    height: auto;
-    border-radius: 8px;
+    width: 90%;
+    height: 80%;
+    border-radius: 3px;
     cursor: pointer;
 }
  .men-products img:hover{
@@ -50,7 +50,7 @@ p.sub-headingg-mens{
     transition: .2s ease-in-out;
 } 
 .product-name{
-    margin-left: 6px;
+    margin-left: 16px;
     text-align: center;
     font-weight: 600;
     overflow: hidden;
@@ -58,13 +58,15 @@ p.sub-headingg-mens{
     text-overflow: ellipsis;
     text-wrap: nowrap;
     font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .product-category{
-    margin-left: -8px;
+    margin-left: 40px;
     text-align: center;
     color: #7d7777;
     font-weight: 100;
     margin-top: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .product-price{
     margin-left: 6px;
@@ -73,39 +75,6 @@ p.sub-headingg-mens{
     width: 220px;
     font-size: 14px;
     margin-top: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*filter section
-.filter-section{
-    width: 18%;
-    margin-top: 5px;
-    box-sizing: border-box;
-    margin-left: -170px;
-    padding: 50px 0 150px;
-    max-height: calc(100vh - 100px);
-    overflow: auto;
-    position: sticky;
-    top: 55px;
-    transition: top .5s ease-out 0s;
-}
-.color-filter{
-    margin-bottom: 20px;
-}
-.heading-filter{
-    text-transform: uppercase;
-    font-size: 20px;
-    text-align: left;
-    font-weight: 600;
-    color: #343434;
-    border-bottom: 1px solid #f9eb28;
-    display: inline-block;
-    font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
-}
-
-.choosecolor{
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #a49797;
-    display: flex;
-}
-*/

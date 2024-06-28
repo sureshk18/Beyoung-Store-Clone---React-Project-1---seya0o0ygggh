@@ -138,9 +138,9 @@ function Navbar() {
         navigate(`/allcloths`);
     };
 
-    const setGenderselected = ()=>{
-        console.log("gnder");
-        setGender();
+    const setGenderselected = (value)=>{
+        console.log("gender");
+        setGender(value);
         // navigate(`/gender`);
     }
     console.log("hi");
@@ -198,8 +198,8 @@ function Navbar() {
                         </Link>
                         {/* MEN DROPDOWN MENU*/}
                         <div className='dropdown'>
-                            <Link className='link1' to='/men' onClick={()=>setGenderselected("Men")}>MEN</Link>
-                            <div className='dropdown-content'>
+                            <Link className='link1' to='/men' onClick={()=>setGenderselected('Men')}>MEN</Link>
+                            <div className='dropdown-content' onClick={()=>setGenderselected('Men')}>
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
                                     <p className='sub-sub-link' onClick={()=>setClothselected('shirt')}>Shirts</p>
@@ -226,8 +226,8 @@ function Navbar() {
 
                         {/* WOMEN DROPDOWN MENU*/}
                         <div className='dropdown'>
-                            <Link className='link1' to='/women' onClick={()=>setGenderselected("Women")}>WOMEN</Link>
-                            <div className='dropdown-content'>
+                            <Link className='link1' to='/women' onClick={()=>setGenderselected('Women')}>WOMEN</Link>
+                            <div className='dropdown-content' onClick={()=>setGenderselected('Women')}>
                                 <div className='sub-heading'>
                                     <p className='headingdropdown'>Topwear</p>
                                     <p className='sub-sub-link' onClick={()=>setClothselected('shirt')}>Shirts</p>
@@ -243,10 +243,11 @@ function Navbar() {
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>
                         </div>
-                        <Link className='link1'  to='/combos' >COMBOS</Link>
-                        <Link className='link1' to='/joggers'>JOGGERS</Link>
-                        <Link className='link1' to='/winterwear' >WINTER WEAR</Link>
-                        <Link className='link1' to='/shopbycollection'>SHOP BY COLLECTION </Link>
+                        <span>
+                        <Link className='link1'  to='/combos' >COMBOS</Link></span>
+                        <Link className='link1' to='/combos'>JOGGERS</Link>
+                        <Link className='link1' to='/combos' >WINTER WEAR</Link>
+                        <Link className='link1' to='/combos'>SHOP BY COLLECTION </Link>
                     </div>
 
 
