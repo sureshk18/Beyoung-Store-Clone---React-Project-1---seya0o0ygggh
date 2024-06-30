@@ -10,7 +10,6 @@ import { Divider, LinearProgress, Rating } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Carticon from '../assests/Carticon.svg';
-// import { useUpdateCartNumbers } from '../Context/CartNumberContext';
 
 const StarRating = ({ rating }) => {
     if (typeof rating !== "number") {
@@ -51,10 +50,7 @@ function ProductDetails() {
     const { _id } = useParams();
     const [getProductData, setProductData] = useState();
     const [selectedImage, setSelectedImage] = useState("");
-    const [showAddToCartMessage, setShowAddToCartMessage] = useState(false);
-    // const updateCartNumber = useUpdateCartNumbers();
-    const { isUserLoggedIn, token } = useAuth();
-    const [showLoginModal, setShowLoginModal] = useState(false);
+
 
     const getProduct = async () => {
         try {
@@ -83,56 +79,7 @@ function ProductDetails() {
         setSelectedImage(image);
     };
 
-    //Adding to cart
-    // Adding to cart
-    // const handleAddToCart = async ({ productId }) => {
-    //     if (!isUserLoggedIn) {
-    //         setShowLoginModal(true);
-    //         return;
-    //     }
-
-    //     try {
-    //         const myHeaders = new Headers();
-    //         myHeaders.append("projectId", "seya0o0ygggh");
-    //         myHeaders.append("Authorization", `Bearer ${token}`);
-    //         myHeaders.append("Content-Type", "application/json");
-
-    //         const requestOptions = {
-    //             method: "PATCH",
-    //             headers: myHeaders,
-    //             body: JSON.stringify({
-    //                 productId: _id,
-    //                 quantity: 1,
-    //             }),
-    //             redirect: "follow",
-    //         };
-
-    //         const response = await fetch(
-    //             `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
-    //             requestOptions
-    //         );
-
-    //         if (response.ok) {
-    //             console.log("Product added to cart successfully");
-
-    //             // Assuming the API response provides the updated cart count
-    //             const responseData = await response.json();
-
-    //             // updateCartNumber(responseData.data.items.length);
-    //             setShowAddToCartMessage(true);
-
-    //             // Hide the message after a certain duration (e.g., 3 seconds)
-    //             setTimeout(() => {
-    //                 setShowAddToCartMessage(false);
-    //             }, 3000);
-    //         } else {
-    //             console.error("Failed to add product to cart");
-    //             // Optionally, you can handle different HTTP status codes here
-    //         }
-    //     } catch (error) {
-    //         console.error("Error adding product to cart:", error);
-    //     }
-    // };
+    
     return (
         <div className='product-component-container'>
             <div className='product-component-box'>
@@ -228,11 +175,11 @@ function ProductDetails() {
                                 <ArrowCircleRightIcon /> buy now
                             </Link>
                         </button>
-                        {showAddToCartMessage && (
+                        {/* {showAddToCartMessage && (
                             <div className="popup-modal">
                                 <p>Product is succesfully added to Cart!</p>
                             </div>
-                        )}
+                        )} */}
                     </div>
                 </div>
             </div>

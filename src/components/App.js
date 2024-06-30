@@ -17,6 +17,7 @@ import MyOrder from '../myaccounts/myOrder';
 import Cart from '../Pages/Cart';
 import Buy from '../Pages/Buy';
 import MixCloths from '../cloths/mixcloths'
+import Wishlist from '../Pages/Wishlist';
 
 
 
@@ -25,7 +26,7 @@ function App() {
     <BrowserRouter>
       <CartNumberProvider />
       <Navbar />
-      
+      {/* <Wishlist/> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/allcloths' element={<MixCloths />}></Route>
@@ -42,7 +43,7 @@ function App() {
         </Route>
 
      
-
+        <Route path='/wishlist' element={<Wishlist/>}></Route>
         <Route path='/cart' element={<Cart />} />
         <Route path='/buy' element={<Buy/>}/>
       </Routes>

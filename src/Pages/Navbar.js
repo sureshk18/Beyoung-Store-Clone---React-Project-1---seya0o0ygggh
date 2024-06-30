@@ -10,13 +10,9 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { AuthProvider, useAuth } from '../Context/UserProvider';
 import LoginModal from '../login/LoginModal';
 import SignupModal from '../login/SingupModal';
+// import Wishlist from '../Pages/Wishlist';
 import { ClickAwayListener, Popper } from "@mui/material";
-import {
-    useCartNumbers,
-    useUpdateCartNumbers,
-    useUpdateWishlistNumbers,
-    useWishlistNumbers,
-} from "../Context/CartNumberContext";
+
 
 
 function Navbar() {
@@ -25,8 +21,7 @@ function Navbar() {
     const { isUserLoggedIn, signInContext, signOutContext,setcloth,setGender} = useAuth();
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const updateCartNumber = useUpdateCartNumbers();
-    // const updateWishlistNumbers = useUpdateWishlistNumbers();
+  
 
     const openLoginModal = () => {
         setIsLoginModalOpen(true);
@@ -54,8 +49,7 @@ function Navbar() {
         sessionStorage.removeItem("userInfo");
         signOutContext(token, userName);
         setIsLoggedIn(false);
-        // updateCartNumber(0);
-        // updateWishlistNumbers(0);
+        
         navigate('/');
     };
 
@@ -65,6 +59,7 @@ function Navbar() {
     const searchInputRef = useRef();
     const navigate = useNavigate(); // Move useNavigate hook here
     const [searchResults, setSearchResults] = useState("");
+    const [wishlist,setWishlist] = useState(0)
 
     const handleSearchBtnClick = (event) => {
         if (anchorEl) {
@@ -118,20 +113,6 @@ function Navbar() {
         navigate(`/search?name=${value}`);
     };
 
-    const handleWishlistClick = () => {
-        if (!isUserLoggedIn) {
-            openLoginModal();
-        } else {
-            return;
-        }
-    };
-    const handleCartClick = () => {
-        if (!isUserLoggedIn) {
-            openLoginModal();
-        } else {
-            return;
-        }
-    };
     const setClothselected = (value) => {
         // console.log("Hi hello")
         setcloth(value);
@@ -143,7 +124,11 @@ function Navbar() {
         setGender(value);
         // navigate(`/gender`);
     }
-    console.log("hi");
+    // console.log("hi");
+
+    const addFav=()=>{
+        setWishlist();
+    }
     return (
         <div>
             <header>
@@ -255,8 +240,8 @@ function Navbar() {
 
                     <div className='nav-right'>
                         <SearchIcon style={{ width: '20px', height: '20px' }} onClick={handleSearchBtnClick} />
-                        <FavoriteBorderIcon style={{ width: '20px', height: '20px' }} />
-                        <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} onClick={handleCartClick} />
+                        <Link to='/wishlist'><FavoriteBorderIcon style={{ width: '20px', height: '20px' }} /></Link>
+                        <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} />
                     </div>
                 </div>
 

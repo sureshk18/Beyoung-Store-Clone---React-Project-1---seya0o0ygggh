@@ -3,9 +3,10 @@
     justify-content: center;
     align-items: center;
     margin-left: 20px;
+    
 }
 .bannermen {
-    margin-top: 89px;
+    /* margin-top: 89px; */
     width: 25%;
     height: 135px;
     margin-bottom: -150px;

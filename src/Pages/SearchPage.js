@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import ProductDetails from '../Pages/ProductDetails';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/SearchPage.css';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 const SearchPage = () => {
     const location = useLocation();
@@ -60,18 +62,21 @@ const SearchPage = () => {
         <div className="men-containerrr">
             <section className="men-clothessearch">
                 <p className="heading-mensearch">Search Results:</p>
-                <div className="for-shirts-pantss">
+                <div className="for-men-shirts-pants">
                     {searchResults.length > 0 ? (
                         searchResults.map((product) => (
                             <div key={product._id} onClick={() => handleProductClick(product)} id='zoom-In'>
                                 <figure>
+                                    <button className='wishlist-button' >
+                                        <FavoriteBorderIcon />
+                                    </button>
                                     <Link to={`/ProductDetails/${product._id}`}>
-                                        <img src={product.displayImage} alt={product.name} loading="lazy" />
+                                        <img src={product.displayImage} alt={product.name} id='zoom-In' />
                                     </Link>
                                 </figure>
-                                <p className='headingsearch-name'>{product.name}</p>
-                                <p className='headingsearch-category'>{product.subCategory}</p>
-                                <p className='headingsearch-price'>Price: &#8377; {product.price}</p>
+                                <p className='seller-details'>{product.name}</p>
+                                <p className='seller-subCategory'>{product.subCategory}</p>
+                                <p className='seller-price'>Price: &#8377; {product.price}</p>
                             </div>
                         ))
                     ) : (

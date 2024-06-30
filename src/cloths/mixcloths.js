@@ -37,7 +37,7 @@ function MixCloths() {
 
     return (<>
         <div className='bannerss'>
-            <img src={Tshirtss} style={{ width: '100%', height: 'auto', marginTop: '88px', maxWidth: '100%' }} />
+            <img src={Tshirtss} style={{ width: '100%', height: 'auto', maxWidth: '100%' }} />
         </div>
         <div className='mens-wear'>
             <section className='productcontainer'>
