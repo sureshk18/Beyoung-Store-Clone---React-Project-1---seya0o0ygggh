@@ -241,7 +241,7 @@ function Navbar() {
                     <div className='nav-right'>
                         <SearchIcon style={{ width: '20px', height: '20px' }} onClick={handleSearchBtnClick} />
                         <Link to='/wishlist'><FavoriteBorderIcon style={{ width: '20px', height: '20px' }} /></Link>
-                        <ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px' }} />
+                        <Link to='/cart'><ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px'}} /></Link>
                     </div>
                 </div>
 

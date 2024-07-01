@@ -6,7 +6,7 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
-    // const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState([]);
     const [resultData, setResultData] = useState(null);
     const [isAuthUser, setisAuthUser] = useState(false);
     const [cloth, setcloth] = useState('');
@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
     function signOutContext() {
         setUser(null);
         setToken(null);
-        // setCart([]);
+        setCart([]);
         setResultData(null);
         console.log('User signed out. Token cleared.');
     }
@@ -35,12 +35,12 @@ export function AuthProvider({ children }) {
     const value = {
         user,
         token,
-        // cart,
+        cart,
         resultData,
         isUserLoggedIn: !!user,
         signInContext,
         signOutContext,
-        // updateCart: setCart,
+        updateCart: setCart,
         updateResultData: setResultData,
         isAuthUser,
         setisAuthUser,

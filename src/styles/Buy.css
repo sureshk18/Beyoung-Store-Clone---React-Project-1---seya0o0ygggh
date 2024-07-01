@@ -1,0 +1,16 @@
+.buy-container{
+    margin-top:80px;
+}
+.buy-heading{
+    padding: 20px 60px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.input-field{
+    display: flex;
+    margin: 10px;
+    width: 320px;
+    height: 50px;
+    border-radius: 5px;
+    margin-left: 50px;
+}

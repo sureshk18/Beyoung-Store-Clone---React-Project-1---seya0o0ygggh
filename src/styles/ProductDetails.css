@@ -3,6 +3,7 @@
     text-align: center;
     margin: 34px 130px;
     padding: 0 15px;
+    margin-top: 110px;
 }
 .product-component-box {
     display: flex;
@@ -136,17 +137,20 @@ span.discounted-text {
     margin: 70px 0px 20px 0px;
     font-weight: 500;
 }
-.size-button.selected {
+.size-button
+.selected {
     border-color: #007bff;
     background-color: #007bff;
     color: #fff;
 }
-.size-button.selected:hover {
+.size-button
+.selected:hover {
     border-color: #0056b3;
 }
 
 
-.product-right .btn-cart-buy {
+.product-right 
+.btn-cart-buy {
     display: flex;
     gap: 1rem;
     margin-top: 20px;
@@ -156,22 +160,26 @@ span.discounted-text {
     height: 19px;
     width: 20px;
     margin-right: 5px;
-    
 }
-.btn-cart-buy .btn-cart {
+
+
+ .btn-cart-buy 
+ .btn-cartt {
     padding: 0px 0px;
     width: 55%;
     text-transform: uppercase;
-    background-color: #51cccc;
+    background-color: #4d71e6;
     border: 1px solid black;
-    color: #fff;
+    color: black;
     font-size: 19px;
     cursor: pointer;
     text-align: center;
     border-radius: 10px;
+    
 }
 
-.btn-cart-buy .btn-buy {
+.btn-cart-buy 
+.btn-buy {
     padding: 20px 20px;
     width: 50%;
     text-transform: uppercase;
@@ -185,22 +193,32 @@ span.discounted-text {
     text-decoration: none;
 }
 
-.btn-cart-buy .btn-buy svg {
+.btn-cart-buy 
+.btn-buy svg {
     vertical-align: middle;
     margin-right: 5px;
     fill: rgba(0, 0, 0, 0.6);
 }
 
-.cartbtn {
+.buybtn {
     text-decoration: none;
     padding: 0px 0px;
     width: 45%;
-    color: #fff;
+    color:black;
     font-size: 19px;
     cursor: pointer;
     text-align: center;
     border-radius: 10px;
 }
+
+
+
+
+
+
+
+
+
 
 
 /*ratings-review-container*/

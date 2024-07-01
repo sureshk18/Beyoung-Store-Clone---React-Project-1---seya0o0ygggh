@@ -13,7 +13,7 @@ import Carticon from '../assests/Carticon.svg';
 
 const StarRating = ({ rating }) => {
     if (typeof rating !== "number") {
-        return null; 
+        return null;
     }
     const maxRating = 5;
     const fullStars = Math.floor(rating);
@@ -80,6 +80,33 @@ function ProductDetails() {
     };
 
     
+
+//Add to cart
+    const addCart = async (id) => {
+        const obj = JSON.stringify({ "productId": id });
+        try {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
+                method: 'PATCH',
+                headers: {
+                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
+                    projectID: 'f104bi07c490',
+                    'Content-Type': 'application/json'
+                },
+                body: obj,
+            });
+            if (response.ok) {
+                const data = await response.json();
+                console.log('cart updated', data);
+            } else {
+                console.log('Failed to update cart');
+            }
+        } catch (error) {
+            console.error('An error occurred while updating cart', error);
+        }
+    };
+
+
+
     return (
         <div className='product-component-container'>
             <div className='product-component-box'>
@@ -166,12 +193,12 @@ function ProductDetails() {
                     </label>
 
                     <div className="btn-cart-buy">
-                        <button className="btn-cart" >
-                            <img src={Carticon} alt="cart" className="cartloggo" /> add to
+                        <button className="btn-cartt" onClick={() => addCart(getProductData.id)} >
+                            <img src={Carticon} className="cartloggo" /> add to
                             cart
                         </button>
                         <button className="btn-buy">
-                            <Link to="/cart" className="cartbtn">
+                            <Link to="/buy" className="buybtn">
                                 <ArrowCircleRightIcon /> buy now
                             </Link>
                         </button>
