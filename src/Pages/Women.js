@@ -31,6 +31,8 @@ function Women() {
         fetchProduct();
     }, [])
 
+
+    
     //Add wishlist
     const addWishlist = async (id) => {
         const obj = JSON.stringify({ "productId": id });

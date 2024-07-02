@@ -18,6 +18,7 @@ import Cart from '../Pages/Cart';
 import Buy from '../Pages/Buy';
 import MixCloths from '../cloths/mixcloths'
 import Wishlist from '../Pages/Wishlist';
+import MyProfile from '../myaccounts/MyProfile';
 
 
 
@@ -36,7 +37,7 @@ function App() {
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
         <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
-          {/* <Route path="/myprofile" element={<MyProfile />} /> */}
+          <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/orders" element={<MyOrder />} />
           {/* <Route path="/address" element={<MyAddress />} /> */}
         </Route>

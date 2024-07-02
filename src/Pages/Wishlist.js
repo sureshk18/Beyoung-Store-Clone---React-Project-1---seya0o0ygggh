@@ -31,6 +31,9 @@ function Wishlist() {
         }
     };
 
+
+    //item remove from wishlist 
+
     const HandleWishListDelete = async () => {
         try {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/wishlist`, {

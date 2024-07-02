@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/MenAll.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/UserProvider';
 import Tshirtss from '../assests/Tshirtss.png'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -9,6 +9,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 function MixCloths() {
     const [getShirtData, setShirtData] = useState([]);
     const { cloth, gender } = useAuth();
+    const navigate = useNavigate();
+    const { token } = useAuth();
 
     
     useEffect(() => {
@@ -33,7 +35,31 @@ function MixCloths() {
 
         fetchData()
     }, [cloth, gender]);
-    // console.log("gender");
+    
+
+    //Add to Wishlist
+    const addProductToFavourite = async (id) => {
+        const obj = JSON.stringify({ "productId": id });
+        try {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/wishlist`, {
+                method: 'PATCH',
+                headers: {
+                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
+                    projectID: 'f104bi07c490',
+                    'Content-Type': 'application/json'
+                },
+                body: obj,
+            });
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Wishlist updated', data);
+            } else {
+                console.log('Failed to update wishlist');
+            }
+        } catch (error) {
+            console.error('An error occurred while updating wishlist', error);
+        }
+    };
 
     return (<>
         <div className='bannerss'>
@@ -46,8 +72,8 @@ function MixCloths() {
                     {getShirtData.map((seller, index) => {
                         return (
                             <div key={index}>
-                                <button className='wishlist-button' >
-                                    <FavoriteBorderIcon />
+                                <button className='wishlist-button' onClick={() => addProductToFavourite(seller._id)} >
+                                    <FavoriteBorderIcon />                                          
                                 </button>
                                 <Link to={`/product-details/${seller._id}`}>
                                     <img className='mens-img' src={seller.displayImage} alt={getShirtData.name} /></Link>

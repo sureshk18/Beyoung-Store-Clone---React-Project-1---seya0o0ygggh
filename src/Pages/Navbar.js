@@ -144,7 +144,7 @@ function Navbar() {
                         {isUserLoggedIn && localStorage.getItem("tokenAvailable") ? (
                             <>
                                 <div className='dropdownmyaccount'>
-                                    <Link >
+                                    <Link to='/myprofile'>
                                         <button className="dropbtn1">MY ACCOUNT</button>
                                     </Link>
                                     <div className="dropdown-contentmyaccount">
@@ -240,8 +240,8 @@ function Navbar() {
 
                     <div className='nav-right'>
                         <SearchIcon style={{ width: '20px', height: '20px' }} onClick={handleSearchBtnClick} />
-                        <Link to='/wishlist'><FavoriteBorderIcon style={{ width: '20px', height: '20px' }} /></Link>
-                        <Link to='/cart'><ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px'}} /></Link>
+                        <Link to='/wishlist'><FavoriteBorderIcon style={{ width: '20px', height: '20px', color:'black'}} /></Link>
+                        <Link to='/cart'><ShoppingCartOutlinedIcon style={{ width: '20px', height: '20px',color:'black'}} /></Link>
                     </div>
                 </div>
 

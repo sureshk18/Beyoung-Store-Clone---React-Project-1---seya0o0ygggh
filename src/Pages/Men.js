@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useAuth } from "../Context/UserProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Men() {
     const [getProducts, setProducts] = useState([]);
@@ -33,6 +36,7 @@ function Men() {
         fetchProduct();
     }, []);
 
+//Add to Wishlist
     const addWishlist = async (id) => {
         const obj = JSON.stringify({ "productId": id });
         try {
@@ -47,17 +51,19 @@ function Men() {
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log('Wishlist updated', data);
+                toast('Wishlist updated', data);
             } else {
-                console.log('Failed to update wishlist');
+                toast('Failed to update wishlist');
             }
         } catch (error) {
             console.error('An error occurred while updating wishlist', error);
         }
     };
 
+
     return (
         <>
+        <ToastContainer />
             <div className='banners'>
                 <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/1.jpg" alt='banner' className='bannermen' />
                 <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/8.jpg" alt='sweater' className='bannermen' />

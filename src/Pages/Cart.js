@@ -10,6 +10,7 @@ function Cart() {
     const [getProducts, setProducts] = useState([]);
     const navigate = useNavigate();
     const { token } = useAuth();
+    
     const fetchProduct = async () => {
         try {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
@@ -42,13 +43,10 @@ function Cart() {
                         {getProducts.length > 0 ? (
                             getProducts.map((seller, index) => (
                                 <div key={index}>
-                                   
-                                    <Link to={`/product-details/${seller._id}`}>
-                                        <img src={seller.displayImage} alt={seller.name} id="zoom-In" />
-                                    </Link>
-                                    <h2 className="seller-details">{seller.name}</h2>
-                                    <span className="seller-subCategory">{seller.subCategory}</span>
-                                    <p className="seller-price">Price: &#8377;{seller.price}</p>
+                                        <img src={seller.product.displayImage} alt={seller.name} id="zoom-In" />
+                                    <h2 className="seller-details">{seller.product.name}</h2>
+                                    <span className="seller-subCategory">{seller.product.subCategory}</span>
+                                    <p className="seller-price">Price: &#8377;{seller.product.price}</p>
                                 </div>
                             ))
                         ) : (

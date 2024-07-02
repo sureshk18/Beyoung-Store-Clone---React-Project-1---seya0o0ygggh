@@ -82,17 +82,17 @@ function ProductDetails() {
     
 
 //Add to cart
-    const addCart = async (id) => {
+    const addToCart = async (id) => {
         const obj = JSON.stringify({ "productId": id });
         try {
-            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart/${id}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
                     projectID: 'f104bi07c490',
                     'Content-Type': 'application/json'
                 },
-                body: obj,
+               
             });
             if (response.ok) {
                 const data = await response.json();
@@ -193,8 +193,8 @@ function ProductDetails() {
                     </label>
 
                     <div className="btn-cart-buy">
-                        <button className="btn-cartt" onClick={() => addCart(getProductData.id)} >
-                            <img src={Carticon} className="cartloggo" /> add to
+                        <button to='/cart' className="btn-cartt" onClick={() => addToCart(getProductData._id)} >
+                            <img src={Carticon} className="cartloggo" /> Go to
                             cart
                         </button>
                         <button className="btn-buy">

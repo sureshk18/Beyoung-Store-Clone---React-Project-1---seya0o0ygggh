@@ -5,7 +5,7 @@ import '../myaccounts/myaccount.css';
 import { Outlet, Navigate, Link } from "react-router-dom";
 import { Avatar, CircularProgress, Grid, TextField } from "@mui/material";
 import { useAuth } from "../Context/UserProvider";
-import { NavLink } from "react-router-dom";
+
 
 function MyAccount() {
     const { user: name, isUserLoggedIn, signInContext, signOutContext, token } = useAuth();
@@ -29,42 +29,7 @@ function MyAccount() {
         setCollapsActive(!collapsActive);
     };
 
-
-    const [favProductList, setFavProductList] = useState([]);
-
-    useEffect(() => {
-        const fetchFavProducts = async () => {
-            if (!isUserLoggedIn) {
-                // Handle the case when the user is not logged in
-                return;
-            }
-
-            try {
-                const myHeaders = new Headers();
-                myHeaders.append('projectId', 'yxpa71cax49z');
-                myHeaders.append('Authorization', `Bearer ${token}`);
-
-                const requestOptions = {
-                    method: 'GET',
-                    headers: myHeaders,
-                    redirect: 'follow',
-                };
-
-                const response = await fetch(
-                    'https://academics.newtonschool.co/api/v1/ecommerce/wishlist',
-                    requestOptions
-                );
-                const data = await response.json();
-
-                console.log('Fetched favorite products:', data);
-
-                const listOfFavProducts = data.data.items || [];
-                setFavProductList(listOfFavProducts);
-            } catch (error) {
-                console.error('Error fetching favorite products:', error);
-            }
-        };
-
+    useEffect(() => {      
         fetchFavProducts();
     }, [isUserLoggedIn, token]);
 
@@ -105,10 +70,10 @@ function MyAccount() {
                     ref={collapsRef}
                 >
                     <nav>
-                        <NavLink to={`/myprofile`}>Profile</NavLink>
-                        <NavLink to={`/orders`}>Order</NavLink>
-                        <NavLink to={`/address`}>Address</NavLink>
-                        <NavLink to={`/wishlist`}>Wishlist</NavLink>
+                        <Link to='/myprofile'>Profile</Link>
+                        <Link to='/orders'>Order</Link>
+                        <Link to='/address'>Address</Link>
+                   
                     </nav>
                     <button onClick={handleLogout}>logout</button>
                 </div>

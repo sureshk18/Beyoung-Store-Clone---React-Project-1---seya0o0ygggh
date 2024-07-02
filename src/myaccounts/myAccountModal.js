@@ -50,20 +50,7 @@ const MyAccountModal = ({ isOpenHomeModal, closeModal }) => {
                         >
                             Profile
                         </Link>
-
-                        <Link
-                            className="link-direction"
-                            to={`wishlist`}
-                        >
-                            Wishlist
-                        </Link>
-
-                        <Link
-                            className="link-direction"
-                            to={`/coupons`}
-                        >
-                            Coupons
-                        </Link>
+    
                     </div>
                 </section>
             )}
