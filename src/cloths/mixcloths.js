@@ -4,6 +4,8 @@ import { Link,useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/UserProvider';
 import Tshirtss from '../assests/Tshirtss.png'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function MixCloths() {
@@ -52,9 +54,9 @@ function MixCloths() {
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log('Wishlist updated', data);
+                toast('Wishlist updated', data);
             } else {
-                console.log('Failed to update wishlist');
+                toast('Failed to update wishlist');
             }
         } catch (error) {
             console.error('An error occurred while updating wishlist', error);
@@ -62,6 +64,7 @@ function MixCloths() {
     };
 
     return (<>
+    <ToastContainer />
         <div className='bannerss'>
             <img src={Tshirtss} style={{ width: '100%', height: 'auto',marginTop:'89px', maxWidth: '100%' }} />
         </div>

@@ -10,6 +10,9 @@ import { Divider, LinearProgress, Rating } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Carticon from '../assests/Carticon.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const StarRating = ({ rating }) => {
     if (typeof rating !== "number") {
@@ -96,9 +99,9 @@ function ProductDetails() {
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log('cart updated', data);
+                toast('cart updated', data);
             } else {
-                console.log('Failed to update cart');
+                toast('Failed to update cart');
             }
         } catch (error) {
             console.error('An error occurred while updating cart', error);
@@ -107,7 +110,8 @@ function ProductDetails() {
 
 
 
-    return (
+    return (<>
+        <ToastContainer />
         <div className='product-component-container'>
             <div className='product-component-box'>
                 <div className='product-left'>
@@ -292,7 +296,7 @@ function ProductDetails() {
                 </ul>
             </div> */}
         </div >
-
+        </>
     )
 }
 
@@ -301,24 +305,3 @@ export default ProductDetails;
 
 
 
-
-{/* <div className='forImageShowing'>
-                        {getProductData?.images &&
-                            getProductData.images
-                                .slice(0, 5)
-                                .map((image, index) => (
-                                    <img
-                                        key={index}
-                                        src={image}
-                                        alt={`Image ${index}`}
-                                        onClick={() => handleImageClick(image)}
-                                    />
-                                ))}
-                        {(getProductData) ? (<>
-                            <img src={getProductData.images} />
-
-                            <img src={getProductData.displayImage} />
-                        </>
-                        ) : (
-                            <h2>Loading...</h2>)}
-                    </div> */}

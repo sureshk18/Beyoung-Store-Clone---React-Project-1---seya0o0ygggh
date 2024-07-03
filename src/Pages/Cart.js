@@ -6,11 +6,16 @@ import { useAuth } from "../Context/UserProvider";
 
 
 
+
 function Cart() {
     const [getProducts, setProducts] = useState([]);
     const navigate = useNavigate();
     const { token } = useAuth();
     
+
+
+
+//add cart item
     const fetchProduct = async () => {
         try {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
@@ -31,6 +36,28 @@ function Cart() {
         }
     };
 
+
+
+//  delete cart item
+    const handleCartDelete = async () => {
+        try {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
+                method: 'DELETE',
+                headers: {
+                    projectId: 'f104bi07c490',
+                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
+                },
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setProducts(data.data.items);
+            } else {
+                console.log('Failed to fetch products');
+            }
+        } catch (error) {
+            console.error('An error occurred while fetching products', error);
+        }
+    };
     useEffect(() => {
         fetchProduct();
     }, []);
@@ -50,9 +77,14 @@ function Cart() {
                                 </div>
                             ))
                         ) : (
-                            <p>Your cart is empty!</p>
+                            <p className='wish-msg'>Your cart is empty!</p>
                         )}
                     </div>
+                    <div>
+                    <button className='btn-remove' onClick={handleCartDelete}>
+                        Remove
+                    </button>
+                </div>
                 </div>
             </section>
         </div>

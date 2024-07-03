@@ -3,7 +3,9 @@ import '../styles/Women.css';
 import womenBanner from '../assests/womenBanner.jpg';
 import { Link } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import addWishlist from '../Pages/Men';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function Women() {
@@ -32,7 +34,7 @@ function Women() {
     }, [])
 
 
-    
+
     //Add wishlist
     const addWishlist = async (id) => {
         const obj = JSON.stringify({ "productId": id });
@@ -48,9 +50,9 @@ function Women() {
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log('Wishlist updated', data);
+                toast('Wishlist updated', data);
             } else {
-                console.log('Failed to update wishlist');
+                toast('Failed to update wishlist');
             }
         } catch (error) {
             console.error('An error occurred while updating wishlist', error);
@@ -60,6 +62,7 @@ function Women() {
 
 
     return (<>
+        <ToastContainer />
         <div className='banners' >
             <img src={womenBanner} alt='womenbannerimg' className='bannerwomen' style={{ width: '100%', height: 'auto' }} />
         </div >
@@ -68,9 +71,9 @@ function Women() {
                 <p className="heading-womens" >WOMENS CLOTHING</p>
                 <p className="heading-womenss" >Women's Clothing - Get your hands on stylish and comfortable clothing for women - Buy a range of ladies' clothing online at affordable prices. Beyoung offers the latest collection of Kurtis, shirts, tops, t-shirts, pants, boxers, and jeggings with existing offers and discounts. Find women's clothing for formal to weekend outings in all styles. Free Shipping | COD | S - 4XL Sizes | 15 Days Return</p>
                 <div className="for-women-shirts-pants">
-                    {getProducts.map((seller) => (
-                        <div key={seller._id}>
-                            <button className='wishlist-button' onClick={() => addWishlist(getProducts._id)} >
+                    {getProducts.map((seller, index) => (
+                        <div key={index}>
+                            <button className='wishlist-button' onClick={() => addWishlist(seller._id)} >
                                 <FavoriteBorderIcon />
                             </button>
                             <Link to={`/product-details/${seller._id}`}>
@@ -92,4 +95,3 @@ function Women() {
 
 export default Women
 
-/*filter={"gender":"add_your_gender"}*/

@@ -60,15 +60,15 @@ function Wishlist() {
 
     return (
         <>
-            <div className="wishlist-container">
-                <div className='wishlist-item'>
+            <div className="men-container">
+                <section className="men-clothess">
+                <div className='for-men-shirts-pants'>
                     {getProducts.length > 0 ? (
                         getProducts.map((seller, index) => (
                             <div key={index} >
                                 <img src={seller.products.displayImage} alt={seller.name} className='wishlist-img' />
-                                <p className='seller-detailss'>{seller.products.name}</p>
-                                {/* <p className="seller-subCategory">{seller.products.size}</p> */}
-                                <p className="seller-prices">Price: &#8377;{seller.products.price}</p>
+                                <p className='seller-details'>{seller.products.name}</p>
+                                <p className="seller-price">Price: &#8377;{seller.products.price}</p>
 
                             </div>
                         ))
@@ -81,6 +81,7 @@ function Wishlist() {
                         Remove
                     </button>
                 </div>
+                </section>
             </div>
         </>
     );
