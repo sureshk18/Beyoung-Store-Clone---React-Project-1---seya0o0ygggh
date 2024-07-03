@@ -64,12 +64,12 @@ function Men() {
     return (
         <>
         <ToastContainer />
-            <div className='banners'>
+            {/* <div className='banners'>
                 <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/1.jpg" alt='banner' className='bannermen' />
                 <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/8.jpg" alt='sweater' className='bannermen' />
                 <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/12.jpg" alt='hoodie' className='bannermen' />
                 <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/13.jpg" alt='combos' className='bannermen' />
-            </div>
+            </div> */}
             <div className="men-container">
                 <section className="men-clothess">
                     <p className="heading-mens">Men's Clothing</p>

@@ -65,12 +65,12 @@ function MixCloths() {
 
     return (<>
     <ToastContainer />
-        <div className='bannerss'>
+        {/* <div className='bannerss'>
             <img src={Tshirtss} style={{ width: '100%', height: 'auto',marginTop:'89px', maxWidth: '100%' }} />
-        </div>
+        </div> */}
         <div className='mens-wear'>
             <section className='productcontainer'>
-                <h3 className='headingg'>Collection of Cloths</h3>
+                {/* <h3 className='headingg'>Collection of Cloths</h3> */}
                 <div className='men-products'>
                     {getShirtData.map((seller, index) => {
                         return (

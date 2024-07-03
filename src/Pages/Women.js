@@ -63,9 +63,9 @@ function Women() {
 
     return (<>
         <ToastContainer />
-        <div className='banners' >
+        {/* <div className='banners' >
             <img src={womenBanner} alt='womenbannerimg' className='bannerwomen' style={{ width: '100%', height: 'auto' }} />
-        </div >
+        </div > */}
         <div className="women-container">
             <section className="women-clothess">
                 <p className="heading-womens" >WOMENS CLOTHING</p>
