@@ -1,3 +1,8 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 .wishlist-container{
     margin: 90px ;
     display: flex;
@@ -34,13 +39,14 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .btn-remove{
-    background-color: #04AA6D;
+    background: transparent;
+    color: #0a7bba;
     width: 15%;
     height: 30px;
     border-radius: 5px;
     font-size: 18px;
-    border: 1px solid black;
-    margin: 5% 13%;
+    border: 1px solid #0a7bba;
+    margin-left: 15px;
 
 }
 .wish-msg{

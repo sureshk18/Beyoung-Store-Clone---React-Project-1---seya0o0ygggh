@@ -99,7 +99,7 @@ function ProductDetails() {
             });
             if (response.ok) {
                 const data = await response.json();
-                toast('cart updated', data);
+                toast('Product added to cart successfully', data);
             } else {
                 toast('Failed to update cart');
             }

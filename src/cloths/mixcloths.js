@@ -54,7 +54,7 @@ function MixCloths() {
             });
             if (response.ok) {
                 const data = await response.json();
-                toast('Wishlist updated', data);
+                toast('Product added to wishlist successfully', data);
             } else {
                 toast('Failed to update wishlist');
             }

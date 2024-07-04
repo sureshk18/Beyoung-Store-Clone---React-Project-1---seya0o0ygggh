@@ -1,3 +1,9 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
 .product-component-container {
     max-width: 1150px;
     text-align: center;
@@ -102,10 +108,6 @@ span.discounted-text {
     color: black;
 }
 
-
-
-
-
 .size-chart-container {
     display: flex;
     flex-direction: row;
@@ -168,9 +170,9 @@ span.discounted-text {
     padding: 0px 0px;
     width: 55%;
     text-transform: uppercase;
-    background-color: #4d71e6;
-    border: 1px solid black;
-    color: black;
+    background: transparent;
+    border: 1px solid #0a7bba;
+    color: #0a7bba;
     font-size: 19px;
     cursor: pointer;
     text-align: center;
