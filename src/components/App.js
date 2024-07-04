@@ -9,11 +9,11 @@ import Upcoming from '../Pages/Upcoming';
 import TrackOrders from '../Morepages/TrackOrders';
 import Footer from '../Morepages/Footer';
 import ProductDetails from '../Pages/ProductDetails';
-import MyAccount from '../myaccounts/myAccount';
+// import MyAccount from '../myaccounts/myAccount';
 import ProtectedComponent from '../Context/ProtectedComponent';
 import SearchPage from '../Pages/SearchPage';
 import { CartNumberProvider } from '../Context/CartNumberContext';
-import MyOrder from '../myaccounts/myOrder';
+// import MyOrder from '../myaccounts/myOrder';
 import Cart from '../Pages/Cart';
 import Buy from '../Pages/Buy';
 import MixCloths from '../cloths/mixcloths'
@@ -37,7 +37,7 @@ function App() {
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
         <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
-          <Route path="/myprofile" element={<MyProfile />} />
+          {/* <Route path="/myprofile" element={<MyProfile />} /> */}
           <Route path="/orders" element={<MyOrder />} />
           {/* <Route path="/address" element={<MyAddress />} /> */}
         </Route>
