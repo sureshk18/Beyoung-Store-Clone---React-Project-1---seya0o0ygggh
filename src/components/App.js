@@ -36,16 +36,16 @@ function App() {
         <Route path='/track-orders' element={<TrackOrders />}></Route>
         <Route path='/product-details/:_id' element={<ProductDetails />}></Route>
         <Route path='/search' element={<SearchPage />}></Route>
-        <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
-          {/* <Route path="/myprofile" element={<MyProfile />} /> */}
+        {/* <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
+        <Route path="/myprofile" element={<MyProfile />} /> 
           <Route path="/orders" element={<MyOrder />} />
-          {/* <Route path="/address" element={<MyAddress />} /> */}
-        </Route>
+           <Route path="/address" element={<MyAddress />} /> 
+        </Route>*/}
 
-    
-        <Route path='/wishlist' element={<Wishlist/>}></Route>
+
+        <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/cart' element={<Cart />} />
-        <Route path='/buy' element={<Buy/>}/>
+        <Route path='/buy' element={<Buy />} />
       </Routes>
       <Footer />
     </BrowserRouter>
