@@ -79,7 +79,7 @@ function Women() {
                             <Link to={`/product-details/${seller._id}`}>
                                 <img src={seller.displayImage} className='img' /></Link>
                             <h2 className='seller-details'>{seller.name}</h2>
-                            <span className='seller-subCategory'>{seller.subCategory}</span>
+                            <p className='seller-subCategory'>{seller.subCategory}</p>
                             <p className='seller-price'>Price : &#8377; {seller.price}</p>
 
                         </div>

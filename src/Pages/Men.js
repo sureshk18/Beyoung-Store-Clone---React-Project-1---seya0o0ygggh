@@ -12,10 +12,11 @@ function Men() {
     const [getProducts, setProducts] = useState([]);
     const navigate = useNavigate();
     const { token } = useAuth();
+    // const [page,setPage] = useState(0);
 
     const fetchProduct = async () => {
         try {
-            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=50&filter={"gender":"Men"}`, {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=20&filter={"gender":"Men"}`, {
                 method: 'GET',
                 headers: {
                     projectId: 'f104bi07c490',
@@ -60,6 +61,17 @@ function Men() {
         }
     };
 
+// infinite scrolling
+    // const fetchData=()=>{
+    //     setPage(page+1);
+    //     const fetchProduct = async () => {
+    //         const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=${page}`
+    //         );
+    //             const data = await response.json();
+    //             setProducts(getProducts.concat(data.data));
+    //         };
+    //         fetchProduct();
+    // };
 
     return (
         <>
@@ -79,7 +91,7 @@ function Men() {
                     <div className="for-men-shirts-pants">
                         {getProducts.map((product, index) => (
                             <div key={index}>
-                                <InfiniteScroll dataLength={getProducts.length} hasMore={false}>
+                                {/* <InfiniteScroll dataLength={fetchData.length} hasMore={false}> */}
                                     <div>
                                         <button className='wishlist-button' onClick={() => addWishlist(product._id)}>
                                             <FavoriteBorderIcon />
@@ -91,7 +103,7 @@ function Men() {
                                         <span className='seller-subCategory'>{product.subCategory}</span>
                                         <p className='seller-price'>Price: &#8377; {product.price}</p>
                                     </div>
-                                </InfiniteScroll>
+                                {/* </InfiniteScroll> */}
                             </div>
                         ))}
                     </div>

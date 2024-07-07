@@ -47,10 +47,12 @@ function Navbar() {
     const handleLogout = (token, userName) => {
         sessionStorage.removeItem("authToken");
         sessionStorage.removeItem("userInfo");
+        localStorage.removeItem("tokenAvailable");
         signOutContext(token, userName);
         setIsLoggedIn(false);
 
         navigate('/');
+        window.location.reload();
     };
 
 
@@ -141,7 +143,7 @@ function Navbar() {
                         <Link to='/track-orders' className='track-order' style={{ fontSize: '12px', alignItems: 'center', display: 'flex', color: '#fff', textDecoration: 'none' }} >TRACK YOUR ORDER</Link>
                     </div>
                     <ul className='nav-linkss'>
-                        {isUserLoggedIn && localStorage.getItem("tokenAvailable") ? (
+                        {isUserLoggedIn || localStorage.getItem("tokenAvailable") ? (
                             <>
                                 <div className='dropdownmyaccount'>
                                     <Link to='/myprofile'>

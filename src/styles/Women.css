@@ -1,18 +1,21 @@
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .banners {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 20px;
 }
+
 .bannerwomen {
     margin-top: 89px;
     width: 100%;
     height: 135px;
     margin-bottom: -150px;
 }
+
 .women-container {
     display: flex;
     margin-left: 150px;
@@ -25,18 +28,20 @@ body{
     box-sizing: border-box;
     margin-top: 57px;
 }
+
 p.heading-womens {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
-    top: 70px;
+    margin-top: 30px;
     font-weight: 400;
     /* margin-left: 3%; */
     color: #343434;
     border-bottom: 1px solid #f9eb28;
     display: inline-block;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 p.heading-womenss {
     font-size: 14px;
     text-align: left;
@@ -45,8 +50,9 @@ p.heading-womenss {
     display: inline-block;
     margin-top: 15px;
     height: 20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .for-women-shirts-pants {
     display: grid;
     text-align: center;
@@ -55,14 +61,16 @@ p.heading-womenss {
     margin-left: -70px;
     margin-top: 37px;
 }
-.for-women-shirts-pants img{
+
+.for-women-shirts-pants img {
     border-radius: 6px;
     width: 80%;
     height: 80%;
     transition: transform .2s;
     cursor: pointer;
 }
-.seller-details{
+
+.seller-details {
     margin-left: 40px;
     text-align: center;
     font-weight: 600;
@@ -71,26 +79,28 @@ p.heading-womenss {
     text-overflow: ellipsis;
     text-wrap: nowrap;
     font-size: 13px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    
+
 }
-.seller-subCategory{
+
+.seller-subCategory {
     /* margin-left: 40px; */
     text-align: center;
-    color: #7d7777;
-    font-weight: 400;
+    /* color: #7d7777; */
+    font-weight: 600;
+    font-size: 14px;
     margin-top: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-p.seller-price{
+
+p.seller-price {
     margin-left: 25%;
     text-align: center;
     font-weight: 600;
     width: 220px;
     font-size: 14px;
     margin-top: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-  
