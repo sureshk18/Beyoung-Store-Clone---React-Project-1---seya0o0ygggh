@@ -35,7 +35,7 @@ function MyAccount() {
 
 
     return (
-        <div className="my-account-container">
+        <div className="my-account-container" style={{marginTop:'90px'}}>
             <section className="my-ac-left-section">
                 <div className="upper-sec">
                     <Stack
