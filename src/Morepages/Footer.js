@@ -25,50 +25,50 @@ function Footer() {
                     <div>
                         <h4 className='footer-heading'>Need Help</h4>
                         <div className='footer-link'>
-                            <a href='#'>Contact Us</a>
-                            <a href='#'> Track Order</a>
-                            <a href='#'>Returns & Refunds</a>
-                            <a href='#'> FAQ's</a>
-                            <a href='#'> Career </a>
+                            <a>Contact Us</a>
+                            <a >Track Order</a>
+                            <a >Returns & Refunds</a>
+                            <a >FAQ's</a>
+                            <a >Career </a>
                         </div>
                     </div>
                     <div>
                         <h4 className='footer-heading'>Company</h4>
                         <div className='footer-link'>
-                            <a href='#'> About Us</a>
-                            <a href='#'>  Beyoung Blog</a>
-                            <a href='#'> Beyoungistan</a>
-                            <a href='#'>  Collaboration</a>
-                            <a href='#'>  Media </a>
+                            <a > About Us</a>
+                            <a >  Beyoung Blog</a>
+                            <a > Beyoungistan</a>
+                            <a >  Collaboration</a>
+                            <a >  Media </a>
                         </div>
                     </div>
                     <div>
                         <h4 className='footer-heading'>MORE INFO</h4>
                         <div className='footer-link'>
-                            <a href='#'>Term and Conditions </a>
-                            <a href='#'>  Privacy Policy</a>
-                            <a href='#'> Shipping Policy</a>
-                            <a href='#'> Sitemap </a>
+                            <a >Term and Conditions </a>
+                            <a >  Privacy Policy</a>
+                            <a > Shipping Policy</a>
+                            <a > Sitemap </a>
                         </div>
                     </div>
                     <div>
                         <h4 className='footer-heading'>LOCATION</h4>
                         <div className='footer-link'>
-                            <a href='#'>support@beyoung.in </a>
+                            <a >support@beyoung.in </a>
                             <span>Eklingpura Chouraha, Ahmedabad Main Road</span>
                             <span>(NH 8- Near Mahadev Hotel) Udaipur, India- 313002</span>
                         </div>
-                        <h4 className='footer-heading' style={{ marginTop: '10px', marginBottom: '10px' }}>
+                        {/* <h4 className='footer-heading' style={{ marginTop: '10px', marginBottom: '10px' }}>
                             DOWNLOAD THE APP
-                        </h4>
-                        <div className='footer-aap-links'>
+                        </h4> */}
+                        {/* <div className='footer-aap-links'>
                             <a href="https://play.google.com/store/apps/details?id=com.beyoungapp&referrer=utm_source%3Dwebsite%26utm_medium%3Dfooter%26anid%3Dadmob">
                                 <img src="https://www.beyoung.in/api/catalog/footer/11Play-Store-footer.png" alt="playstore" />
                             </a>
                             <a href="https://apps.apple.com/in/app/beyoung/id1665513310">
                                 <img src="https://www.beyoung.in/api/catalog/footer/12App-Store-footer.png" alt="applestore" />
-                            </a>s
-                        </div>
+                            </a>
+                        </div> */}
                     </div>
                 </div>
 

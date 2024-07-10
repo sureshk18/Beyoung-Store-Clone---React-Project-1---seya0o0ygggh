@@ -153,7 +153,7 @@ function Navbar() {
                                         <Link to='/myprofile' className='linked'>
                                             My Profile
                                         </Link>
-                                        <Link to='/orders' className='linked'>
+                                    {/*    <Link to='/orders' className='linked'>
                                             Orders
                                         </Link>
                                         <Link to='/address' className='linked'>
@@ -161,7 +161,7 @@ function Navbar() {
                                         </Link>
                                         <Link to='/wishlist' className='linked'>
                                             Wishlist
-                                        </Link>
+                                        </Link>*/}
                                     </div>
                                 </div>
                                 <p className='dash'>|</p>
@@ -232,8 +232,8 @@ function Navbar() {
                         </div>
                         <span>
                             <Link className='link1' to='/combos' >COMBOS</Link></span>
-                        <Link className='link1' to='/combos'>JOGGERS</Link>
-                        <Link className='link1' to='/combos' >WINTER WEAR</Link>
+                        {/* <Link className='link1' to='/combos'>JOGGERS</Link>
+                        <Link className='link1' to='/combos' >WINTER WEAR</Link> */}
                         <Link className='link1' to='/combos'>SHOP BY COLLECTION </Link>
                     </div>
 

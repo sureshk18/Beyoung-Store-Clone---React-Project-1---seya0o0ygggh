@@ -163,7 +163,7 @@ function Men() {
                             getProducts.map((product, index) => (
                                 <div key={index}>
                                     <div>
-                                        <button className='wishlist-button' onClick={() => addWishlist(product._id)}>
+                                        <button className='wishlist-button' onClick={() => addWishlist(product._id)} >
                                             <FavoriteBorderIcon />
                                         </button>
                                         <Link to={`/product-details/${product._id}`}>

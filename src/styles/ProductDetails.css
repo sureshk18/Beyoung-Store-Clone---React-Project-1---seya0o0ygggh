@@ -112,12 +112,13 @@ span.discounted-text {
     display: flex;
     flex-direction: row;
     gap: 8px;
+    border: red;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .size-button {
-    border: 1px solid rgb(172 161 161);
+    border: 1px solid rgb(218, 17, 17);
     border-radius: 25px;
     background-color: white;
     color: black;
@@ -142,7 +143,7 @@ span.discounted-text {
 .size-button
 .selected {
     border-color: #007bff;
-    background-color: #007bff;
+    background-color: #b27418;
     color: #fff;
 }
 .size-button

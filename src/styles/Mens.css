@@ -17,7 +17,7 @@
 }
 .men-container {
     display: flex;
-    margin-left: 125px;
+    margin-left: 115px;
     margin-top: 30px;
 }
 
@@ -58,21 +58,21 @@ p.heading-menss {
     /* gap: 5px; */
 }
 .for-men-shirts-pants img{
-    border-radius: 3px;
-    width: 80%;
-    height: 80%;
+    /* border-radius: 3px; */
+    width: 70%;
+    height: auto;
     transition: transform .2s;
     cursor: pointer;
 }
 .seller-details{
-    margin-left: 40px;
+    margin-left: 60px;
     text-align: center;
     font-weight: 600;
     overflow: hidden;
-    width: 250px;
-    text-overflow: ellipsis;
+    width: 266px;
+    /* text-overflow: ellipsis; */
     text-wrap: nowrap;
-    font-size: 13px;
+    font-size: 3px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .seller-subCategory{
@@ -95,7 +95,7 @@ p.seller-price{
 
 .wishlist-button{
     z-index: 1;
-    margin-left: 250px;
+    margin-left: 230px;
     position: absolute;
     margin-top: 10px;
     height: 28px;
@@ -110,5 +110,5 @@ p.seller-price{
     justify-content: center;
 }
 .wishlist-button:hover{
-    background-color: #e2ce1b;
+    background-color: #eaede5;
 }

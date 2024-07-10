@@ -170,11 +170,15 @@ function ProductDetails() {
                                         key={index}
                                         className={`size-button ${getProductData.selectedSize === size ? "selected" : ""
                                             }`}
-                                        onClick={() => setProductData({ ...getProductData, selectedSize: size })}
+                                        onClick={() => {setProductData({ ...getProductData, selectedSize: size })
+                                        console.log(getProductData)}
+                                    }
                                     >
                                         {size}
                                     </button>
+                                    
                                 ))}
+                                
                         </div>
                     </>
                     ) : (

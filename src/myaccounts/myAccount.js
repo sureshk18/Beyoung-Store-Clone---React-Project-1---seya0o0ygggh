@@ -69,12 +69,12 @@ function MyAccount() {
                     className={`lower-sec ${collapsActive ? "collaps-active" : ""}`}
                     ref={collapsRef}
                 >
-                    <nav>
+                    {/* <nav>
                         <Link to='/myprofile'>Profile</Link>
                         <Link to='/orders'>Order</Link>
                         <Link to='/address'>Address</Link>
                    
-                    </nav>
+                    </nav> */}
                     <button onClick={handleLogout}>logout</button>
                 </div>
             </section>

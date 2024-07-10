@@ -191,6 +191,7 @@ button {
     gap: 20px;
     position: relative;
     cursor: pointer;
+    margin-left: 8%;
 }
 
 
