@@ -9,11 +9,8 @@ body{
 }
 
 .sliderimg {
-    max-width: 101%;
+    width: 100%;
     height: auto;
-    margin-left: -7px;
-    margin-right: 0px;
-    margin-top: 0px;
 }
 
 
@@ -100,7 +97,7 @@ body{
 
 /* shirt image css */
 .shirt-image {
-    margin-top: 60px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     max-width: 1200px;
@@ -111,8 +108,8 @@ body{
 
 .shirt-image img {
     height: 340px;
-    width: 523px;
-    border-radius: 12px;
+    width: 100%;
+    border-radius: 5px;
 }
 
 /* big saving zone css  */

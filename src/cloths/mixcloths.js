@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/MenAll.css';
+import '../styles/Mens.css';
 import { Link,useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/UserProvider';
 import Tshirtss from '../assests/Tshirtss.png'
@@ -68,10 +68,9 @@ function MixCloths() {
         {/* <div className='bannerss'>
             <img src={Tshirtss} style={{ width: '100%', height: 'auto',marginTop:'89px', maxWidth: '100%' }} />
         </div> */}
-        <div className='mens-wear'>
-            <section className='productcontainer'>
-                {/* <h3 className='headingg'>Collection of Cloths</h3> */}
-                <div className='men-products'>
+        <div className='men-container'>
+            <section className='men-clothess'>
+                <div className='for-men-shirts-pants'>
                     {getShirtData.map((seller, index) => {
                         return (
                             <div key={index}>

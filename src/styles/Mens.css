@@ -24,7 +24,7 @@
 .men-clothess {
     width: 75%;
     box-sizing: border-box;
-    margin-top: 80px;
+    margin-top: 70px;
 }
 p.heading-mens {
     text-transform: uppercase;
@@ -54,7 +54,7 @@ p.heading-menss {
     width: 135%;
     grid-template-columns: repeat(3, 1fr);
     margin-left: -3%;
-    margin-top: 37px;
+    margin-top: 47px;
     /* gap: 5px; */
 }
 .for-men-shirts-pants img{
@@ -70,7 +70,7 @@ p.heading-menss {
     font-weight: 600;
     overflow: hidden;
     width: 266px;
-    /* text-overflow: ellipsis; */
+    text-overflow: ellipsis;
     text-wrap: nowrap;
     font-size: 3px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -89,7 +89,7 @@ p.seller-price{
     font-weight: 600;
     width: 220px;
     font-size: 14px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

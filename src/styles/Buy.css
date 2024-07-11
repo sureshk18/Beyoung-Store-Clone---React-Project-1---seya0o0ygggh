@@ -1,20 +1,45 @@
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.buy-container{
-    margin-top:80px;
+.buy-container {
+    margin-top: 80px;
+    background: rgb(248, 248, 248);
+    padding: 30px 15px 0px;
 }
-.buy-heading{
-    padding: 20px 60px;
-    text-transform: uppercase;
-    text-decoration: underline;
-}
-.input-field{
+
+.buy-header ul {
+    width: 60%;
     display: flex;
-    margin: 10px;
-    width: 320px;
-    height: 50px;
-    border-radius: 5px;
-    margin-left: 50px;
+    margin: 0px auto;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    padding: 10px 15px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.list {
+    text-align: center;
+    font-size: 12px;
+    list-style: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.list span:first-of-type {
+    font-size: 12px;
+    z-index: 2;
+    background: rgb(255, 255, 255);
+    margin: 0px auto;
+    height: 33px;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    border: 1px solid rgb(0, 0, 0);
 }

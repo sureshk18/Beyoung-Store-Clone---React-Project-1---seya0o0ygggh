@@ -206,7 +206,7 @@ function ProductDetails() {
                             cart
                         </button>
                         <button className="btn-buy">
-                            <Link to="/buy" className="buybtn">
+                            <Link to="/checkout" className="buybtn">
                                 <ArrowCircleRightIcon /> buy now
                             </Link>
                         </button>

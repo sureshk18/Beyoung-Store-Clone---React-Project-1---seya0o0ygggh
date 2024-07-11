@@ -13,7 +13,7 @@ function MenHome() {
     const images = [
         {
             url: 'https://images.bewakoof.com/t1080/men-s-grey-all-over-printed-super-loose-fit-plus-size-shirt-586212-1695998689-1.jpg',
-            heading: 'Shirts',
+            heading: 'Shirt',
         },
         {
             url: 'https://images.bewakoof.com/t1080/men-s-olive-relaxed-fit-short-kurta-302581-1663931236-1.jpg',
@@ -21,7 +21,7 @@ function MenHome() {
         },
         {
             url: 'https://images.bewakoof.com/t1080/worst-enemies-half-sleeve-t-shirt-for-men-s-381186-1656185046-1.jpg',
-            heading: 'Tshirt',
+            heading: 'T-shirt',
         },
         {
             url: 'https://images.bewakoof.com/t1080/men-s-black-high-side-graphic-printed-flatknit-sweater-40-597238-1695639276-1.jpg',
@@ -43,14 +43,14 @@ function MenHome() {
         const { url, heading } = images[index];
         return (
             <div className='newarrival' key={index}>
-                <Link to={`/${heading.toUpperCase()}`}>
+                {/* <Link to={`/product-details/${_id}`}> */}
                     <img
                         src={url}
                         alt={`img${index + 1}`}
                         className='newarrivalimg'
                     />
                     <p className='newarrrivalheading'>{heading}</p>
-                </Link>
+                {/* </Link> */}
             </div>
         );
     });

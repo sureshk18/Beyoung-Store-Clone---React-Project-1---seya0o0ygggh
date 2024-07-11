@@ -40,7 +40,6 @@ function Home() {
 
         <CashBackSliders />
         <ShirtsImages />
-        <NewArrival />
         <FreeShipping />
         <MenHome />
         <Womens />

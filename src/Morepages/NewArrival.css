@@ -57,14 +57,12 @@
   .newarrivalimg {
     width: 250px;
     height: 330px;
-    border-radius: 10px;
+    border-radius: 3px;
   }
   
   .newarrival a {
     text-decoration: none;
-    /* Remove underline */
     color: inherit;
-  
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* Inherit color from parent */
   }
@@ -76,7 +74,7 @@
     font-size: 17px;
     font-weight: 400;
     margin-left: 10px;
-    border-left: 4px solid #ffdd00;
+    /* border-left: 4px solid #ffdd00; */
     padding: 5px;
     height: 20px;
   
