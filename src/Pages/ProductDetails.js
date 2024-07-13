@@ -12,6 +12,8 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Carticon from '../assests/Carticon.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 
 const StarRating = ({ rating }) => {
@@ -82,9 +84,9 @@ function ProductDetails() {
         setSelectedImage(image);
     };
 
-    
 
-//Add to cart
+
+    //Add to cart
     const addToCart = async (id) => {
         const obj = JSON.stringify({ "productId": id });
         try {
@@ -95,7 +97,7 @@ function ProductDetails() {
                     projectID: 'f104bi07c490',
                     'Content-Type': 'application/json'
                 },
-               
+
             });
             if (response.ok) {
                 const data = await response.json();
@@ -137,12 +139,14 @@ function ProductDetails() {
                             onClick={() => handleImageClick(selectedImage)}
                         />
                     ) : (
-                        getProductData?.displayImage && (
+                        getProductData?.displayImage && (<>
                             <img
                                 src={getProductData?.displayImage}
                                 alt="Default Display Image"
+                                className='display-image'
                                 onClick={() => handleImageClick(getProductData.displayImage)}
                             />
+                        </>
                         )
                     )}
                 </div>
@@ -170,15 +174,17 @@ function ProductDetails() {
                                         key={index}
                                         className={`size-button ${getProductData.selectedSize === size ? "selected" : ""
                                             }`}
-                                        onClick={() => {setProductData({ ...getProductData, selectedSize: size })
-                                        console.log(getProductData)}
-                                    }
+                                        onClick={() => {
+                                            setProductData({ ...getProductData, selectedSize: size })
+                                            console.log(getProductData)
+                                        }
+                                        }
                                     >
                                         {size}
                                     </button>
-                                    
+
                                 ))}
-                                
+
                         </div>
                     </>
                     ) : (
@@ -202,20 +208,24 @@ function ProductDetails() {
 
                     <div className="btn-cart-buy">
                         <button to='/cart' className="btn-cartt" onClick={() => addToCart(getProductData._id)} >
-                            <img src={Carticon} className="cartloggo" /> Go to
-                            cart
+                             add to cart
                         </button>
-                        <button className="btn-buy">
-                            <Link to="/checkout" className="buybtn">
-                                <ArrowCircleRightIcon /> buy now
-                            </Link>
-                        </button>
-                        {/* {showAddToCartMessage && (
-                            <div className="popup-modal">
-                                <p>Product is succesfully added to Cart!</p>
-                            </div>
-                        )} */}
                     </div>
+
+                    <div>
+                        <button className='product-wishlist'>
+                             add to wishlist
+                        </button>
+                    </div>
+
+                    <div className="btn-cart-buy">
+                        <button to="/checkout" className="btn-cartt">
+                            <Link to='/checkout'> buy now</Link>
+                        </button>
+                    </div>
+
+                    
+
                 </div>
             </div>
 
@@ -300,7 +310,7 @@ function ProductDetails() {
                 </ul>
             </div> */}
         </div >
-        </>
+    </>
     )
 }
 
