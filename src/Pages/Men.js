@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import '../styles/Mens.css';
 import { Link, useNavigate } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import InfiniteScroll from 'react-infinite-scroll-component';
 import { useAuth } from "../Context/UserProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import _debounce from "lodash/debounce";
-
 
 function Men() {
     const [getProducts, setProducts] = useState([]);
@@ -17,9 +15,9 @@ function Men() {
     const [page, setPage] = useState(1);
     const [isFetching, setIsFetching] = useState(false);
     const [error, setError] = useState(null);
-
-    const fetchProduct = async () => {
-        if (isFetching) {
+    const [hasMore, setHasMore] = useState(true);
+    const fetchProduct = useCallback(async () => {
+        if (isFetching || !hasMore) {
             return;
         }
         try {
@@ -32,30 +30,34 @@ function Men() {
             });
             if (response.ok) {
                 const data = await response.json();
-                setProducts(data.data);
                 setProducts((prevData) => [...prevData, ...data.data]);
-                setPage((prevPage) => [prevPage + 1]);
+                if (data.data.length < 10) {
+                    setHasMore(false); 
+                }
+                setPage((prevPage) => prevPage + 1);
             } else {
                 console.log('Failed to fetch products');
+                setError("Failed to fetch products");
             }
         } catch (error) {
             console.error('An error occurred while fetching products', error);
             setError("Error fetching data. Please try again.");
         } finally {
             setIsFetching(false);
-        };
-    };
+        }
+    }, [page, isFetching, hasMore]);
+
     const handleScroll = _debounce(() => {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
         const clientHeight = document.documentElement.clientHeight;
-        if (scrollTop + clientHeight >= scrollHeight - 100) {
+        if (scrollTop + clientHeight >= scrollHeight - 500) {
             fetchProduct();
         }
-    }, 200); // Adjust the debounce delay as needed
+    }, 200); 
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
@@ -65,7 +67,6 @@ function Men() {
         fetchProduct();
     }, []);
 
-    //Add to Wishlist
     const addWishlist = async (id) => {
         const obj = JSON.stringify({ "productId": id });
         try {
@@ -89,69 +90,9 @@ function Men() {
         }
     };
 
-    {/*
-    // Infinite scrolling
-    const[data,setData] = useState([]);
-    const [page,setPage] = useState(1);
-    const [isFetching,setIsFetching] = useState(false);
-    const [error,setError] = useState(null);
-    const config={
-        headers:{
-            projectId:""
-        },
-    };
-
-    const fetchData=async()=>{
-        if(isFetching){
-            return;
-        }
-        try{
-            setIsFetching(true);
-            const res = await axios.get()(
-                `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=10&page=${page}`,config
-            );
-            setData((prevData)=>[...prevData,...res.data.data]);
-            setPage((prePage)=>prePage+1);
-        }catch(error){
-            console.error("Error fetching data:", error);
-            setError("Error fetching data. Please try again.");
-        }finally{
-            setIsFetching(false);
-        }
-    };
-    const handleScroll = _debounce(()=>{
-        const scrollTop = document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight;
-    const clientHeight = document.documentElement.clientHeight;
-    if (scrollTop + clientHeight >= scrollHeight - 100) {
-        fetchData();
-      }
-    },200);
-    useEffect(()=>{
-        window.addEventListener("scroll", handleScroll);
-        return()=>{
-            window.removeEventListener("scroll", handleScroll);
-        };
-    },[handleScroll]);
-
-    useEffect(()=>{
-        fetchData();
-    },[])
-    */}
-
-
-
-
-
     return (
         <>
             <ToastContainer />
-            {/* <div className='banners'>
-                <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/1.jpg" alt='banner' className='bannermen' />
-                <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/8.jpg" alt='sweater' className='bannermen' />
-                <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/12.jpg" alt='hoodie' className='bannermen' />
-                <img src="https://www.beyoung.in/api/catalog/filtericon/new/new/13.jpg" alt='combos' className='bannermen' />
-            </div> */}
             <div className="men-container">
                 <section className="men-clothess">
                     <p className="heading-mens">Men's Clothing</p>
@@ -177,6 +118,7 @@ function Men() {
                             ))}
                         {isFetching && <p>Loading...</p>}
                         {error && <p style={{ color: "red" }}>{error}</p>}
+                        {!hasMore && <p>No more products to display.</p>}
                     </div>
                 </section>
             </div>
