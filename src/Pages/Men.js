@@ -67,6 +67,7 @@ function Men() {
         fetchProduct();
     }, []);
 
+    //add wishlist
     const addWishlist = async (id) => {
         const obj = JSON.stringify({ "productId": id });
         try {
