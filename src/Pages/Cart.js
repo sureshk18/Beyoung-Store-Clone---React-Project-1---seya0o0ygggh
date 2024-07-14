@@ -11,11 +11,11 @@ function Cart() {
     const [getProducts, setProducts] = useState([]);
     const navigate = useNavigate();
     const { token } = useAuth();
-    
 
 
 
-//add cart item
+
+    //add cart item
     const fetchProduct = async () => {
         try {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
@@ -38,7 +38,7 @@ function Cart() {
 
 
 
-//  delete cart item
+    //  delete cart item
     const handleCartDelete = async () => {
         try {
             const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
@@ -70,7 +70,7 @@ function Cart() {
                         {getProducts.length > 0 ? (
                             getProducts.map((seller, index) => (
                                 <div key={index}>
-                                        <img src={seller.product.displayImage} alt={seller.name} id="zoom-In" />
+                                    <img src={seller.product.displayImage} alt={seller.name} id="zoom-In" />
                                     <h2 className="seller-details">{seller.product.name}</h2>
                                     <span className="seller-subCategory">{seller.product.subCategory}</span>
                                     <p className="seller-price">Price: &#8377;{seller.product.price}</p>
@@ -81,10 +81,10 @@ function Cart() {
                         )}
                     </div>
                     <div>
-                    <button className='btn-remove' onClick={handleCartDelete}>
-                        Remove
-                    </button>
-                </div>
+                        <button className='btn-remove' onClick={handleCartDelete}>
+                            Remove
+                        </button>
+                    </div>
                 </div>
             </section>
         </div>

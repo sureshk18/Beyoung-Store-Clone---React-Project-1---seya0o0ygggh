@@ -46,8 +46,8 @@ body{
     border-radius: 5px;
     font-size: 18px;
     border: 1px solid #0a7bba;
-    margin-left: 15px;
-
+    margin-left: 50%;
+    margin-top: 25px;
 }
 .wish-msg{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
