@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.buy-container {
+/* .buy-container {
     margin-top: 80px;
     background: rgb(248, 248, 248);
     padding: 30px 15px 0px;
@@ -42,13 +42,20 @@ body {
     align-items: center;
     border-radius: 36px;
     border: 1px solid rgb(0, 0, 0);
-}
+} */
 
 .buy-container2{
     display: flex;
     justify-content: space-between;
-    width: 70%;
-    margin-top: 80px;
+    width: 100%;
+    height: auto;
+    /* margin-left: 20px; */
+    margin-top: 100px;
+    /* border: 1px solid rgb(221, 221, 221); */
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px; */
+
 }
 .buy-containerr{
     background: rgb(255, 255, 255);
@@ -69,18 +76,20 @@ body {
 .buy-containerr-data2{
     background: rgb(255, 255, 255);
     display: flex;
+    width: 580px;
     margin: 0px 0px 10px;
 }
 .product-check-name {
-    margin: 0px 10px 10px;
-    width: 72%;
+    /* margin: 0px 10px 10px; */
+    /* width: 72%; */
 }
 .buy-image{
     width: 200px;
     height: auto;
 }
 .article{
-    margin: 0px 10px 0px 20px;
+    /* margin: 0px 10px 0px 20px; */
+    margin-left: -50px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -89,10 +98,10 @@ body {
     font-size: 15px;
     padding: 5px 10px;
     background: transparent;
-    border: 1px solid black;
+    border: 1px solid rgb(24, 165, 208);
     border-radius: 5px;
     cursor: pointer;
-    color: #000;
+    color: #1a60da;
 }
 
 
@@ -103,27 +112,40 @@ body {
     margin: 0px 0px 10px;
 } */
 
-.css-3gg2w {
-    width: 40%;  
-}
-.css-18aiek4 {
+.price-container{
+    margin-left: 150px;
+    /* background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px; */
+    width: 50%;
     border-radius: 5px;
-    background: rgb(255,255,255);
-    padding: 20px;
-    gap: 20px;
 }
-.css-18aiek4 div:not(first-of-type) {
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 20px 0px;
+.price-container h2{
+    margin: 5px 15px;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(144, 141, 141);
+    
 }
-.css-10xg8a8  {
-    display: grid;
-    font-weight: 600;
-    font-size: 18px;
-    /* padding: 0px 0px 10px; */
-    color: rgb(34, 34, 34);
-    /* border-bottom: 1px solid rgb(221, 221, 221); */
+.price-chart p{
+    margin: 12px 15px;
+    /* gap: 10px; */
+    border-bottom: rgb(100, 20, 205);
+}
+p span{
+    margin-left: 45%;
+}
+.py-mode h4{
+    margin:30px 12px;
+}
+ h4 span{
+    margin-left: 65%;
+    /* text-align: end; */
+}
+.py-title{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(81, 203, 204);;
+    color: azure;
 }

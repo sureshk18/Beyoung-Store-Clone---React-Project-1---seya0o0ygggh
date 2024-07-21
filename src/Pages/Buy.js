@@ -120,30 +120,32 @@ function BuyProduct() {
               )
             })}
           </div>
-        </div>
 
-        <div className='css-3gg2w'>
-          <div className='css-18aiek4'>
-            <div className='css-10xg8a8'>
-              PRICE DETAILS
-              {getShirtData?.map((seller, index) => {
-                return (<>
-                  <div key={index}>
-                    <p>Total Amount: {seller.product.price}</p>
-                   
-                    <p>Beyoung Discount: </p>
-                   
-                    <p>Shipping </p>
-                  
-                    <p>Cart Total </p>
-                  </div>
-                </>)
-              })}
-            </div>
-          </div>
-        </div>
 
+
+        </div>
+        <div className='price-container'>
+          <h2 className=''>PRICE DETAILS</h2>
+          {getShirtData?.map((seller, index) => {
+            return (<>
+              <div key={index} className='price-chart'>
+                <p>Total MRP (Inc. of Taxes) <span>&#8377; {seller.product.totalPrice}</span></p>
+                <p>Beyoung Discont <span>&#8377;</span></p>
+                <p>Shipping <span>&#8377; </span></p>
+                <p>Cart Total <span>&#8377;</span></p>
+              </div>
+              <div className='py-mode'>
+                <h4 >Total Amount
+                <span>&#8377; 12</span></h4>
+              <h3 className='py-title' >You Saved ₹630 on this order</h3>
+              <br/>
+              <h3 className='py-title' >CHECKOUT SECURELY</h3>
+              </div>
+            </>)
+          })}
+        </div>
       </div>
+
     </div>
 
 
