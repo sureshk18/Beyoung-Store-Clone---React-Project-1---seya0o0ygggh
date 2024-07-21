@@ -59,7 +59,7 @@ function Navbar() {
     const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const searchInputRef = useRef();
-    const navigate = useNavigate(); // Move useNavigate hook here
+    const navigate = useNavigate(); 
     const [searchResults, setSearchResults] = useState("");
     const [wishlist, setWishlist] = useState(0)
 
@@ -92,24 +92,21 @@ function Navbar() {
         };
         try {
             const response = await fetch(apiUrl, requestOptions);
-            const result = await response.json(); // Parse the response as JSON
+            const result = await response.json();
 
             if (response.ok) {
-                // Check if the response status is OK
                 if (result.status === 'success' && result.results > 0) {
                     setSearchResults(result.data);
                 } else {
-                    // No products found
                     setSearchResults([]);
                 }
             } else {
-                // Handle non-OK response status
                 console.log('Error:', result.message);
-                setSearchResults([]); // Set empty array in case of an error
+                setSearchResults([]); 
             }
         } catch (error) {
             console.log('Fetch Error:', error);
-            setSearchResults([]); // Set empty array in case of an error
+            setSearchResults([]);
         }
 
         navigate(`/search?name=${value}`);
@@ -124,7 +121,6 @@ function Navbar() {
     const setGenderselected = (value) => {
         console.log("gender");
         setGender(value);
-        // navigate(`/gender`);
     }
     // console.log("hi");
 
@@ -201,8 +197,6 @@ function Navbar() {
                                     <p className='sub-sub-link' onClick={() => setClothselected('shorts')} >Shorts</p>
                                     <p className='sub-sub-link' onClick={() => setClothselected('trouser')} >Trousers</p>
                                     <p className='sub-sub-link' onClick={() => setClothselected('pyjamas')} >Pyjamas</p>
-                                    {/* <Link to='/joggers' className='sub-sub-link' >Joggers</Link> */}
-                                    {/* <Link to='/jeans' className='sub-sub-link' onClick={()=>setClothselected('jeans')}>Jeans</Link> */}
                                 </div>
                                 <img src={desktopnav} className='dropdownimg'></img>
                             </div>

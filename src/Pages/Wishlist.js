@@ -69,7 +69,6 @@ function Wishlist() {
                                 <img src={seller.products.displayImage} alt={seller.name} className='wishlist-img' />
                                 <p className='seller-details'>{seller.products.name}</p>
                                 <p className="seller-price">Price: &#8377;{seller.products.price}</p>
-
                             </div>
                         ))
                     ) : (

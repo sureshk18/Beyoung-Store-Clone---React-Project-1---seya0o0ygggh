@@ -134,6 +134,7 @@ function ProductDetails() {
             selectedSize: size
         }));
     }
+    
 
     return (
         <>

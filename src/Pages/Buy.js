@@ -8,6 +8,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/UserProvider';
 import 'react-toastify/dist/ReactToastify.css';
 import Address from '../Payment/Address';
+import Payment from '../Payment/Payment';
+import { Stepper } from 'react-form-stepper';
+
+
 
 
 function BuyProduct() {
@@ -38,15 +42,39 @@ function BuyProduct() {
     }
   };
 
+
+
+
+  //item remove from checkout 
+
+  const handleRemove = async () => {
+    try {
+      const response = await fetch(`https://academics.newtonschool.co/api/v1/ecommerce/cart`, {
+        method: 'DELETE',
+        headers: {
+          projectId: 'f104bi07c490',
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setProducts(data.data.items);
+      } else {
+        console.log('Failed to remove product from wishlist');
+      }
+    } catch (error) {
+      console.error('Delete error', error);
+    }
+  };
+
   useEffect(() => {
     fetchData()
   }, [cloth]);
 
 
 
-
   return (<>
-    <div className='buy-container'>
+    {/* <div className='buy-container'>
       <div className='buy-header'>
         <ul >
           <li className='list'>
@@ -54,18 +82,18 @@ function BuyProduct() {
             <span>My cart</span>
           </li>
           <li className='list'>
-            <span><LocationOnOutlinedIcon /></span>
-            <span>Address</span>
+            <Link to='/Address'><span><LocationOnOutlinedIcon /></span>
+            <span>Address</span></Link>
           </li>
           <li className='list'>
-            <span><PaymentIcon /></span>
-            <span>Payment</span>
+            <Link to='/payment'><span><PaymentIcon /></span>
+            <span>Payment</span></Link>
           </li>
         </ul>
       </div>
       <div>
       </div>
-    </div>
+    </div> */}
 
 
 
@@ -78,8 +106,10 @@ function BuyProduct() {
               return (<>
                 <div key={index}>
                   <img className='buy-image' src={seller.product.displayImage} />
+                  <button className='handleremove' onClick={handleRemove}>remove</button>
                 </div>
-                
+
+
                 <article className='article'>
                   <h4 className='product-check-name'>{seller.product.name}</h4>
                   <p className='product-check-name'>Price : &#8377; {seller.product.price}</p>
@@ -91,10 +121,34 @@ function BuyProduct() {
             })}
           </div>
         </div>
+
+        <div className='css-3gg2w'>
+          <div className='css-18aiek4'>
+            <div className='css-10xg8a8'>
+              PRICE DETAILS
+              {getShirtData?.map((seller, index) => {
+                return (<>
+                  <div key={index}>
+                    <p>Total Amount: {seller.product.price}</p>
+                   
+                    <p>Beyoung Discount: </p>
+                   
+                    <p>Shipping </p>
+                  
+                    <p>Cart Total </p>
+                  </div>
+                </>)
+              })}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <Address/>
+
+    {/* <Address/>
+    <Payment/> */}
   </>
   )
 }

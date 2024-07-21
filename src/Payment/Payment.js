@@ -2,8 +2,8 @@ import React from 'react'
 
 const Payment = () => {
   return (
-    <div>
-      
+    <div >
+      <h2 >Pyment page</h2>
     </div>
   )
 }
