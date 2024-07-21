@@ -1,27 +1,12 @@
 import React from 'react';
 import '../styles/address.css';
-import { Link, useNavigate } from 'react-router-dom';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useAuth } from "../Context/UserProvider";
 import PriceDetails from './PriceDetails'
 
-
-
-
 function Order() {
-  const navigate = useNavigate();
-
-  const onPyHandler = () => {
-    navigate('/Payment');
-  }
-
-
-
-
-  return (
+  return (<>
     <div className="address-container" style={{ marginTop: '80px' }} >
-      <h3 className='heading-address' >shipping address</h3>
       <div className='form-container'>
+        <h3 className='heading-address' >shipping address</h3>
         <div className='input-form'>
           <label>Full Name:</label>
           <input type='text' placeholder='fullname' ></input>
@@ -56,15 +41,14 @@ function Order() {
           <br />
           <button className='cancel-btn'>CANCEL</button>
         </div>
-
-
-
       </div>
-      <div >
-        <PriceDetails />
+      <div className='price-address-box'><PriceDetails />
+        {/* <button style={{width:'100px',height:'40px', alignItems:'center'}} onClick={onHandler}>next</button> */}
       </div>
-      <button onClick={onPyHandler}>next</button>
+
     </div>
+
+  </>
 
 
   );

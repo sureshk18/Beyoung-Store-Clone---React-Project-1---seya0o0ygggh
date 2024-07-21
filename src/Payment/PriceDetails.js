@@ -48,7 +48,7 @@ const PriceDetails = () => {
                     <div className='py-mode'>
                         <h4 >Total Amount
                             <span>&#8377; {getShirtData?.totalPrice - (getShirtData?.totalPrice * 10 / 100) + 49}</span></h4>
-                        <h3 className='py-title' >You Saved ₹... on this order</h3>
+                        <h3 className='py-title' >You Saved ₹ {getShirtData?.totalPrice - (getShirtData?.totalPrice * 10 / 100) + 49} on this order</h3>
                         <br />
                         <h3 className='py-title' onClick={onHandler} >CHECKOUT SECURELY</h3>
                     </div>

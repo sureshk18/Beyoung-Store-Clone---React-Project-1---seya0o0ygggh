@@ -17,7 +17,7 @@ import PriceDetails from '../Payment/PriceDetails';
 
 function BuyProduct() {
   const [getShirtData, setShirtData] = useState([]);
-  const { cloth, gender } = useAuth();
+  const { cloth } = useAuth();
   const { token } = useAuth();
 
 
