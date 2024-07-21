@@ -9,7 +9,8 @@ import { useAuth } from '../Context/UserProvider';
 import 'react-toastify/dist/ReactToastify.css';
 import Address from '../Payment/Address';
 import Payment from '../Payment/Payment';
-import { Stepper } from 'react-form-stepper';
+import PriceDetails from '../Payment/PriceDetails';
+
 
 
 
@@ -17,7 +18,6 @@ import { Stepper } from 'react-form-stepper';
 function BuyProduct() {
   const [getShirtData, setShirtData] = useState([]);
   const { cloth, gender } = useAuth();
-  const navigate = useNavigate();
   const { token } = useAuth();
 
 
@@ -33,7 +33,8 @@ function BuyProduct() {
       });
       if (res.ok) {
         const data = await res.json();
-        setShirtData(data.data.items);
+        setShirtData(data.data);
+        console.log(data.data);
       } else {
         console.log('Failed to fetch products');
       }
@@ -58,7 +59,7 @@ function BuyProduct() {
       });
       if (response.ok) {
         const data = await response.json();
-        setProducts(data.data.items);
+        setProducts(data.data);
       } else {
         console.log('Failed to remove product from wishlist');
       }
@@ -71,45 +72,17 @@ function BuyProduct() {
     fetchData()
   }, [cloth]);
 
-
-
   return (<>
-    {/* <div className='buy-container'>
-      <div className='buy-header'>
-        <ul >
-          <li className='list'>
-            <span><ShoppingCartOutlinedIcon /></span>
-            <span>My cart</span>
-          </li>
-          <li className='list'>
-            <Link to='/Address'><span><LocationOnOutlinedIcon /></span>
-            <span>Address</span></Link>
-          </li>
-          <li className='list'>
-            <Link to='/payment'><span><PaymentIcon /></span>
-            <span>Payment</span></Link>
-          </li>
-        </ul>
-      </div>
-      <div>
-      </div>
-    </div> */}
-
-
-
-
-    <div className='buy-container2'>
+      <div className='buy-container2'>
       <div className='buy-containerr'>
         <div className='buy-containerr-data'>
           <div className='buy-containerr-data2'>
-            {getShirtData?.map((seller, index) => {
+            {getShirtData.items?.map((seller, index) => {
               return (<>
                 <div key={index}>
                   <img className='buy-image' src={seller.product.displayImage} />
                   <button className='handleremove' onClick={handleRemove}>remove</button>
                 </div>
-
-
                 <article className='article'>
                   <h4 className='product-check-name'>{seller.product.name}</h4>
                   <p className='product-check-name'>Price : &#8377; {seller.product.price}</p>
@@ -120,37 +93,10 @@ function BuyProduct() {
               )
             })}
           </div>
-
-
-
         </div>
-        <div className='price-container'>
-          <h2 className=''>PRICE DETAILS</h2>
-          {getShirtData?.map((seller, index) => {
-            return (<>
-              <div key={index} className='price-chart'>
-                <p>Total MRP (Inc. of Taxes) <span>&#8377; {seller.product.totalPrice}</span></p>
-                <p>Beyoung Discont <span>&#8377;</span></p>
-                <p>Shipping <span>&#8377; </span></p>
-                <p>Cart Total <span>&#8377;</span></p>
-              </div>
-              <div className='py-mode'>
-                <h4 >Total Amount
-                <span>&#8377; 12</span></h4>
-              <h3 className='py-title' >You Saved ₹630 on this order</h3>
-              <br/>
-              <h3 className='py-title' >CHECKOUT SECURELY</h3>
-              </div>
-            </>)
-          })}
-        </div>
+        <PriceDetails/>
       </div>
-
     </div>
-
-
-    {/* <Address/>
-    <Payment/> */}
   </>
   )
 }

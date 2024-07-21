@@ -2,48 +2,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* .buy-container {
-    margin-top: 80px;
-    background: rgb(248, 248, 248);
-    padding: 30px 15px 0px;
-    
-}
-
-.buy-header ul {
-    width: 40%;
-    display: flex;
-    margin: 0px auto;
-    position: relative;
-    background: white;
-    border-radius: 3px;
-    padding: 10px 15px;
-    justify-content: space-between;
-    z-index: 1;
-}
-
-.list {
-    text-align: center;
-    font-size: 12px;
-    list-style: none;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.list span:first-of-type {
-    font-size: 12px;
-    z-index: 1;
-    background: rgb(255, 255, 255);
-    margin: 0px auto;
-    height: 33px;
-    width: 40px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 36px;
-    border: 1px solid rgb(0, 0, 0);
-} */
-
 .buy-container2{
     display: flex;
     justify-content: space-between;
@@ -80,7 +38,7 @@ body {
     margin: 0px 0px 10px;
 }
 .product-check-name {
-    /* margin: 0px 10px 10px; */
+    margin: 0px 5px 10px;
     /* width: 72%; */
 }
 .buy-image{
@@ -104,18 +62,8 @@ body {
     color: #1a60da;
 }
 
-
-/* .right-div{
-    display: inline-block;
-    background: rgb(255, 255, 255);
-    display: flex;
-    margin: 0px 0px 10px;
-} */
-
 .price-container{
     margin-left: 150px;
-    /* background: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px; */
     width: 50%;
     border-radius: 5px;
 }
@@ -128,13 +76,17 @@ body {
 .price-chart p{
     margin: 12px 15px;
     /* gap: 10px; */
-    border-bottom: rgb(100, 20, 205);
+    /* border-bottom: rgb(17, 16, 17); */
 }
 p span{
     margin-left: 45%;
 }
+.py-mode{
+    border-top: 1px solid black;
+    margin: 15px;
+}
 .py-mode h4{
-    margin:30px 12px;
+    margin:20px 12px;
 }
  h4 span{
     margin-left: 65%;
@@ -146,6 +98,7 @@ p span{
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-    background: rgb(81, 203, 204);;
+    background: rgb(81, 203, 204);
     color: azure;
+    cursor: pointer;
 }

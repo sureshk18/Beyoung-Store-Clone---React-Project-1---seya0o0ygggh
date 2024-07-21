@@ -19,6 +19,8 @@ import Buy from '../Pages/Buy';
 import MixCloths from '../cloths/mixcloths'
 import Wishlist from '../Pages/Wishlist';
 // import MyProfile from '../myaccounts/MyProfile';
+import Address from '../Payment/Address';
+import Payment from '../Payment/Payment';
 
 
 
@@ -47,6 +49,8 @@ function App() {
         <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Buy />} />
+        <Route path='/address' element={<Address />} />
+        <Route path='/payment' element={<Payment />} />
       </Routes>
       <Footer />
     </BrowserRouter>
