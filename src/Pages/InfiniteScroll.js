@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import _debounce from "lodash/debounce";
@@ -52,26 +51,26 @@ const App = () => {
   }, []);
   return (
     <div>
-    {data.length > 0 &&
-      data.map((item, index) => (
-        <div key={index}>
-          <div>
-            {/* <img
+      {data.length > 0 &&
+        data.map((item, index) => (
+          <div key={index}>
+            <div>
+              {/* <img
               src={item.author.profileImage}
               alt="author Image"
               style={{ width: "3rem" }}
             /> */}
-            <h5>{item.author.name}</h5>
-            <p>{item.content}</p>
-            <img src={item.images[0]} width={650} alt="channel Image" />
-            <p>likeCount: {item.likeCount}</p>
-            <p>comments: {item.commentCount}</p>
+              <h5>{item.author.name}</h5>
+              <p>{item.content}</p>
+              <img src={item.images[0]} width={650} alt="channel Image" />
+              <p>likeCount: {item.likeCount}</p>
+              <p>comments: {item.commentCount}</p>
+            </div>
           </div>
-        </div>
-      ))}
-    {isFetching && <p>Loading...</p>}
-    {error && <p style={{ color: "red" }}>{error}</p>}
-  </div>
+        ))}
+      {isFetching && <p>Loading...</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+    </div>
   );
 };
 export default App;

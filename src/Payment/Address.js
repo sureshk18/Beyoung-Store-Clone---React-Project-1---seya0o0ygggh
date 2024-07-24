@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "../styles/address.css";
 import PriceDetails from "./PriceDetails";
 import { Navigate, useNavigate } from "react-router-dom";
-// import Checkbox from '@mui/material/Checkbox';
 
 function Order() {
-  const [activity, setActivity] = useState("");
+  const [name, setName] = useState("");
   const [data, setData] = useState([]);
   const [phone, setPhone] = useState("");
   const [pincode, setPincode] = useState("");
@@ -13,21 +12,12 @@ function Order() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const Navigate = useNavigate();
-  // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   function addData() {
     setData((data) => {
-      const updateList = [
-        ...data,
-        activity,
-        phone,
-        pincode,
-        address,
-        city,
-        state,
-      ];
+      const updateList = [...data, name, phone, pincode, address, city, state];
       // console.log(updateList);
-      setActivity("");
+      setName("");
       setPhone("");
       setPincode("");
       setAddress("");
@@ -48,7 +38,7 @@ function Order() {
 
   return (
     <>
-      <div className="address-container" style={{ marginTop: "80px" }}>
+      <div className="address-container" style={{ marginTop: "50px" }}>
         <div className="form-container">
           <h3 className="heading-address">shipping address</h3>
           <div className="input-form">
@@ -56,8 +46,8 @@ function Order() {
             <input
               type="text"
               placeholder="full name"
-              value={activity}
-              onChange={(e) => setActivity(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             ></input>
           </div>
 
@@ -116,22 +106,24 @@ function Order() {
             </button>
             <br />
             <button className="cancel-btn" onClick={removeActivity}>
-              REMOVE ADDRESS
+              CANCEL
             </button>
           </div>
           {/* <Checkbox {...label} /> */}
-          {data != [] &&
-            data.map((key, value) => {
+        </div>
+        <div className="price-address-box">
+          <div className="address-data">
+            {/* {data != [] && */}
+            {data.map((data, index) => {
               return (
                 <>
-                  <div key={value} style={{display:'inline-block'}}>
-                    <h4>{key},</h4>
+                  <div key={index} style={{ display: "inline-block" }}>
+                    <h4> {data}</h4>
                   </div>
                 </>
               );
             })}
-        </div>
-        <div className="price-address-box">
+          </div>
           <PriceDetails />
           {/* <button style={{width:'100px',height:'40px', alignItems:'center'}} onClick={onHandler}>next</button> */}
         </div>

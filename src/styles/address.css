@@ -1,80 +1,75 @@
 .address-container {
-    width: 100%;
-    background: rgb(255, 255, 255);
-    padding: 30px 20px 20px;
-    margin-top: 100%;
-    display: flex;
-    /* margin: 50px; */
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 30px 20px 20px;
+  margin-top: 100%;
+  display: flex;
+  /* margin: 50px; */
 }
-
 .heading-address {
-    color: rgba(0, 0, 0, 0.75);
-    font-size: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 0px 0px 20px 5px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0px 0px 10px 5px;
 }
-
-
-
 .form-container {
-    /* display: flex; */
-    border-radius: 5px;
-    border: 1.5px solid rgb(115, 200, 203);
-    /* box-shadow: rgba(115, 200, 203, 0.1) 0px 0px 20px 0px; */
-    background: rgb(255, 255, 255);
-    width: 60%;
-    padding: 20px 25px;
-    color: rgba(0, 0, 0, 0.6);
-    margin-top: 15px;
-    flex-direction: column;
+  /* display: flex; */
+  border-radius: 5px;
+  border: 1.5px solid rgb(115, 200, 203);
+  /* box-shadow: rgba(115, 200, 203, 0.1) 0px 0px 20px 0px; */
+  background: rgb(255, 255, 255);
+  width: 60%;
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 15px;
+  flex-direction: column;
 }
-
 .input-form {
-    border-bottom: 1px solid rgb(230, 230, 230);
-    margin-bottom: 15px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  margin-bottom: 10px;
 }
-
 .input-form label {
-    display: block;
-    color: rgb(24, 24, 24);
-    margin-bottom: 5px;
-    opacity: 0.5;
-    font-size: 13px;
+  display: block;
+  color: rgb(24, 24, 24);
+  /* margin-bottom: 5px; */
+  font-size: 13px;
 }
-
 .input-form input {
-    width: 100%;
-    padding: 8px 0px;
-    border: none;
-    outline: none;
+  width: 100%;
+  padding: 8px 0px;
+  border: none;
+  /* outline: none; */
 }
-.btn{
-    display: flex;
-    gap: 10px;
-
+.btn {
+  display: flex;
+  gap: 10px;
 }
-.save-btn{
-    width:  220px;
-    font-size: 15px;
-    padding: 12px 20px;
-    background: transparent;
-    border: 1px solid blue;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #000;
+.save-btn {
+  width: 200px;
+  font-size: 15px;
+  /* padding: 12px 20px; */
+  background-color: yellow;
+  border: 1px solid rgb(146, 216, 230);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
 }
-.cancel-btn{
-    font-size: 15px;
-    padding: 12px 20px;
-    background:transparent;
-    border: 1px solid blue;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #000;
+.cancel-btn {
+  font-size: 15px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid blue;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
 }
-.price-address-box{
-    width: 140%;
-    /* background: rgb(255, 255, 255); */
-    padding: 20px 20px 20px;
+.price-address-box {
+  width: 140%;
+  padding: 20px 20px 20px;
+}
+.address-data {
+  margin-left: 20%;
+  width: 50%;
+  box-shadow: rgb(234, 243, 243) 0px 0px 20px 0px;
 }
