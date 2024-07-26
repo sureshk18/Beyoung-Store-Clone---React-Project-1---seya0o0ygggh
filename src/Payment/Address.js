@@ -32,9 +32,9 @@ function Order() {
     setData([]);
   }
 
-  // const onHandler=()=>{
-  //   Navigate('/payment')
-  // }
+  const onHandler = () => {
+    Navigate("/payment");
+  };
 
   return (
     <>
@@ -124,8 +124,15 @@ function Order() {
               );
             })}
           </div>
-          <PriceDetails />
-          {/* <button style={{width:'100px',height:'40px', alignItems:'center'}} onClick={onHandler}>next</button> */}
+          <div style={{ width: "80%" }}>
+            <PriceDetails  />
+          </div>
+          <button
+            style={{ width: "100px", height: "40px", alignItems: "center" }}
+            onClick={onHandler}
+          >
+            order place
+          </button>
         </div>
       </div>
     </>

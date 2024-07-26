@@ -1,0 +1,93 @@
+.payment-container{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.pay-box {
+    width: 50%;
+    background: rgb(255, 255, 255);
+    padding: 30px 20px 20px;
+}
+.pay-heading{
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 0px 0px 20px 5px;
+}
+.pay-card{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.pay-card div {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px;
+    padding: 10px;
+}
+.css-d2uv7k {
+    cursor: pointer;
+    border: 2px solid rgb(69, 187, 0);
+}
+.css-1j7qy17 span {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(66, 66, 66);
+    margin: 0px 0px 3px;
+}
+.css-1yisxr7 * {
+    box-sizing: border-box;
+}
+.css-mftlzs > div {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.css-1u9zz6k {
+    position: relative;
+}
+.css-1292orw {
+    width: 100%;
+    position: relative;
+    margin: 0px 0px 12px;
+}
+.css-1u9zz6k input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 3px 0px inset;
+    padding: 15px 10px;
+    outline: none;
+}
+.css-1u9zz6k label {
+    padding: 12px;
+    pointer-events: none;
+    position: absolute;
+    left: 0px;
+    top: 6px;
+    transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    color: rgb(153, 153, 153);
+}
+.css-1qoyb3 {
+    display: flex;
+    gap: 20%;
+}
+.css-uo6s9x {
+    display: flex;
+    width: 50%;
+    gap: 5%;
+}
+.css-dekg0 {
+    width: 30%;
+    position: relative;
+}
+

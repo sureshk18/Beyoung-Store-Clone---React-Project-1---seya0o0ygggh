@@ -50,14 +50,16 @@ const PriceDetails = () => {
               </p>
               <p>
                 Beyoung Discont{" "}
-                <span>- &#8377; {(getShirtData?.totalPrice * 10) / 100}</span>
+                <span className="discount">
+                  - &#8377; {(getShirtData?.totalPrice * 10) / 100}
+                </span>
               </p>
               <p>
-                Shipping <span>&#8377; 49</span>
+                Shipping <span className="shipping">&#8377; 49</span>
               </p>
               <p>
                 Cart Total{" "}
-                <span>
+                <span className="cartTotal">
                   &#8377;{" "}
                   {getShirtData?.totalPrice -
                     (getShirtData?.totalPrice * 10) / 100 +
@@ -68,7 +70,7 @@ const PriceDetails = () => {
             <div className="py-mode">
               <h4>
                 Total Amount
-                <span>
+                <span className="totalAmount">
                   &#8377;{" "}
                   {getShirtData?.totalPrice -
                     (getShirtData?.totalPrice * 10) / 100 +
