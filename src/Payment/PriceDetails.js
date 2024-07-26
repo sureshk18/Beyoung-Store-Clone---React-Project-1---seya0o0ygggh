@@ -51,7 +51,7 @@ const PriceDetails = () => {
               <p>
                 Beyoung Discont{" "}
                 <span className="discount">
-                  - &#8377; {(getShirtData?.totalPrice * 10) / 100}
+                  - &#8377; {(getShirtData?.totalPrice * 20) / 100}
                 </span>
               </p>
               <p>
@@ -62,7 +62,7 @@ const PriceDetails = () => {
                 <span className="cartTotal">
                   &#8377;{" "}
                   {getShirtData?.totalPrice -
-                    (getShirtData?.totalPrice * 10) / 100 +
+                    (getShirtData?.totalPrice * 20) / 100 +
                     49}
                 </span>
               </p>
@@ -73,15 +73,13 @@ const PriceDetails = () => {
                 <span className="totalAmount">
                   &#8377;{" "}
                   {getShirtData?.totalPrice -
-                    (getShirtData?.totalPrice * 10) / 100 +
+                    (getShirtData?.totalPrice * 20) / 100 +
                     49}
                 </span>
               </h4>
               <h3 className="py-title">
                 You Saved ₹{" "}
-                {getShirtData?.totalPrice -
-                  (getShirtData?.totalPrice * 10) / 100 +
-                  49}{" "}
+                {(getShirtData?.totalPrice * 20) / 100}{" "}
                 on this order
               </h3>
               <br />
