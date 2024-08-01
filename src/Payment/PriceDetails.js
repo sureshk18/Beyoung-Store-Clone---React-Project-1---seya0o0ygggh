@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PriceDetails = () => {
+const PriceDetails = ({clickMethod}) => {
   const [getShirtData, setShirtData] = useState([]);
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const PriceDetails = () => {
               <p>
                 Beyoung Discont{" "}
                 <span className="discount">
-                  - &#8377; {(getShirtData?.totalPrice * 20) / 100}
+                  - &#8377; {Math.round(getShirtData?.totalPrice * 20 / 100)}
                 </span>
               </p>
               <p>
@@ -61,8 +61,8 @@ const PriceDetails = () => {
                 Cart Total{" "}
                 <span className="cartTotal">
                   &#8377;{" "}
-                  {getShirtData?.totalPrice -
-                    (getShirtData?.totalPrice * 20) / 100 +
+                  {Math.round(getShirtData?.totalPrice -
+                    (getShirtData?.totalPrice * 20) / 100) +
                     49}
                 </span>
               </p>
@@ -72,17 +72,18 @@ const PriceDetails = () => {
                 Total Amount
                 <span className="totalAmount">
                   &#8377;{" "}
-                  {getShirtData?.totalPrice -
-                    (getShirtData?.totalPrice * 20) / 100 +
+                  {Math.round(getShirtData?.totalPrice -
+                    (getShirtData?.totalPrice * 20) / 100) +
                     49}
                 </span>
               </h4>
               <h3 className="py-title">
                 You Saved ₹{" "}
-                {(getShirtData?.totalPrice * 20) / 100}{" "}
+                {Math.round(getShirtData?.totalPrice * 20 / 100)}{" "}
                 on this order
               </h3>
               <br />
+              {/* <h3 className="py-title" onClick={clickMethod}> */}
               <h3 className="py-title" onClick={onHandler}>
                 CHECKOUT SECURELY
               </h3>

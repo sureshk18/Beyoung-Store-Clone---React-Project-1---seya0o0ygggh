@@ -93,8 +93,9 @@ function BuyProduct() {
                       </h4>
                       <p className="product-check-name">
                         Price : &#8377; {seller.product.price}
+                        <span className="product-off">(20% OFF)</span>
                       </p>
-                      <p className="product-check-name">{seller.color}</p>
+                      <p className="product-check-name">{seller.product.color}</p>
                       <p className="product-check-name">Size: {seller.size}</p>
                     </article>
                   </>

@@ -35,6 +35,11 @@ body {
 .product-check-name {
     margin: 0px 5px 10px;
 }
+.product-off{
+    color: green;
+    margin-left:10px;
+    font-size: 14px;
+}
 .buy-image{
     width: 200px;
     height: auto;
@@ -70,16 +75,16 @@ body {
     margin: 12px 15px;
 }
 p span{
-    margin-left: 47%;
+    margin-left: 51%;
 }
 span.discount{
-    margin-left: 55%;
+    margin-left: 59%;
 }
 span.shipping{
-    margin-left: 75%;
+    margin-left: 76%;
 }
 span.cartTotal{
-    margin-left:68%;
+    margin-left:74%;
 }
 .py-mode{
     border-top: 1px solid black;
@@ -92,7 +97,7 @@ span.cartTotal{
     margin-left: 45%;
 } */
 span.totalAmount{
-    margin-left: 60%;
+    margin-left: 65%;
 }
 .py-title{
     width: 100%;
