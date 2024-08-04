@@ -47,7 +47,7 @@ function Order() {
     localStorage.removeItem("items");
   }
 
-  const onHandler = () => {
+  const onPaymentHandler = () => {
     navigate("/payment");
   };
 
@@ -139,9 +139,9 @@ function Order() {
             ))}
           </div>
           <div style={{ width: "90%" }}>
-            {/* <PriceDetails clickMethod={onHandler} /> */}
             <PriceDetails/>
-            <button className="pay-title" onClick={onHandler}>next</button>
+            {/* <PriceDetails/> */}
+            {/* <button className="pay-title" onClick={onHandler}>next</button> */}
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const PriceDetails = ({clickMethod}) => {
+const PriceDetails = ({ key }) => {
   const [getShirtData, setShirtData] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
 
   async function fetchData() {
     try {
@@ -33,7 +34,10 @@ const PriceDetails = ({clickMethod}) => {
     fetchData();
   }, []);
 
-  const onHandler = () => {
+  const clickMethod = () => {
+    if(location.pathname=='/address')
+    navigate("/payment"); 
+    else
     navigate("/address");
   };
 
@@ -51,7 +55,7 @@ const PriceDetails = ({clickMethod}) => {
               <p>
                 Beyoung Discont{" "}
                 <span className="discount">
-                  - &#8377; {Math.round(getShirtData?.totalPrice * 20 / 100)}
+                  - &#8377; {Math.round((getShirtData?.totalPrice * 20) / 100)}
                 </span>
               </p>
               <p>
@@ -61,9 +65,10 @@ const PriceDetails = ({clickMethod}) => {
                 Cart Total{" "}
                 <span className="cartTotal">
                   &#8377;{" "}
-                  {Math.round(getShirtData?.totalPrice -
-                    (getShirtData?.totalPrice * 20) / 100) +
-                    49}
+                  {Math.round(
+                    getShirtData?.totalPrice -
+                      (getShirtData?.totalPrice * 20) / 100
+                  ) + 49}
                 </span>
               </p>
             </div>
@@ -72,21 +77,23 @@ const PriceDetails = ({clickMethod}) => {
                 Total Amount
                 <span className="totalAmount">
                   &#8377;{" "}
-                  {Math.round(getShirtData?.totalPrice -
-                    (getShirtData?.totalPrice * 20) / 100) +
-                    49}
+                  {Math.round(
+                    getShirtData?.totalPrice -
+                      (getShirtData?.totalPrice * 20) / 100
+                  ) + 49}
                 </span>
               </h4>
+              
               <h3 className="py-title">
-                You Saved ₹{" "}
-                {Math.round(getShirtData?.totalPrice * 20 / 100)}{" "}
+                You Saved ₹ {Math.round((getShirtData?.totalPrice * 20) / 100)}{" "}
                 on this order
               </h3>
               <br />
-              {/* <h3 className="py-title" onClick={clickMethod}> */}
-              <h3 className="py-title" onClick={onHandler}>
+              <h3 className="py-title" onClick={clickMethod} >
+                {/*<h3 className="py-title" onClick={onHandler}>*/}
                 CHECKOUT SECURELY
               </h3>
+              {/* <p>{location.key}</p> */}
             </div>
           </>
         );
