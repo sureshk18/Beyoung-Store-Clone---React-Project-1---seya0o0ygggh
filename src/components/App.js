@@ -20,7 +20,7 @@ import MixCloths from "../cloths/mixcloths";
 import Wishlist from "../Pages/Wishlist";
 // import MyProfile from '../myaccounts/MyProfile';
 import Address from "../Payment/Address";
-import Payment from "../Payment/Payment";
+import PaymentCheckout from "../Payment/PaymentCheckout";
 
 function App() {
   return (
@@ -50,8 +50,9 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Buy />} />
           <Route path="/address" element={<Address />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<PaymentCheckout/>} />
         </Routes>
+      
         <Footer />
       </BrowserRouter>
     </>

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../styles/address.css";
 import PriceDetails from "./PriceDetails";
 import { useNavigate } from "react-router-dom";
+import PaymentCheckout from "../Payment/PaymentCheckout";
+
 
 function Order() {
   const [name, setName] = useState("");
@@ -77,10 +79,10 @@ function Order() {
           </div>
 
           <div className="input-form">
-            <label>Pincode:</label>
+            <label>Zipcode:</label>
             <input
               type="number"
-              placeholder="Pincode"
+              placeholder="Zipcode"
               value={pincode}
               onChange={(e) => setPincode(e.target.value)}
             />
@@ -128,18 +130,21 @@ function Order() {
         <div className="price-address-box">
           <div className="address-data">
             {data.map((item, index) => (
-              <div key={index} style={{ display: "inline-block" }}>
-                <p>Name: {item.name}</p>
-                <p>Phone: {item.phone}</p>
-                <p>Pincode: {item.pincode}</p>
-                <p>Address: {item.address}</p>
-                <p>City: {item.city}</p>
-                <p>State: {item.state}</p>
+              <div key={index} style={{ display: "inline-block",textTransform:'capitalize' }}>
+                <p><strong>Name: </strong> {item.name}</p>
+                <p><strong>Address:</strong> {item.address}, {item.city}, {item.state},  {item.pincode}</p>
+                <p><strong>Phone:</strong> {item.phone}</p>
+                {/* <p><strong>Zipcode: </strong></p> */}
+               
+                {/* <p>City: {item.city}</p>
+                <p>State: {item.state}</p> */}
               </div>
             ))}
           </div>
+       
           <div style={{ width: "90%" }}>
-            <PriceDetails/>
+            <PriceDetails />
+            
             {/* <PriceDetails/> */}
             {/* <button className="pay-title" onClick={onHandler}>next</button> */}
           </div>

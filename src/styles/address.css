@@ -73,3 +73,8 @@
   width: 65%;
   box-shadow: rgb(234, 243, 243) 0px 0px 20px 0px;
 }
+
+.user-address{
+  display: flex;
+  /* color: red; */
+}
