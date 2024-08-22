@@ -35,10 +35,14 @@ const PriceDetails = ({ key }) => {
   }, []);
 
   const clickMethod = () => {
-    if(location.pathname=='/address')
-    navigate("/payment"); 
-    else
-    navigate("/address");
+    if (location.pathname == "/address") navigate("/payment");
+    else {
+      if (location.pathname == "/payment") {
+        navigate("/payment");
+      } else {
+        navigate("/address");
+      }
+    }
   };
 
   return (
@@ -83,13 +87,13 @@ const PriceDetails = ({ key }) => {
                   ) + 49}
                 </span>
               </h4>
-              
+
               <h3 className="py-title">
                 You Saved ₹ {Math.round((getShirtData?.totalPrice * 20) / 100)}{" "}
                 on this order
               </h3>
               <br />
-              <h3 className="py-title" onClick={clickMethod} >
+              <h3 className="py-title" onClick={clickMethod}>
                 {/*<h3 className="py-title" onClick={onHandler}>*/}
                 CHECKOUT SECURELY
               </h3>

@@ -631,3 +631,387 @@ const Payment = () => {
 };
 
 export default Payment;
+
+
+// import React, { useState } from 'react';
+
+// const PaymentCheckout = () => {
+//   const [productID, setProductID] = useState('');
+//   const [quantity, setQuantity] = useState(1);
+//   const [addressType, setAddressType] = useState('HOME');
+//   const [address, setAddress] = useState({
+//     street: '',
+//     city: '',
+//     state: '',
+//     country: '',
+//     zipCode: ''
+//   });
+
+//   const handleOrder = async () => {
+//     const url = `https://academics.newtonschool.co/api/v1/ecommerce/order`;
+
+//     const orderData = {
+//       productId: productID,
+//       quantity: quantity,
+//       addressType: addressType,
+//       address: address
+//     };
+
+//     try {
+//       const response = await fetch(url, {
+//         method: 'POST',
+//         headers: {
+//           'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
+//           'projectID': 'Your_ProjectId',
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(orderData)
+//       });
+
+//       const result = await response.json();
+//       if (response.ok) {
+//         console.log('Order placed successfully:', result);
+//       } else {
+//         console.error('Error placing order:', result);
+//       }
+//     } catch (error) {
+//       console.error('Network error:', error);
+//     }
+//   };
+
+//   return (
+//     <div style={{marginTop:'90px'}}>
+//       <h1>Place Your Order</h1>
+//       <form onSubmit={(e) => {
+//         e.preventDefault();
+//         handleOrder();
+//       }}>
+//         <input
+//           type="text"
+//           placeholder="Product ID"
+//           value={productID}
+//           onChange={(e) => setProductID(e.target.value)}
+//         />
+//         <input
+//           type="number"
+//           placeholder="Quantity"
+//           value={quantity}
+//           onChange={(e) => setQuantity(e.target.value)}
+//         />
+//         <select
+//           value={addressType}
+//           onChange={(e) => setAddressType(e.target.value)}
+//         >
+//           <option value="HOME">Home</option>
+//           <option value="OFFICE">Office</option>
+//         </select>
+//         <input
+//           type="text"
+//           placeholder="Street"
+//           value={address.street}
+//           onChange={(e) => setAddress({ ...address, street: e.target.value })}
+//         />
+//         <input
+//           type="text"
+//           placeholder="City"
+//           value={address.city}
+//           onChange={(e) => setAddress({ ...address, city: e.target.value })}
+//         />
+//         <input
+//           type="text"
+//           placeholder="State"
+//           value={address.state}
+//           onChange={(e) => setAddress({ ...address, state: e.target.value })}
+//         />
+//         <input
+//           type="text"
+//           placeholder="Country"
+//           value={address.country}
+//           onChange={(e) => setAddress({ ...address, country: e.target.value })}
+//         />
+//         <input
+//           type="text"
+//           placeholder="Zip Code"
+//           value={address.zipCode}
+//           onChange={(e) => setAddress({ ...address, zipCode: e.target.value })}
+//         />
+//         <button type="submit">Place Order</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default PaymentCheckout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//no final but just near by final page 
+
+// import React, { useEffect, useState } from "react";
+// import "../styles/Payment.css";
+// import Box from "@mui/material/Box";
+// import Modal from "@mui/material/Modal";
+// import PriceDetails from "./PriceDetails";
+// import { useLocation } from "react-router-dom";
+
+// const PaymentCheckout = () => {
+//   const [itemData, setItemData] = useState([]);
+//   const [paymentMethod, setPaymentMethod] = useState("cod");
+//   const [error, setError] = useState("");
+//   const [orderPlaced, setOrderPlaced] = useState(false);
+//   const [addressType, setAddressType] = useState("HOME");
+//   const [address, setAddress] = useState({
+//     name: "",
+//     street: "",
+//     city: "",
+//     state: "",
+//     country: "",
+//     zipCode: "",
+//   });
+
+//   const [open, setOpen] = React.useState(false);
+//   const handleOpen = () => setOpen(true);
+//   const handleClose = () => setOpen(false);
+
+//   const style = {
+//     position: "absolute",
+//     top: "50%",
+//     left: "50%",
+//     transform: "translate(-50%, -50%)",
+//     width: 400,
+//     bgcolor: "background.paper",
+//     border: "1px solid #000",
+//     boxShadow: 24,
+//     p: 4,
+//   };
+
+//   useEffect(() => {
+//     const savedData = JSON.parse(localStorage.getItem("items"));
+//     if (savedData && savedData.length > 0) {
+//       setAddress({
+//         name: savedData[0].name,
+//         street: savedData[0].address,
+//         city: savedData[0].city,
+//         state: savedData[0].state,
+//         country: "India",
+//         zipCode: savedData[0].pincode,
+//       });
+//     }
+//   }, []);
+
+//   const handlePaymentMethodChange = (event) => {
+//     setPaymentMethod(event.target.value);
+//   };
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+
+//     if (
+//       !address.name ||
+//       !address.street ||
+//       !address.city ||
+//       !address.state ||
+//       !address.country ||
+//       !address.zipCode
+//     ) {
+//       setError("Please fill in all fields.");
+//       return;
+//     }
+//     setError("");
+//     setOrderPlaced(true);
+//   };
+
+//   return (
+//     <>
+//       <h2 className="pay-heading">100% secure payment</h2>
+//       <div>
+//         <div className="checkout-container">
+//         <form onSubmit={handleSubmit}>
+//           <div className="paymentt-container">
+//             <select
+//               className="input-name1"
+//               value={addressType}
+//               onChange={(e) => setAddressType(e.target.value)}
+//             >
+//               <option value="HOME">Home</option>
+//               <option value="OFFICE">Office</option>
+//             </select>
+//             <input
+//               className="input-name1"
+//               type="text"
+//               value={address.name}
+//               placeholder="Name"
+//               onChange={(e) => setAddress({ ...address, name: e.target.value })}
+//               required
+//             />
+
+//             <input
+//               type="text"
+//               className="input-name1"
+//               placeholder="Street"
+//               value={address.street}
+//               onChange={(e) =>
+//                 setAddress({ ...address, street: e.target.value })
+//               }
+//               required
+//             />
+//             <input
+//               className="input-name1"
+//               type="text"
+//               placeholder="City"
+//               value={address.city}
+//               onChange={(e) => setAddress({ ...address, city: e.target.value })}
+//               required
+//             />
+//             <input
+//               className="input-name1"
+//               type="text"
+//               placeholder="State"
+//               value={address.state}
+//               onChange={(e) =>
+//                 setAddress({ ...address, state: e.target.value })
+//               }
+//               required
+//             />
+//             <input
+//               className="input-name1"
+//               type="text"
+//               placeholder="Country"
+//               value={address.country}
+//               onChange={(e) =>
+//                 setAddress({ ...address, country: e.target.value })
+//               }
+//               required
+//             />
+//             <input
+//               className="input-name1"
+//               type="number"
+//               placeholder="Zip Code"
+//               value={address.zipCode}
+//               onChange={(e) =>
+//                 setAddress({ ...address, zipCode: e.target.value })
+//               }
+//               required
+//             />
+
+//             <div className="payment-method">
+//               <div className="card">
+//                 <label>
+//                   <input
+//                     className="radio-buttons"
+//                     type="radio"
+//                     value="card"
+//                     checked={paymentMethod === "card"}
+//                     onChange={handlePaymentMethodChange}
+//                   />
+//                   Debit/Credit Card
+//                 </label>
+//               </div>
+//               <div className="card">
+//                 <label>
+//                   <input
+//                     type="radio"
+//                     value="cod"
+//                     checked={paymentMethod === "cod"}
+//                     onChange={handlePaymentMethodChange}
+//                   />
+//                   Cash on Delivery
+//                 </label>
+//               </div>
+//             </div>
+//             {paymentMethod === "card" && (
+//               <div className="cardDetails">
+//                 <label>Card Details:</label>
+//                 <input
+//                   className="card-input"
+//                   type="text"
+//                   maxLength={19}
+//                   placeholder="Card Number"
+//                   required
+//                 />
+//                 <input
+//                   className="card-input"
+//                   type="text"
+//                   maxLength={4}
+//                   placeholder="Expiration Date (MM/YY)"
+//                   required
+//                 />
+//                 <input
+//                   className="card-input"
+//                   type="text"
+//                   maxLength={3}
+//                   placeholder="CVC"
+//                   required
+//                 />
+//               </div>
+//             )}
+//             {error && <div style={{ color: "red" }}>{error}</div>}
+//           </div>
+//           <div  className="checkout-price-container">
+//             <PriceDetails />
+//           </div>
+//           <div className="">
+//             <Modal
+//               open={open}
+//               onClose={handleClose}
+//               aria-labelledby="modal-modal-title"
+//               aria-describedby="modal-modal-description"
+//             >
+//               <Box sx={style}>
+//                 {orderPlaced && (
+//                   <div
+//                     style={{
+//                       margin: "20px",
+//                       textAlign: "center",
+//                       color: "green",
+//                     }}
+//                   >
+//                     <h3>Order Placed Successfully!</h3>
+//                     <p
+//                       style={{
+//                         textTransform: "capitalize",
+//                         textAlign: "center",
+//                       }}
+//                     >
+//                       Thank you, {address.name}
+//                     </p>
+//                   </div>
+//                 )}
+//               </Box>
+//             </Modal>
+//           </div>
+//           <button className="payment-btn" type="submit" onClick={handleOpen}>
+//             PLACE ORDER
+//           </button>
+//         </form>
+//       </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default PaymentCheckout;

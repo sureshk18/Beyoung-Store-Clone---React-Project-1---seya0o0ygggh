@@ -4,7 +4,6 @@ import PriceDetails from "./PriceDetails";
 import { useNavigate } from "react-router-dom";
 import PaymentCheckout from "../Payment/PaymentCheckout";
 
-
 function Order() {
   const [name, setName] = useState("");
   const [data, setData] = useState([]);
@@ -23,15 +22,15 @@ function Order() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("items", JSON.stringify(data));
+    if (data.length > 0) {
+      localStorage.setItem("items", JSON.stringify(data));
+    }
   }, [data]);
 
   function addData() {
     if (name && phone && pincode && address && city && state) {
-      setData((prevData) => [
-        ...prevData,
-        { name, phone, pincode, address, city, state },
-      ]);
+      const newEntry = { name, phone, pincode, address, city, state };
+      setData((prevData) => [...prevData, newEntry]);
 
       setName("");
       setPhone("");
@@ -117,6 +116,7 @@ function Order() {
               onChange={(e) => setState(e.target.value)}
             />
           </div>
+
           <div className="btn">
             <button className="save-btn" onClick={addData}>
               SAVE
@@ -127,26 +127,20 @@ function Order() {
             </button>
           </div>
         </div>
+
         <div className="price-address-box">
           <div className="address-data">
             {data.map((item, index) => (
-              <div key={index} style={{ display: "inline-block",textTransform:'capitalize' }}>
+              <div key={index} style={{ display: "inline-block", textTransform: 'capitalize' }}>
                 <p><strong>Name: </strong> {item.name}</p>
-                <p><strong>Address:</strong> {item.address}, {item.city}, {item.state},  {item.pincode}</p>
+                <p><strong>Address:</strong> {item.address}, {item.city}, {item.state}, {item.pincode}</p>
                 <p><strong>Phone:</strong> {item.phone}</p>
-                {/* <p><strong>Zipcode: </strong></p> */}
-               
-                {/* <p>City: {item.city}</p>
-                <p>State: {item.state}</p> */}
               </div>
             ))}
           </div>
-       
+
           <div style={{ width: "90%" }}>
             <PriceDetails />
-            
-            {/* <PriceDetails/> */}
-            {/* <button className="pay-title" onClick={onHandler}>next</button> */}
           </div>
         </div>
       </div>
