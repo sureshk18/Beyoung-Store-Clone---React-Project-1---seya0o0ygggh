@@ -21,6 +21,7 @@ import Wishlist from "../Pages/Wishlist";
 // import MyProfile from '../myaccounts/MyProfile';
 import Address from "../Payment/Address";
 import PaymentCheckout from "../Payment/PaymentCheckout";
+import ThanksPage from "../Payment/ThanksPage";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="/checkout" element={<Buy />} />
           <Route path="/address" element={<Address />} />
           <Route path="/payment" element={<PaymentCheckout/>} />
+          <Route path="/thankyou" element={<ThanksPage/>}/>
         </Routes>
       
         <Footer />

@@ -1,10 +1,9 @@
 .address-container {
   width: 100%;
   background: #ffffff;
-  padding: 30px 20px 20px;
-  margin-top: 100%;
+  padding: 25px 5px 10px;
   display: flex;
-  /* margin: 50px; */
+  margin: 50px;
 }
 .heading-address {
   color: rgba(0, 0, 0, 0.75);
@@ -14,12 +13,11 @@
   padding: 0px 0px 10px 5px;
 }
 .form-container {
-  /* display: flex; */
+  display: flex;
   border-radius: 5px;
-  border: 1.5px solid rgb(115, 200, 203);
-  /* box-shadow: rgba(115, 200, 203, 0.1) 0px 0px 20px 0px; */
+  border: 1px solid rgb(115, 200, 203);
   background: rgb(255, 255, 255);
-  width: 60%;
+  width: 30%;
   padding: 10px 20px;
   color: rgba(0, 0, 0, 0.6);
   margin-top: 15px;
@@ -32,14 +30,12 @@
 .input-form label {
   display: block;
   color: rgb(24, 24, 24);
-  /* margin-bottom: 5px; */
   font-size: 13px;
 }
 .input-form input {
   width: 100%;
   padding: 8px 0px;
   border: none;
-  /* outline: none; */
 }
 .btn {
   display: flex;
@@ -48,7 +44,6 @@
 .save-btn {
   width: 200px;
   font-size: 15px;
-  /* padding: 12px 20px; */
   background-color: yellow;
   border: 1px solid rgb(146, 216, 230);
   border-radius: 8px;
@@ -65,16 +60,23 @@
   color: #000;
 }
 .price-address-box {
-  width: 140%;
-  padding: 20px 20px 20px;
+  width:30%;
+  margin: 15px;
+  margin-left: -20px;
+  /* padding: 20px 20px 20px; */
 }
 .address-data {
   margin-left: 12%;
-  width: 65%;
+  width: 100%;
   box-shadow: rgb(234, 243, 243) 0px 0px 20px 0px;
 }
 
 .user-address{
   display: flex;
-  /* color: red; */
+}
+.product-price-1{
+  margin: 15px;
+  display: flex;
+  width: 300%;
+  /* margin-left: 6%; */
 }

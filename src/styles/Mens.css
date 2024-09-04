@@ -112,3 +112,18 @@ p.seller-price{
 .wishlist-button:hover{
     background-color: #eaede5;
 }
+
+.sellerTag{
+    /* padding: 5px; */
+    margin-right: 188px;
+    width: 70px;
+    float: right;
+    background-color: rgb(195, 33, 72);
+    color: rgb(255, 255, 255);
+    /* cursor: default; */
+    /* position: absolute; */
+    /* width: 100%; */
+    height: 10%;
+    /* text-align: left; */
+    z-index: 2;
+}

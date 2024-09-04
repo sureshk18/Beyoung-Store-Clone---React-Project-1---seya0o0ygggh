@@ -48,13 +48,13 @@ function Order() {
     localStorage.removeItem("items");
   }
 
-  const onPaymentHandler = () => {
-    navigate("/payment");
-  };
+  // const onPaymentHandler = () => {
+  //   navigate("/payment");
+  // };
 
   return (
     <>
-      <div className="address-container" style={{ marginTop: "50px" }}>
+      <div className="address-container" >
         <div className="form-container">
           <h3 className="heading-address">Shipping Address</h3>
           <div className="input-form">
@@ -139,9 +139,9 @@ function Order() {
             ))}
           </div>
 
-          <div style={{ width: "90%" }}>
+          <div className="product-price-1">
             <PriceDetails />
-          </div>
+            </div>
         </div>
       </div>
     </>

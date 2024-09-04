@@ -1015,3 +1015,278 @@ export default Payment;
 // };
 
 // export default PaymentCheckout;
+
+
+
+
+//================================================================================================================================
+//PAYMENT CHECKOUT PAGE
+
+
+
+
+
+{/*
+import React, { useEffect, useState } from "react";
+import "../styles/Payment.css";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import PriceDetails from "./PriceDetails";
+import { useParams, Link } from "react-router-dom";
+
+const PaymentCheckout = () => {
+  const [itemData, setItemData] = useState([]);
+  const [paymentMethod, setPaymentMethod] = useState("");
+
+  const [addressType, setAddressType] = useState("HOME");
+  const [address, setAddress] = useState({
+    name: "",
+    street: "",
+    city: "",
+    state: "",
+    country: "",
+    zipCode: "",
+  });
+  const { _id } = useParams();
+  const [isRadioSelected, setIsRadioSelected] = useState(false);
+
+  async function fetchOrderData(productID) {
+    try {
+      const res = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/order${productID}`,
+        {
+          method: "POST",
+          headers: {
+            projectId: "f104bi07c490",
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE0MzQyNzFmNjFkNjE2YWMwYzNjYSIsImlhdCI6MTcxOTc0NzM5NywiZXhwIjoxNzUxMjgzMzk3fQ.rxq5Muz_hToParfTiTHOnayIqyA6BvWNrva6CTe1foo`,
+          },
+          body: {
+            productId: "{{productID}}",
+            quantity: 2,
+            addressType: "HOME",
+            address: {
+              street: "123 main st",
+              city: "Pindwara",
+              state: "Rajasthan",
+              country: "India",
+              zipcode: "307022",
+            },
+          },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setItemData(data.data);
+        console.log(data.data);
+      } else {
+        console.log("Failed to fetch products");
+      }
+    } catch (error) {
+      console.error("An error occurred while fetching products", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchOrderData();
+  }, []);
+
+  useEffect(() => {
+    const savedData = JSON.parse(localStorage.getItem("items"));
+    if (savedData && savedData.length > 0) {
+      setAddress({
+        name: savedData[0].name,
+        street: savedData[0].address,
+        city: savedData[0].city,
+        state: savedData[0].state,
+        country: "India",
+        zipCode: savedData[0].pincode,
+      });
+    }
+  }, []);
+
+  const handlePaymentMethodChange = (event) => {
+    setPaymentMethod(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (
+      !address.name ||
+      !address.street ||
+      !address.city ||
+      !address.state ||
+      !address.country ||
+      !address.zipCode
+    ) {
+      setError("Please fill in all fields.");
+      return;
+    }
+    setError("");
+    setOrderPlaced(true);
+  };
+
+  const radioHandleChange = () => {
+    setIsRadioSelected(true);
+  };
+
+  return (
+    <>
+      <div className="PaymentPage__Parent">
+        <div className="PaymentPage__child">
+          <div className="PaymentPage__PaymentOptions">
+            <div className="payment-method">
+              <div className="card">
+                 <label>
+                  <input
+                    className="radio-buttons"
+                    type="radio"
+                    value="card"
+                    checked={paymentMethod === "card"}
+                    onChange={handlePaymentMethodChange}
+                    required
+                  />
+                  Debit/Credit Card
+                </label> 
+              </div>
+              <div className="card">
+                <label>
+                  <input
+                    type="radio"
+                    value="cod"
+                    checked={paymentMethod === "cod"}
+                    onChange={handlePaymentMethodChange}
+                  /> 
+                  <input
+                    className="btn-radio"
+                    type="radio"
+                    onChange={radioHandleChange}
+                    checked={isRadioSelected}
+                  />
+                  Cash on Delivery
+                </label>
+              </div>
+            </div>
+            {paymentMethod === "card" && (
+              <div className="cardDetails">
+                <label>Card Details:</label>
+                <input
+                  className="card-input"
+                  type="number"
+                  // id='credit-card'
+                  // checked={paymentMethod==="card"}
+                  maxLength={19}
+                  placeholder="Card Number"
+                  required
+                />
+
+                <input
+                  className="card-input"
+                  type="text"
+                  maxLength={4}
+                  placeholder="Expiration Date (MM/YY)"
+                  required
+                />
+                <input
+                  className="card-input"
+                  type="text"
+                  maxLength={3}
+                  placeholder="CVC"
+                  required
+                />
+              </div>
+            )} 
+          </div>
+          <form
+            onSubmit={handleSubmit}
+            className="PaymentPage__AddressAndCheckout"
+          >
+             <input
+              className="btn-radio"
+              type="radio"
+              onChange={radioHandleChange}
+              checked={isRadioSelected}
+            /> 
+            <lable className="shoppingAddress">Shipping Address: </lable>
+            <select
+              className="input-name1"
+              value={addressType}
+              onChange={(e) => setAddressType(e.target.value)}
+            >
+              <option value="HOME">Home</option>
+              <option value="OFFICE">Office</option>
+            </select>
+            <input
+              className="input-name1"
+              type="text"
+              value={address.name}
+              placeholder="Name"
+              onChange={(e) => setAddress({ ...address, name: e.target.value })}
+              required
+            />
+            <input
+              type="text"
+              className="input-name1"
+              placeholder="Street"
+              value={address.street}
+              onChange={(e) =>
+                setAddress({ ...address, street: e.target.value })
+              }
+              required
+            />
+            <input
+              className="input-name1"
+              type="text"
+              placeholder="City"
+              value={address.city}
+              onChange={(e) => setAddress({ ...address, city: e.target.value })}
+              required
+            />
+            <input
+              className="input-name1"
+              type="text"
+              placeholder="State"
+              value={address.state}
+              onChange={(e) =>
+                setAddress({ ...address, state: e.target.value })
+              }
+              required
+            />
+            <input
+              className="input-name1"
+              type="text"
+              placeholder="Country"
+              value={address.country}
+              onChange={(e) =>
+                setAddress({ ...address, country: e.target.value })
+              }
+              required
+            />
+            <input
+              className="input-name1"
+              type="number"
+              placeholder="Zip Code"
+              value={address.zipCode}
+              onChange={(e) =>
+                setAddress({ ...address, zipCode: e.target.value })
+              }
+              required
+            />
+            <Link to="/thankyou">
+              <button
+                className="payment-btn"
+                type="submit"
+                onClick={handleOpen}
+                disabled={!isRadioSelected}
+              >
+                PLACE ORDER
+              </button>
+            </Link>
+          </form>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default PaymentCheckout;*/}

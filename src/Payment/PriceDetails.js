@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const PriceDetails = ({ key }) => {
+const PriceDetails = () => {
   const [getShirtData, setShirtData] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-
+  
   async function fetchData() {
     try {
       const res = await fetch(
@@ -51,7 +51,7 @@ const PriceDetails = ({ key }) => {
       {getShirtData.items?.map((seller, index) => {
         return (
           <>
-            <div key={index} className="price-chart">
+            <div key={index._id} className="price-chart">
               <p>
                 Total MRP (Inc. of Taxes){" "}
                 <span>&#8377; {getShirtData?.totalPrice}</span>
@@ -87,13 +87,13 @@ const PriceDetails = ({ key }) => {
                   ) + 49}
                 </span>
               </h4>
-
+                  
               <h3 className="py-title">
                 You Saved ₹ {Math.round((getShirtData?.totalPrice * 20) / 100)}{" "}
                 on this order
               </h3>
               <br />
-              <h3 className="py-title" onClick={clickMethod}>
+              <h3 className="py-title" onClick={clickMethod} style={{cursor:'pointer'}}>
                 {/*<h3 className="py-title" onClick={onHandler}>*/}
                 CHECKOUT SECURELY
               </h3>
