@@ -80,6 +80,10 @@ function ProductDetails() {
     getProduct();
   }, [_id]);
 
+  useEffect(() => {
+    localStorage.setItem('productId',_id);
+  }, []);
+
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };

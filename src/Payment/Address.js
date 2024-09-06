@@ -133,7 +133,7 @@ function Order() {
             {data.map((item, index) => (
               <div key={index} style={{ display: "inline-block", textTransform: 'capitalize' }}>
                 <p><strong>Name: </strong> {item.name}</p>
-                <p><strong>Address:</strong> {item.address}, {item.city}, {item.state}, {item.pincode}</p>
+                <p><strong>Address:</strong> {item.address} {item.city} {item.state}-{item.pincode}</p>
                 <p><strong>Phone:</strong> {item.phone}</p>
               </div>
             ))}
