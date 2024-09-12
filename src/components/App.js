@@ -17,7 +17,7 @@ import Cart from "../Pages/Cart";
 import Buy from "../Pages/Buy";
 import MixCloths from "../cloths/mixcloths";
 import Wishlist from "../Pages/Wishlist";
-import MyProfile from "../myaccounts/MyProfile";
+// import MyProfile from "../myaccounts/MyProfile";
 import Address from "../Payment/Address";
 import PaymentCheckout from "../Payment/PaymentCheckout";
 import ThanksPage from "../Payment/ThanksPage";
@@ -38,8 +38,8 @@ function App() {
           <Route path="/search" element={<SearchPage />}></Route>
           
           <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
-            <Route path="/myprofile" element={<MyProfile />} />
-            <Route path="/orders" element={<MyOrder />} />
+            {/* <Route path="/myprofile" element={<MyProfile />} /> */}
+            {/* <Route path="/orders" element={<MyOrder />} /> */}
           </Route>
 
           <Route path="/wishlist" element={<Wishlist />}></Route>

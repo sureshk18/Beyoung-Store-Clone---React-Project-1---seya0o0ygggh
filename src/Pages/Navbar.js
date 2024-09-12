@@ -160,7 +160,7 @@ function Navbar() {
             {isUserLoggedIn || localStorage.getItem("tokenAvailable") ? (
               <>
                 <div className="dropdownmyaccount">
-                  <Link to="/myprofile">
+                  <Link >
                     <button className="dropbtn1">MY ACCOUNT</button>
                   </Link>
                   <div className="dropdown-contentmyaccount">
