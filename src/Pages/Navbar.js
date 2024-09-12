@@ -57,7 +57,7 @@ function Navbar() {
   const searchInputRef = useRef();
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState("");
-  const [wishlist, setWishlist] = useState(0);
+  // const [wishlist, setWishlist] = useState(0);
 
   const handleSearchBtnClick = (event) => {
     if (anchorEl) {
@@ -75,11 +75,11 @@ function Navbar() {
 
     const encodedSearchQuery = encodeURIComponent(`{"name":"${value}"}`);
     const apiUrl = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search=${encodedSearchQuery}`;
-    console.log(apiUrl);
+    // console.log(apiUrl);
     setIsSearchbarOpen(false);
 
     var myHeaders = new Headers();
-    myHeaders.append("projectId", "seya0o0ygggh");
+    myHeaders.append("projectId", "f104bi07c490");
 
     const requestOptions = {
       method: "GET",
@@ -109,7 +109,6 @@ function Navbar() {
   };
 
   const setClothselected = (value) => {
-    // console.log("Hi hello")
     setcloth(value);
     navigate(`/allcloths`);
   };
@@ -120,9 +119,9 @@ function Navbar() {
   };
   // console.log("hi");
 
-  const addFav = () => {
-    setWishlist();
-  };
+  // const addFav = () => {
+  //   setWishlist();
+  // };
   return (
     <div>
       <header>
@@ -165,18 +164,12 @@ function Navbar() {
                     <button className="dropbtn1">MY ACCOUNT</button>
                   </Link>
                   <div className="dropdown-contentmyaccount">
-                    <Link to="/myprofile" className="linked">
-                      My Profile
+                    <Link to="/cart" className="linked">
+                      Cart
                     </Link>
-                    {/*    <Link to='/orders' className='linked'>
-                                            Orders
-                                        </Link>
-                                        <Link to='/address' className='linked'>
-                                            Address
-                                        </Link>
-                                        <Link to='/wishlist' className='linked'>
-                                            Wishlist
-                                        </Link>*/}
+                    <Link to="/wishlist" className="linked">
+                      Wishlist
+                    </Link>
                   </div>
                 </div>
                 <p className="dash">|</p>

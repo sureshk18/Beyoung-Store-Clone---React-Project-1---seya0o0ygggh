@@ -1,8 +1,9 @@
-import { People } from "@mui/icons-material";
+
 import { createContext, useEffect, useState, useContext } from "react";
 
-const AuthContext = createContext();
 
+
+const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);

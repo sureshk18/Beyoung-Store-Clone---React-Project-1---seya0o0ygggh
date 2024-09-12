@@ -1,14 +1,8 @@
 import "../styles/Buy.css";
-import PaymentIcon from "@mui/icons-material/Payment";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import React, { useEffect, useState } from "react";
 import "../styles/Mens.css";
-import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/UserProvider";
 import "react-toastify/dist/ReactToastify.css";
-import Address from "../Payment/Address";
-import Payment from "../Payment/Payment";
 import PriceDetails from "../Payment/PriceDetails";
 
 function BuyProduct() {

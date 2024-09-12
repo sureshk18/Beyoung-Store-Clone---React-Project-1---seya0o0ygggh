@@ -36,7 +36,7 @@ const LoginModal = ({ isOpen, closeModal, onLogin }) => {
   const signIn = async (userInfo) => {
     try {
       const myHeaders = new Headers();
-      myHeaders.append("projectId", "seya0o0ygggh");
+      myHeaders.append("projectId", "f104bi07c490");
       myHeaders.append("Content-Type", "application/json");
 
       const url = "https://academics.newtonschool.co/api/v1/user/login";

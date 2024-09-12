@@ -18,6 +18,7 @@ const PaymentCheckout = () => {
   const [error, setError] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
   const { _id } = useParams();
+  const savedData = JSON.parse(localStorage.getItem("items"));
   async function fetchOrderData() {
     try {
       const res = await fetch(
@@ -34,11 +35,12 @@ const PaymentCheckout = () => {
             quantity: 2,
             addressType: "HOME",
             address: {
-              "street":address.street,
-              "city": address.city,
-              "state": address.state,
-              "country":"India",
-              "zipCode": address.zipCode
+              // name: savedData[0].name,
+              street: savedData[0].address,
+              city: savedData[0].city,
+              state: savedData[0].state,
+              country: "India",
+              zipCode: savedData[0].pincode,
             }
           }),
         }

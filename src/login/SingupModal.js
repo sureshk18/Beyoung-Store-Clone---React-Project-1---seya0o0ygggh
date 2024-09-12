@@ -38,7 +38,7 @@ const SignupModal = ({ isOpen, closeModal, openLoginModal, onContinueAsGuest }) 
             // Make a POST request to your signup API
             const headers = {
                 headers: {
-                    projectID: 'seya0o0ygggh', // Replace with your project ID
+                    projectID: 'f104bi07c490', // Replace with your project ID
                 },
             };
 

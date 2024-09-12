@@ -9,16 +9,15 @@ import Upcoming from "../Pages/Upcoming";
 import TrackOrders from "../Morepages/TrackOrders";
 import Footer from "../Morepages/Footer";
 import ProductDetails from "../Pages/ProductDetails";
-// import MyAccount from '../myaccounts/myAccount';
+import MyAccount from "../myaccounts/myAccount";
 import ProtectedComponent from "../Context/ProtectedComponent";
 import SearchPage from "../Pages/SearchPage";
-import { CartNumberProvider } from "../Context/CartNumberContext";
-// import MyOrder from '../myaccounts/myOrder';
+import MyOrder from "../myaccounts/myOrder";
 import Cart from "../Pages/Cart";
 import Buy from "../Pages/Buy";
 import MixCloths from "../cloths/mixcloths";
 import Wishlist from "../Pages/Wishlist";
-// import MyProfile from '../myaccounts/MyProfile';
+import MyProfile from "../myaccounts/MyProfile";
 import Address from "../Payment/Address";
 import PaymentCheckout from "../Payment/PaymentCheckout";
 import ThanksPage from "../Payment/ThanksPage";
@@ -27,7 +26,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <CartNumberProvider />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -36,25 +34,22 @@ function App() {
           <Route path="/women" element={<Women />}></Route>
           <Route path="/Combos" element={<Upcoming />}></Route>
           <Route path="/track-orders" element={<TrackOrders />}></Route>
-          <Route
-            path="/product-details/:_id"
-            element={<ProductDetails />}
-          ></Route>
+          <Route path="/product-details/:_id" element={<ProductDetails />}></Route>
           <Route path="/search" element={<SearchPage />}></Route>
-          {/* <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
-        <Route path="/myprofile" element={<MyProfile />} /> 
-          <Route path="/orders" element={<MyOrder />} />
-           <Route path="/address" element={<MyAddress />} /> 
-        </Route>*/}
+          
+          <Route path="/" element={<ProtectedComponent><MyAccount /></ProtectedComponent>}>
+            <Route path="/myprofile" element={<MyProfile />} />
+            <Route path="/orders" element={<MyOrder />} />
+          </Route>
 
           <Route path="/wishlist" element={<Wishlist />}></Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Buy />} />
           <Route path="/address" element={<Address />} />
-          <Route path="/payment" element={<PaymentCheckout/>} />
-          <Route path="/thankyou" element={<ThanksPage/>}/>
+          <Route path="/payment" element={<PaymentCheckout />} />
+          <Route path="/thankyou" element={<ThanksPage />} />
         </Routes>
-      
+
         <Footer />
       </BrowserRouter>
     </>
