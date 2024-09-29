@@ -7,6 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import _debounce from "lodash/debounce";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+
 
 function Men() {
   const [getProducts, setProducts] = useState([]);
@@ -100,7 +103,58 @@ function Men() {
   return (
     <>
       <ToastContainer />
-      <div className="men-container">
+      <div style={{ margin: "130px" }}>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          style={{ gap: "13px" ,marginLeft:'25px'}}
+        >
+          {getProducts.length > 0 &&
+            getProducts.map((product, index) => (
+              <div key={index} size={{ xs: 2, sm: 4, md: 8 }}>
+                <div>
+                  <button
+                    className="wishlist-button"
+                    onClick={() => addWishlist(product._id)}
+                  >
+                    <FavoriteBorderIcon />
+                  </button>
+                  <Link to={`/product-details/${product._id}`}>
+                    <img
+                      src={product.displayImage}
+                      alt={product.name}
+                      id="zoom-In"
+                      style={{ height: "350px", width: "100%" }}
+                      spacing={3}
+                    />
+                  </Link>
+                  <h2
+                    className="seller-details"
+                    style={{ alignItems: "center", marginLeft: "10px" }}
+                  >
+                    {product.name}
+                  </h2>
+                  <span
+                    className="seller-subCategory"
+                    style={{ padding: "100px" }}
+                  >
+                    {product.subCategory}
+                  </span>
+                  <p className="seller-price" style={{ marginLeft: "50px" }}>
+                    Price: &#8377; {product.price}
+                  </p>
+                </div>
+              </div>
+            ))}
+            {isFetching && <p>Loading...</p>}
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            {!hasMore && <p>No more products to display.</p>}
+        </Grid>
+      </Box>
+    </div>
+      {/* <div className="men-container">
         <section className="men-clothess">
           <p className="heading-mens">Men's Clothing</p>
           <p className="heading-menss">
@@ -109,11 +163,11 @@ function Men() {
             range of clothing. Scroll below to check it out.
           </p>
           <div className="for-men-shirts-pants">
+          
             {getProducts.length > 0 &&
               getProducts.map((product, index) => (
                 <div key={index}>
                   <div>
-                  {/* <p className="sellerTag">{product.sellerTag}</p> */}
                     <button
                       className="wishlist-button"
                       onClick={() => addWishlist(product._id)}
@@ -137,12 +191,13 @@ function Men() {
                   </div>
                 </div>
               ))}
+              
             {isFetching && <p>Loading...</p>}
             {error && <p style={{ color: "red" }}>{error}</p>}
             {!hasMore && <p>No more products to display.</p>}
           </div>
         </section>
-      </div>
+      </div> */}
     </>
   );
 }

@@ -32,7 +32,7 @@ const PaymentCheckout = () => {
           },
           body: JSON.stringify({
             productId: localStorage.getItem('productId'),
-            quantity: 2,
+            quantity: 1,
             addressType: "HOME",
             address: {
               // name: savedData[0].name,

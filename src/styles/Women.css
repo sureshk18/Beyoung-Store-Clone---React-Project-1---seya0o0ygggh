@@ -98,3 +98,16 @@ p.seller-price {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+
+@media screen and (max-width: 768px) {
+.women-container{
+    margin-left: 0px;
+    flex-direction: row;
+}
+
+
+.for-women-shirts-pants{
+    display: grid;
+       
+}
+}
