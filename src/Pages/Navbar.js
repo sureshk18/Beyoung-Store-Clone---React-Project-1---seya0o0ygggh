@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Beyounglogo from "../assests/Beyounglogo.svg";
 import desktopnav from "../assests/desktopnav.png";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -12,6 +12,7 @@ import LoginModal from "../login/LoginModal";
 import SignupModal from "../login/SingupModal";
 // import Wishlist from '../Pages/Wishlist';
 import { ClickAwayListener, Popper } from "@mui/material";
+
 
 
 import AppBar from '@mui/material/AppBar';
@@ -125,8 +126,7 @@ function Navbar() {
     navigate(`/search?name=${value}`);
   };
 
-  const setClothselected = (value) => {
-    setcloth(value);
+  const setClothselected = () => {
     navigate(`/allcloths`);
   };
 
